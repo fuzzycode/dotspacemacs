@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst bl-dired-packages
-  '( peep-dired )
+  '( peep-dired
+     dired-narrow)
   "The list of Lisp packages required by the bl-dired layer.
 
 Each entry is either:
@@ -66,5 +67,13 @@ Each entry is either:
     :bind (:map dired-mode-map
                 ("P" . peep-dired))
     ))
+
+
+(defun bl-dired/init-dired-narrow ()
+  (use-package dired-narrow
+    :ensure t
+    :defer t
+    :bind (:map dired-mode-map
+                ("/" . dired-narrow))))
 
 ;;; packages.el ends here
