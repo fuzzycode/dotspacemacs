@@ -66,6 +66,9 @@ Each entry is either:
     :defer t
     :bind (:map dired-mode-map
                 ("P" . peep-dired))
+    :config (progn
+              (setq peep-dired-ignored-extensions '("mkv" "iso" "mp4"))
+              )
     ))
 
 
