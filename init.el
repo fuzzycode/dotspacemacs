@@ -29,6 +29,7 @@ values."
 
       (git :variables
            git-magit-status-fullscreen t)
+      github
 
       markdown
       org
