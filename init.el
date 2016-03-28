@@ -42,14 +42,17 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+
      spell-checking
      syntax-checking
      version-control
      restclient
      jabber
-     (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
 
-     c-c++
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      semantic
 
      ;; My private packages
