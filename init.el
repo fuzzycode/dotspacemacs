@@ -23,28 +23,32 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-      auto-completion
-      better-defaults
-      emacs-lisp
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t)
 
-      (git :variables
-           git-magit-status-fullscreen t)
-      github
+     better-defaults
+     emacs-lisp
 
-      markdown
-      org
-      (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
-      spell-checking
-      syntax-checking
-      version-control
-      restclient
-      jabber
-      (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     (git :variables
+          git-magit-status-fullscreen t)
+     github
 
-      ;; My private packages
-      bl-dired
+     markdown
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spell-checking
+     syntax-checking
+     version-control
+     restclient
+     jabber
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
+
+     ;; My private packages
+     bl-dired
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
