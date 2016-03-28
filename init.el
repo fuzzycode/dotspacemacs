@@ -39,6 +39,9 @@ values."
      (org :variables
           org-enable-github-support t)
      yaml
+     lua
+     html
+     latex
 
      (shell :variables
             shell-default-height 30
