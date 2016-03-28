@@ -49,6 +49,9 @@ values."
      jabber
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
 
+     c-c++
+     semantic
+
      ;; My private packages
      bl-dired
      )
