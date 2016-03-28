@@ -53,7 +53,7 @@ values."
               ibuffer-group-buffers-by 'projects)
 
      (c-c++ :variables
-            c-c++-enable-clang-support t)
+            c-c++-enable-clang-support nil)
      semantic
 
      ;; My private packages
