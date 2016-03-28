@@ -1,1 +1,27 @@
-
+* Requirements
+** Common
+[ ] Key-chords
+*** Snippets
+[ ] Able to use 3rd party snippets
+[ ] Able to have a separate repository of custom snippets
+[ ] Possible to specify special private snippets for work
+** C/C++
+[ ] Code formatting
+[ ] Auto Complete
+[ ] Code Checker
+[ ] Compilation
+[ ] Debugger
+[ ] Manage different coding styles
+** Python
+[ ] Debugger
+[ ] Coder Formatting
+[ ] Code Checker
+[ ] PEP8 Formatting
+** Org
+** Markdown
+** Git
+** Mail
+[ ] Able to send and receive mails in Emacs
+** Jabber
+[ ] Able to use hipchat
+[ ] Separate private password and settings files for work and private usage 
