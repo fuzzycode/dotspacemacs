@@ -36,7 +36,8 @@ values."
      github
 
      markdown
-     org
+     (org :variables
+          org-enable-github-support t)
      yaml
 
      (shell :variables
