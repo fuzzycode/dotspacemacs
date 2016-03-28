@@ -1,6 +1,8 @@
 * Requirements
 ** Common
 [ ] Key-chords
+[ ] File skeletons
+[ ] Automatic license headers for code files
 *** Snippets
 [ ] Able to use 3rd party snippets
 [ ] Able to have a separate repository of custom snippets
@@ -12,11 +14,14 @@
 [ ] Compilation
 [ ] Debugger
 [ ] Manage different coding styles
+[ ] Re-factoring support
 ** Python
 [ ] Debugger
 [ ] Coder Formatting
 [ ] Code Checker
 [ ] PEP8 Formatting
+[ ] Tox support
+[ ] Virtualenv support
 ** Org
 ** Markdown
 ** Git
@@ -24,4 +29,20 @@
 [ ] Able to send and receive mails in Emacs
 ** Jabber
 [ ] Able to use hipchat
-[ ] Separate private password and settings files for work and private usage 
+[ ] Separate private password and settings files for work and private usage
+** LateX
+[ ] Auto completion
+[ ] Compilation with different engines
+[ ] Snippets
+[ ] Preview
+[ ] Debugging
+[ ] Syntax highlighting
+** Arduino
+[ ] Support for developing arduino source
+[ ] Syntax highlighting
+[ ] Compilation
+[ ] Upload to board
+[ ] Snippets
+[ ] Syntax checking
+[ ] Syntax formatting
+[ ] Debugging 
