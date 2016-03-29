@@ -1,48 +1,74 @@
+#+TITLE: README
+#+AUTHOR: Björn Larsson
+#+EMAIL: develop@bjornlarsson.net
+
 * Requirements
 ** Common
-[ ] Key-chords
-[ ] File skeletons
-[ ] Automatic license headers for code files
+- [ ] Key-chords
+- [ ] File skeletons
+- [ ] Automatic license headers for code files
 *** Snippets
-[ ] Able to use 3rd party snippets
-[ ] Able to have a separate repository of custom snippets
-[ ] Possible to specify special private snippets for work
+- [ ] Able to use 3rd party snippets
+- [ ] Able to have a separate repository of custom snippets
+- [ ] Possible to specify special private snippets for work
+*** Setup
+- [ ] Backup files
+- [ ] Auto save files
+*** Spell checking
+- [ ] Easy access to spell checking
 ** C/C++
-[ ] Code formatting
-[ ] Auto Complete
-[ ] Code Checker
-[ ] Compilation
-[ ] Debugger
-[ ] Manage different coding styles
-[ ] Re-factoring support
+- [ ] Code formatting
+- [ ] Auto Complete
+- [ ] Code Checker
+- [ ] Compilation
+- [ ] Debugger
+- [ ] Manage different coding styles
+- [ ] Re-factoring support
+- [ ] Code Navigation
 ** Python
-[ ] Debugger
-[ ] Coder Formatting
-[ ] Code Checker
-[ ] PEP8 Formatting
-[ ] Tox support
-[ ] Virtualenv support
+- [ ] Debugger
+- [ ] Coder Formatting
+- [ ] Code Checker
+- [ ] PEP8 Formatting
+- [ ] Tox support
+- [ ] Virtualenv support
+- [ ] Code Navigation
 ** Org
+- [ ] Snippets
+- [ ] Jira Integration
+*** Capture
+- [ ] Templates
+- [ ] Setup
 ** Markdown
+- [ ] Snippets
+- [ ] Compilation
+- [ ] Syntax highlighting
+- [ ] Preview
 ** Git
+- [ ] Github support
+- [ ] Support for .gitignore file editing
+
 ** Mail
-[ ] Able to send and receive mails in Emacs
+- [ ] Able to send and receive mails in Emacs
 ** Jabber
-[ ] Able to use hipchat
-[ ] Separate private password and settings files for work and private usage
+- [ ] Able to use hipchat
+- [ ] Separate private password and settings files for work and private usage
 ** LateX
-[ ] Auto completion
-[ ] Compilation with different engines
-[ ] Snippets
-[ ] Preview
-[ ] Debugging
-[ ] Syntax highlighting
+- [ ] Auto completion
+- [ ] Compilation with different engines
+- [ ] Snippets
+- [ ] Preview
+- [ ] Debugging
+- [ ] Syntax highlighting
+- [ ] Snippets
 ** Arduino
-[ ] Support for developing arduino source
-[ ] Syntax highlighting
-[ ] Compilation
-[ ] Upload to board
-[ ] Snippets
-[ ] Syntax checking
-[ ] Syntax formatting
-[ ] Debugging 
+- [ ] Support for developing arduino source
+- [ ] Syntax highlighting
+- [ ] Compilation
+- [ ] Upload to board
+- [ ] Snippets
+- [ ] Syntax checking
+- [ ] Syntax formatting
+- [ ] Debugging
+** Config files
+- [ ] Syntax highlighting
