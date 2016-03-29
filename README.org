@@ -75,3 +75,5 @@
 - [ ] Debugging
 ** Config files
 - [ ] Syntax highlighting
+** Jekyll
+- [ ] Syntax highlighting
