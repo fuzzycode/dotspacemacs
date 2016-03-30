@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-spelling-packages
-  '()
+  '(flyspell)
   "The list of Lisp packages required by the bl-spelling layer.
 
 Each entry is either:
@@ -58,5 +58,6 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-spelling/init-flyspell ())
 
 ;;; packages.el ends here
