@@ -8,13 +8,15 @@
 - [ ] File skeletons
 - [ ] Automatic license headers for code files
 - [ ] Unique buffer names
+- [ ] Jenkins Support
+- [ ] Travis Support
 *** Snippets
 - [ ] Able to use 3rd party snippets
 - [ ] Able to have a separate repository of custom snippets
 - [ ] Possible to specify special private snippets for work
 *** Setup
-- [ ] Backup files
-- [ ] Auto save files
+- [ ] Backup file location
+- [ ] Auto save file location
 *** Spell checking
 - [ ] Easy access to spell checking
 ** C/C++
