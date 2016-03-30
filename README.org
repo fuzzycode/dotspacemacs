@@ -18,7 +18,7 @@
 - [ ] Backup file location
 - [ ] Auto save file location
 *** Spell checking
-- [ ] Easy access to spell checking
+- [X] Easy access to spell checking
 ** C/C++
 - [ ] Code formatting
 - [ ] Auto Complete
