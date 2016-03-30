@@ -280,6 +280,21 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+
+  ;; Configure backup behavior
+  (setq
+   backup-by-copying t
+   backup-directory-alist '((".*" . ,temporary-file-directory))
+   delete-old-versions t
+   kept-new-versions 5
+   kept-old-versions 0
+   version-control t
+   vc-make-backup-files t)
+
+  ;; Configure auto save
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
