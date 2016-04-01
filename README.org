@@ -56,9 +56,9 @@
 - [ ] Syntax highlighting
 - [ ] Preview
 ** Git
-- [ ] Github support
-- [-] gitignore file editing
-  - [ ] Support for spelling in comments
+- [X] Github support
+- [X] gitignore file editing
+  - [X] Support for spelling in comments
   - [X] Syntax highlighting
 ** Mail
 - [ ] Able to send and receive mails in Emacs
