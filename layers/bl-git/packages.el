@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '()
+  '(gitignore-mode)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -58,5 +58,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-git/post-init-gitignore-mode ()
+  (add-hook 'gitignore-mode-hook 'flyspell-prog-mode)
+  )
 
 ;;; packages.el ends here

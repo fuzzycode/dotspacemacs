@@ -26,7 +26,8 @@ values."
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t)
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory "~/.snippets")
 
      better-defaults
      emacs-lisp
@@ -47,7 +48,8 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
 
-     spell-checking
+     (spell-checking :variables
+                     spell-checking-enable-by-default t)
      syntax-checking
      version-control
      restclient
@@ -62,6 +64,7 @@ values."
      ;; My private packages
      bl-dired
      bl-spelling
+     bl-git
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
