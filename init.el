@@ -23,14 +23,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-private-snippets-directory "~/.snippets")
-
-     better-defaults
-
+     
      ;;Language layers
      emacs-lisp
      yaml
@@ -47,6 +40,15 @@ values."
      github
 
      ;; General layers
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory '("~/.snippets"
+                                                                   "~/.spacemacs.d/snippets"))
+
+     better-defaults
+
      (org :variables
           org-enable-github-support t)
 
@@ -69,6 +71,7 @@ values."
      bl-dired
      bl-spelling
      bl-git
+     bl-key-chords
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
