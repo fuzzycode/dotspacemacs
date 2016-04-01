@@ -7,12 +7,14 @@
 
 * Requirements
 ** Common
-- [ ] Key-chords
+- [X] Key-chords
 - [ ] File skeletons
 - [ ] Automatic license headers for code files
 - [ ] Unique buffer names
 - [ ] Jenkins Support
 - [ ] Travis Support
+- [ ] Multi cursor
+- [ ] Remote Editing
 *** Snippets
 - [ ] Able to use 3rd party snippets
 - [ ] Able to have a separate repository of custom snippets
@@ -44,6 +46,12 @@
 - [ ] Snippets
 - [ ] Re-factoring
 - [ ] Sphinx documentation support
+*** Django
+- [ ] Template support
+- [ ] Code Completion
+- [ ] Snippets
+- [ ] Manage Commands
+- [ ] Build/Deploy
 ** Org
 - [ ] Snippets
 - [ ] Jira Integration
@@ -88,3 +96,6 @@
 - [ ] Syntax highlighting
 ** Jekyll
 - [ ] Syntax highlighting
+- [ ] Formatting
+- [ ] Snippets
+- [ ] Preview
