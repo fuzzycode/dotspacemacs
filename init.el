@@ -30,19 +30,25 @@ values."
                       auto-completion-private-snippets-directory "~/.snippets")
 
      better-defaults
+
+     ;;Language layers
      emacs-lisp
-
-     (git :variables
-          git-magit-status-fullscreen t)
-     github
-
-     markdown
-     (org :variables
-          org-enable-github-support t)
      yaml
      lua
      html
      latex
+     markdown
+     (c-c++ :variables
+            c-c++-enable-clang-support nil) 
+
+     ;; Git
+     (git :variables
+          git-magit-status-fullscreen t)
+     github
+
+     ;; General layers
+     (org :variables
+          org-enable-github-support t)
 
      (shell :variables
             shell-default-height 30
@@ -57,8 +63,6 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
 
-     (c-c++ :variables
-            c-c++-enable-clang-support nil)
      semantic
 
      ;; My private packages
