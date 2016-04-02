@@ -15,6 +15,7 @@
 - [ ] Travis Support
 - [ ] Multi cursor
 - [ ] Remote Editing
+- [ ] Extend helm usage
 *** Snippets
 - [ ] Able to use 3rd party snippets
 - [ ] Able to have a separate repository of custom snippets
@@ -32,7 +33,12 @@
 - [ ] Debugger
 - [ ] Manage different coding styles
 - [ ] Re-factoring support
+  - [ ] Create implementation
+  - [ ] Smart renaming
 - [ ] Code Navigation
+  - [ ] Go to definition
+  - [ ] Go to declaration
+  - [ ] Find usage
 - [ ] Snippets
 ** Python
 - [ ] Debugger
@@ -46,6 +52,7 @@
 - [ ] Snippets
 - [ ] Re-factoring
 - [ ] Sphinx documentation support
+- [ ] Testing support
 *** Django
 - [ ] Template support
 - [ ] Code Completion
