@@ -1,0 +1,3 @@
+[submodule "snippets/bl-snippets"]
+	path = snippets/bl-snippets
+	url = git@github.com:fuzzycode/bl-snippets.git
