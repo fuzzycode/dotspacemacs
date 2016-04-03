@@ -17,9 +17,9 @@
 - [ ] Remote Editing
 - [ ] Extend helm usage
 *** Snippets
-- [ ] Able to use 3rd party snippets
-- [ ] Able to have a separate repository of custom snippets
-- [ ] Possible to specify special private snippets for work
+- [X] Able to use 3rd party snippets
+- [X] Able to have a separate repository of custom snippets
+- [X] Possible to specify special private snippets for work
 *** Setup
 - [X] Backup file location
 - [X] Auto save file location
@@ -60,7 +60,7 @@
 - [ ] Manage Commands
 - [ ] Build/Deploy
 ** Org
-- [ ] Snippets
+- [X] Snippets
 - [ ] Jira Integration
 *** Capture
 - [ ] Templates
