@@ -4,6 +4,14 @@
 #+STARTUP: showall
 
 * About
+My personal setup for [[https://github.com/syl20bnr/spacemacs]][[spacemacs]]
+* Installing
+#+srcname: install
+#+begin_src sh
+git clone https://github.com/fuzzycode/dotspacemacs.git ~/.spacemacs.d
+cd ~/.spacemacs.d
+git submodule update --init --recursive
+#+end_src
 
 * Requirements
 ** Common
