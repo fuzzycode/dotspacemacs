@@ -75,6 +75,7 @@ values."
      bl-git
      bl-key-chords
      bl-error
+     bl-edit
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -317,6 +318,9 @@ you should place you code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4f2ede02b3324c2f788f4e0bad77f7ebc1874eff7971d2a2c9b9724a50fb3f65" default)))
  '(org-export-backends (quote (ascii html icalendar latex md confluence))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
