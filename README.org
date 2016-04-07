@@ -23,7 +23,8 @@ git submodule update --init --recursive
 - [ ] Travis Support
 - [ ] Multi cursor
 - [ ] Remote Editing
-- [ ] Extend helm usage
+- [X] Extend helm usage
+  - [X] Helm Flycheck errors
 *** Snippets
 - [X] Able to use 3rd party snippets
 - [X] Able to have a separate repository of custom snippets
@@ -47,7 +48,7 @@ git submodule update --init --recursive
   - [ ] Go to definition
   - [ ] Go to declaration
   - [ ] Find usage
-- [ ] Snippets
+- [X] Snippets
 ** Python
 - [ ] Debugger
 - [ ] Coder Formatting
@@ -57,14 +58,14 @@ git submodule update --init --recursive
 - [ ] Virtualenv support
 - [ ] Code Navigation
 - [ ] Console
-- [ ] Snippets
+- [X] Snippets
 - [ ] Re-factoring
 - [ ] Sphinx documentation support
 - [ ] Testing support
 *** Django
 - [ ] Template support
 - [ ] Code Completion
-- [ ] Snippets
+- [X] Snippets
 - [ ] Manage Commands
 - [ ] Build/Deploy
 ** Org
@@ -74,7 +75,7 @@ git submodule update --init --recursive
 - [ ] Templates
 - [ ] Setup
 ** Markdown
-- [ ] Snippets
+- [X] Snippets
 - [ ] Compilation
 - [ ] Syntax highlighting
 - [ ] Preview
