@@ -50,6 +50,7 @@ values."
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/bl-snippets/external"
                       )
      better-defaults
+     themes-megapack
 
      (org :variables
           org-enable-github-support t)
@@ -63,7 +64,7 @@ values."
      syntax-checking
      version-control
      restclient
-     jabber
+     jabberfed
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
 
@@ -136,7 +137,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(subatomic
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
