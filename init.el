@@ -65,7 +65,7 @@ values."
      syntax-checking
      version-control
      restclient
-     jabberfed
+     jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
 
@@ -154,7 +154,7 @@ values."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -328,7 +328,14 @@ you should place you code here."
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4f2ede02b3324c2f788f4e0bad77f7ebc1874eff7971d2a2c9b9724a50fb3f65" default)))
- '(org-export-backends (quote (ascii html icalendar latex md confluence))))
+ '(org-export-backends (quote (ascii html icalendar latex md confluence)))
+ '(safe-local-variable-values
+   (quote
+    ((project-venv-name . "pytvdbapi")
+     (eval setq python-shell-extra-pythonpaths
+           (list
+            (expand-file-name
+             (locate-dominating-file buffer-file-name ".dir-locals.el"))))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
