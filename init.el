@@ -307,10 +307,14 @@ you should place you code here."
    version-control t
    vc-make-backup-files t)
 
-  ;; Configure auto save
+  ;;Configure auto save
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
 
+
+  ;;; Load local config file if present
+  (when (file-exists-p "~/.spacemacs.d/local.el")
+    (load "~/.spacemacs.d/local.el"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
