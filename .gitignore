@@ -1,1 +1,4 @@
 local.el
+
+#If I make custom changes to Emacs  treat them as local config
+emacs-custom.el

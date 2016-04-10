@@ -138,8 +138,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(subatomic
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -150,8 +149,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Inconsolata"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
@@ -313,33 +312,14 @@ you should place you code here."
         `((".*" ,temporary-file-directory t)))
 
 
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+
   ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.d/local.el")
     (load "~/.spacemacs.d/local.el"))
-  )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "4f2ede02b3324c2f788f4e0bad77f7ebc1874eff7971d2a2c9b9724a50fb3f65" default)))
- '(org-export-backends (quote (ascii html icalendar latex md confluence)))
- '(safe-local-variable-values
-   (quote
-    ((project-venv-name . "pytvdbapi")
-     (eval setq python-shell-extra-pythonpaths
-           (list
-            (expand-file-name
-             (locate-dominating-file buffer-file-name ".dir-locals.el"))))))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+  ;; Load the custom file
+  (setq custom-file "~/.spacemacs.d/emacs-custom.el")
+  (when (file-exists-p custom-file)
+    (load custom-file))
+  )
