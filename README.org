@@ -17,7 +17,7 @@ git submodule update --init --recursive
 ** Common
 - [X] Key-chords
 - [ ] File skeletons
-- [ ] Automatic license headers for code files
+- [X] Automatic license headers for code files
 - [ ] Unique buffer names
 - [ ] Jenkins Support
 - [ ] Travis Support
@@ -25,6 +25,7 @@ git submodule update --init --recursive
 - [ ] Remote Editing
 - [X] Extend helm usage
   - [X] Helm Flycheck errors
+- [ ] Encrypted settings
 *** Snippets
 - [X] Able to use 3rd party snippets
 - [X] Able to have a separate repository of custom snippets
@@ -62,6 +63,7 @@ git submodule update --init --recursive
 - [ ] Re-factoring
 - [ ] Sphinx documentation support
 - [ ] Testing support
+- [ ] IPython support
 *** Django
 - [ ] Template support
 - [ ] Code Completion
