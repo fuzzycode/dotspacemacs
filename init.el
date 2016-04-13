@@ -32,6 +32,7 @@ values."
      latex
      markdown
      javascript
+     shell-scripts
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode) 
@@ -49,10 +50,13 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory '("~/.spacemacs.d/snippets/bl-snippets/external"
-                                                                   "~/.spacemacs.d/snippets/bl-snippets/personal")
+                                                                   "~/.spacemacs.d/snippets/bl-snippets/personal"
+                                                                   "~/.snippets/")
                       )
      better-defaults
      themes-megapack
+     eyebrowse
+     ranger
 
      (org :variables
           org-enable-github-support t)
