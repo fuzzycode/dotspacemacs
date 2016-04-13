@@ -23,7 +23,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     
+
      ;;Language layers
      emacs-lisp
      yaml
@@ -31,6 +31,7 @@ values."
      html
      latex
      markdown
+     javascript
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode) 
@@ -149,8 +150,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata"
-                               :size 14
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.2)
