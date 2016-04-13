@@ -21,7 +21,7 @@ git submodule update --init --recursive
 - [ ] Unique buffer names
 - [ ] Jenkins Support
 - [ ] Travis Support
-- [ ] Multi cursor
+- [X] Multi cursor
 - [ ] Remote Editing
 - [X] Extend helm usage
   - [X] Helm Flycheck errors
