@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst bl-ci-packages
-  '(jenkins)
+  '(jenkins
+    travis)
+
   "The list of Lisp packages required by the bl-ci layer.
 
 Each entry is either:
@@ -64,5 +66,11 @@ Each entry is either:
     :defer t
     :init (spacemacs/set-leader-keys "aJ" 'jenkins)
   ))
+
+(defun bl-ci/init-travis ()
+  (use-package travis
+    :defer t
+    :init (spacemacs/set-leader-keys "aT" 'travis-show-projects)
+    ))
 
 ;;; packages.el ends here
