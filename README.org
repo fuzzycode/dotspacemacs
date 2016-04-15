@@ -19,8 +19,8 @@ git submodule update --init --recursive
 - [ ] File skeletons
 - [X] Automatic license headers for code files
 - [ ] Unique buffer names
-- [ ] Jenkins Support
-- [ ] Travis Support
+- [X] Jenkins Support
+- [X] Travis Support
 - [X] Multi cursor
 - [ ] Remote Editing
 - [X] Extend helm usage
