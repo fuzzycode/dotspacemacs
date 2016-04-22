@@ -30,8 +30,11 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(helm-gtags
-    irony
+  '(irony
+    company-irony
+    flycheck-irony
+    yasnippet
+    helm-gtags
     )
   "The list of Lisp packages required by the bl-c-c++ layer.
 
@@ -60,21 +63,54 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
-(defun bl-c-c++/init-helm-gtags ()
-  (use-package helm-gtags
-    :defer t
-    :init
-    (progn
-
-      ))
-  )
+(setq irony-mode-excluded-packages
+     '(auto-complete-clang))
 
 (defun bl-c-c++/init-irony ()
   (use-package irony
     :defer t
     :init
     (progn
-     ))
+      (add-hook 'c++-mode-hook 'irony-mode)
+      (add-hook 'c-mode-hook 'irony-mode)
+      (add-hook 'objc-mode-hook 'irony-mode)
+      (add-hook 'irony-mode-hook
+                (lambda ()
+                  (define-key irony-mode-map [remap completion-at-point]
+                    'irony-completion-at-point-async)
+                  (define-key irony-mode-map [remap complete-symbol]
+                    'irony-completion-at-point-async)))
+      (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+      (spacemacs|diminish irony-mode " Ⓘ" " I"))
+      ))
+
+(defun bl-c-c++/init-company-irony ()
+  (use-package company-irony
+    :defer t
+    :init
+    (progn
+      (eval-after-load 'company
+        '(add-to-list 'company-backends 'company-irony))
+      (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+      (add-hook 'irony-mode-hook 'company-mode))
+    )
+  )
+
+(defun bl-c-c++/init-flycheck-irony ()
+  (use-package flycheck-irony
+    :defer t
+    :init
+    (progn
+      (eval-after-load 'flycheck
+        '(add-to-list 'flycheck-checkers 'irony))
+      (add-hook 'irony-mode-hook 'flycheck-mode))
+      )
+  )
+
+(defun bl-c-c++/post-init-helm-gtags ()
+  (use-package helm-gtags
+    :defer t
+    :init (spacemacs|diminish helm-gtags-mode " G" " G")
+    )
   )
 ;;; packages.el ends here

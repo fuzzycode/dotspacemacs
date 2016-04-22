@@ -85,6 +85,7 @@ values."
      bl-error
      bl-edit
      bl-ci
+     bl-c-c++
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
