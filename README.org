@@ -124,3 +124,15 @@ git submodule update --init --recursive
 - [ ] Formatting
 - [ ] Snippets
 - [ ] Preview
+* Interesting Packages
+** back-button http://github.com/rolandwalker/back-button
+Navigating the kill ring in a visual way
+** writegood-mode
+Detect bad English writing
+** helm-codesearch
+For using codesearch to search through the code
+** synonymous
+Looking up synonyms in dictionaries
+** yatemplate https://github.com/mineo/yatemplate
+For automatically inserting yasnippet powered file skeletons when creating new files
+
