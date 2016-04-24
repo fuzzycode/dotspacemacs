@@ -22,10 +22,12 @@ git submodule update --init --recursive
 - [X] Jenkins Support
 - [X] Travis Support
 - [X] Multi cursor
-- [ ] Remote Editing
+- [X] Remote Editing
 - [X] Extend helm usage
   - [X] Helm Flycheck errors
 - [ ] Encrypted settings
+- Work/Private Settings [0/1]
+  - [ ] Different E-mail depending on location
 *** Snippets
 - [X] Able to use 3rd party snippets
 - [X] Able to have a separate repository of custom snippets
@@ -36,9 +38,12 @@ git submodule update --init --recursive
 *** Spell checking
 - [X] Easy access to spell checking
 ** C/C++
-- [ ] Code formatting
-- [ ] Auto Complete
-- [ ] Code Checker
+- [X] Code formatting
+  Using clang_format
+- [X] Auto Complete
+  Using Irony mode
+- [X] Code Checker
+  Using flycheck-irony
 - [ ] Compilation
 - [ ] Debugger
 - [ ] Manage different coding styles
@@ -90,8 +95,9 @@ git submodule update --init --recursive
 - [ ] Able to send and receive mails in Emacs
 - [ ] Integrated with org mode
 ** Jabber
-- [ ] Able to use hipchat
-- [ ] Separate private password and settings files for work and private usage
+- [X] Able to use hipchat
+  Works but is very annoying with large amount of users
+- [X] Separate private password and settings files for work and private usage
 ** LateX
 - [ ] Auto completion
 - [ ] Compilation with different engines
@@ -111,7 +117,8 @@ git submodule update --init --recursive
 - [ ] Syntax formatting
 - [ ] Debugging
 ** Config files
-- [ ] Syntax highlighting
+- [X] Syntax highlighting
+  Using conf-mode
 ** Jekyll
 - [ ] Syntax highlighting
 - [ ] Formatting
