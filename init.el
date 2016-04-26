@@ -44,6 +44,7 @@ values."
 
      ;; General layers
      gtags
+     ycmd
      (auto-completion :variables
                       auto-completion-return-key-behavior nil
                       auto-completion-tab-key-behavior 'complete
@@ -85,13 +86,14 @@ values."
      bl-error
      bl-edit
      bl-ci
-     bl-c-c++
+     ;bl-c-c++
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(f ;emacs-ycmd depends on f but it is not properly listed as a dependency 
+                                      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
