@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
 
      ;;Language layers
+     python
      emacs-lisp
      yaml
      lua
