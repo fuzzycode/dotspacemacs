@@ -58,6 +58,7 @@ values."
                       )
      better-defaults
      themes-megapack
+     theming
      eyebrowse
      ranger
 
