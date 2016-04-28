@@ -26,6 +26,7 @@ values."
 
      ;;Language layers
      python
+     django
      emacs-lisp
      yaml
      lua
