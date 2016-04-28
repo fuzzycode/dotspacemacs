@@ -26,6 +26,9 @@ git submodule update --init --recursive
 - [X] Extend helm usage
   - [X] Helm Flycheck errors
 - [ ] Encrypted settings
+- Platform dependent settings [0/2]
+  - [ ] Platform dependent layers
+  - [ ] Different themes for terminal and UI
 - Work/Private Settings [0/1]
   - [ ] Different E-mail depending on location
 *** Snippets
