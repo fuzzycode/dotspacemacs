@@ -88,6 +88,7 @@ values."
      bl-error
      bl-edit
      bl-ci
+     bl-bl
      ;bl-c-c++
      )
    ;; List of additional packages that will be installed without being
@@ -324,7 +325,6 @@ you should place you code here."
         `((".*" ,temporary-file-directory t)))
 
   (setq require-final-newline t)
-
   (add-hook 'text-mode-hook 'auto-fill-mode)
 
   ;;; Load local config file if present
