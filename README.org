@@ -39,7 +39,7 @@ git submodule update --init --recursive
 - [X] Backup file location
 - [X] Auto save file location
 - [X] Cleanup white space when saving file
-- [ ] Automatic update of copyright strings
+- [X] Automatic update of copyright strings
 *** Spell checking
 - [X] Easy access to spell checking
 ** C/C++

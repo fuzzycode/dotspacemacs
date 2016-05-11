@@ -37,7 +37,7 @@ values."
      shell-scripts
      (c-c++ :variables
             c-c++-enable-clang-support t
-            c-c++-default-mode-for-headers 'c++-mode) 
+            c-c++-default-mode-for-headers 'c++-mode)
 
      ;; Git
      (git :variables
@@ -95,7 +95,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(f ;emacs-ycmd depends on f but it is not properly listed as a dependency 
+   dotspacemacs-additional-packages '(f ;emacs-ycmd depends on f but it is not properly listed as a dependency
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -326,6 +326,10 @@ you should place you code here."
 
   (setq require-final-newline t)
   (add-hook 'text-mode-hook 'auto-fill-mode)
+
+  ;; Automatic update of the copyright year in file headers
+  (when (fboundp 'copyright-update)
+    (add-hook 'before-save-hook 'copyright-update))
 
   ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.d/local.el")
