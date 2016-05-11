@@ -72,8 +72,8 @@ Each entry is either:
   )
 
 (defun bl-edit/post-init-expand-region ()
-  (global-set-key (kbd "M-<up>") 'er/expand-region)
-  (global-set-key (kbd "M-<down>") 'er/contract-region)
+  (global-set-key (kbd "C-+") 'er/expand-region)
+  (global-set-key (kbd "M-+") 'er/contract-region)
   )
 
 ;;; packages.el ends here
