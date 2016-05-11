@@ -38,7 +38,7 @@ git submodule update --init --recursive
 *** Setup
 - [X] Backup file location
 - [X] Auto save file location
-- [ ] Cleanup white space when saving file
+- [X] Cleanup white space when saving file
 - [ ] Automatic update of copyright strings
 *** Spell checking
 - [X] Easy access to spell checking
@@ -140,4 +140,3 @@ For using codesearch to search through the code
 Looking up synonyms in dictionaries
 ** yatemplate https://github.com/mineo/yatemplate
 For automatically inserting yasnippet powered file skeletons when creating new files
-
