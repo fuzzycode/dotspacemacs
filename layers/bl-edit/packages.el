@@ -31,7 +31,9 @@
 
 (defconst bl-edit-packages
   '(multiple-cursors
-    expand-region)
+    expand-region
+    yatemplate
+    editorconfig)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -76,4 +78,9 @@ Each entry is either:
   (global-set-key (kbd "M-+") 'er/contract-region)
   )
 
+
+(defun bl-edit/init-editorconfig ()
+  (use-package editorconfig
+    :defer t
+    :config (editorconfig-mode 1)))
 ;;; packages.el ends here
