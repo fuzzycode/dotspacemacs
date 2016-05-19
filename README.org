@@ -129,8 +129,11 @@ git submodule update --init --recursive
 - [ ] Formatting
 - [ ] Snippets
 - [ ] Preview
+* Improvements
+- [ ] Remove hard coded paths to ~/.spacemacs.d/ and sub directories
+
 * Interesting Packages
-** back-button http://github.com/rolandwalker/back-button
+** [[http://github.com/rolandwalker/back-button][back-button]]
 Navigating the kill ring in a visual way
 ** writegood-mode
 Detect bad English writing
@@ -138,5 +141,8 @@ Detect bad English writing
 For using codesearch to search through the code
 ** synonymous
 Looking up synonyms in dictionaries
-** yatemplate https://github.com/mineo/yatemplate
+** [[https://github.com/mineo/yatemplate][yatemplate]]
 For automatically inserting yasnippet powered file skeletons when creating new files
+** [[http://editorconfig.org/][editorconfig]]
+For having a unified way of configuring indentation and code style. Enables
+config sharing across multiple editors.
