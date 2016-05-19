@@ -64,7 +64,7 @@ Each entry is either:
 (defun bl-edit/init-multiple-cursors ()
   (use-package multiple-cursors
     :defer t
-    :init
+    :config
     (progn
       (spacemacs/set-leader-keys "ic" 'mc/mark-next-like-this)
       (spacemacs/set-leader-keys "iC" 'mc/mark-previous-like-this)
@@ -78,6 +78,15 @@ Each entry is either:
   (global-set-key (kbd "M-+") 'er/contract-region)
   )
 
+(defun bl-edit/init-yatemplate ()
+  "A package for allowing yasnippets as file skeletons for auto-fill "
+  (use-package yatemplate
+    :defer t
+    :config (progn
+              (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
+              (setq auto-insert t)
+              ))
+  )
 
 (defun bl-edit/init-editorconfig ()
   (use-package editorconfig
