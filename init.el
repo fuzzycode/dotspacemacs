@@ -386,7 +386,11 @@ you should place you code here."
                   (class-open . (after))
                   (extern-lang-open . (after)))
 
-                 ;(c-hanging-colons-alist . ())
+                 (c-hanging-colons-alist . ((case-label)
+                                            (label after)
+                                            (access-label after)
+                                            (member-init-intro before)
+                                            (inher-intro)))
 
                  (c-cleanup-list . (brace-else-brace
                                     brace-elseif-brace
