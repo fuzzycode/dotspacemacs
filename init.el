@@ -342,7 +342,9 @@ you should place you code here."
   (c-add-style "FF"
                '("allman"
                  (c-indent-tabs-mode . t)
+                 (indent-tabs-mode . t)
                  (c-indent-level . 4)
+                 (tab-width . 4)
                  (c-basic-offset . 4)
                  (tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
