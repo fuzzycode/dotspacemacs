@@ -81,13 +81,11 @@ values."
      semantic
 
      ;; My private packages
-     bl-dired
      bl-spelling
      bl-git
      bl-key-chords
      bl-error
      bl-edit
-     bl-ci
      bl-bl
      ;bl-c-c++
      )
