@@ -297,7 +297,10 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
+  ;; Load the custom file
   (setq custom-file "~/.spacemacs.d/emacs-custom.el")
+  (when (file-exists-p custom-file)
+    (load custom-file))
 
   (setq
    user-full-name "Björn Larsson"
@@ -335,10 +338,6 @@ you should place you code here."
   ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.d/local.el")
     (load "~/.spacemacs.d/local.el"))
-
-  ;; Load the custom file
-  (when (file-exists-p custom-file)
-    (load custom-file))
 
   (c-add-style "FF"
                '("allman"
