@@ -1,0 +1,1 @@
+(provide 'ff-c-style)

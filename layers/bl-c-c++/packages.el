@@ -30,11 +30,14 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(irony
-    company-irony
-    flycheck-irony
-    yasnippet
-    helm-gtags
+  '(
+    ff-c-style
+                                        ;irony
+                                        ;company-irony
+                                        ;flycheck-irony
+                                        ;yasnippet
+                                        ;helm-gtags
+
     )
   "The list of Lisp packages required by the bl-c-c++ layer.
 
@@ -65,6 +68,12 @@ Each entry is either:
 
 (setq irony-mode-excluded-packages
      '(auto-complete-clang))
+
+(defun bl-c-c++/init-ff-c-style ()
+  (use-package ff-c-style
+    :defer t
+    )
+  )
 
 (defun bl-c-c++/init-irony ()
   (use-package irony
