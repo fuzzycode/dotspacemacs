@@ -58,9 +58,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
 (defun bl-debug/init-realgud ()
   (use-package realgud
-    :init (load-library realgud)))
+    :config (require 'realgud)))
 
 ;;; packages.el ends here
