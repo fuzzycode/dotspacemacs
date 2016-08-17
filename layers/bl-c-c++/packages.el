@@ -72,7 +72,6 @@ Each entry is either:
 
 (defun bl-c-c++/post-init-cmake-ide ()
   (require 'rtags)
-  (require 'company-rtags)
   (cmake-ide-setup))
 
 ;;; packages.el ends here
