@@ -87,6 +87,7 @@ values."
      bl-error
      bl-edit
      bl-bl
+     bl-debug
      ;bl-c-c++
      )
    ;; List of additional packages that will be installed without being
