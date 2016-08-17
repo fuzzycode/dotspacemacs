@@ -30,12 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(irony
-    company-irony
-    flycheck-irony
-    yasnippet
-    helm-gtags
-    )
+  '(cmake-ide rtags)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -63,54 +58,21 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(setq irony-mode-excluded-packages
-     '(auto-complete-clang))
-
-(defun bl-c-c++/init-irony ()
-  (use-package irony
-    :defer t
-    :init
+(defun bl-c-c++/init-rtags ()
+  (use-package rtags
+    :config
     (progn
-      (add-hook 'c++-mode-hook 'irony-mode)
-      (add-hook 'c-mode-hook 'irony-mode)
-      (add-hook 'objc-mode-hook 'irony-mode)
-      (add-hook 'irony-mode-hook
-                (lambda ()
-                  (define-key irony-mode-map [remap completion-at-point]
-                    'irony-completion-at-point-async)
-                  (define-key irony-mode-map [remap complete-symbol]
-                    'irony-completion-at-point-async)))
-      (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-      (spacemacs|diminish irony-mode " Ⓘ" " I"))
-      ))
+      (setq rtags-autostart-diagnostics t)
+      (rtags-enable-standard-keybindings)
+      (setq rtags-use-helm t)
+      )))
 
-(defun bl-c-c++/init-company-irony ()
-  (use-package company-irony
-    :defer t
-    :init
-    (progn
-      (eval-after-load 'company
-        '(add-to-list 'company-backends 'company-irony))
-      (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-      (add-hook 'irony-mode-hook 'company-mode))
-    )
-  )
+(defun bl-c-c++/init-cmake-ide ()
+  (use-package cmake-ide))
 
-(defun bl-c-c++/init-flycheck-irony ()
-  (use-package flycheck-irony
-    :defer t
-    :init
-    (progn
-      (eval-after-load 'flycheck
-        '(add-to-list 'flycheck-checkers 'irony))
-      (add-hook 'irony-mode-hook 'flycheck-mode))
-      )
-  )
+(defun bl-c-c++/post-init-cmake-ide ()
+  (require 'rtags)
+  (require 'company-rtags)
+  (cmake-ide-setup))
 
-(defun bl-c-c++/post-init-helm-gtags ()
-  (use-package helm-gtags
-    :defer t
-    :init (spacemacs|diminish helm-gtags-mode " G" " G")
-    )
-  )
 ;;; packages.el ends here
