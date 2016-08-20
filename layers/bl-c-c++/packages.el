@@ -60,15 +60,11 @@ Each entry is either:
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
-    :config
-    (progn
-      (setq rtags-autostart-diagnostics t)
-      (rtags-enable-standard-keybindings)
-      (setq rtags-use-helm t)
-      )))
+    :defer t))
 
 (defun bl-c-c++/init-cmake-ide ()
-  (use-package cmake-ide))
+  (use-package cmake-ide
+    :defer t))
 
 (defun bl-c-c++/post-init-cmake-ide ()
   (require 'rtags)
