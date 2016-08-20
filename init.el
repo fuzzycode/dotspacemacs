@@ -338,8 +338,7 @@ you should place you code here."
     (load "~/.spacemacs.d/local.el"))
 
   (c-add-style "FF"
-               '("allman"
-                 (c-indent-tabs-mode . t)
+               '((c-indent-tabs-mode . t)
                  (indent-tabs-mode . t)
                  (c-indent-level . 4)
                  (tab-width . 4)
