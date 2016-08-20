@@ -33,7 +33,8 @@
   '(multiple-cursors
     expand-region
     yatemplate
-    editorconfig)
+    editorconfig
+    dumb-jump)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -92,4 +93,13 @@ Each entry is either:
   (use-package editorconfig
     :defer t
     :config (editorconfig-mode 1)))
+
+(defun bl-edit/init-dumb-jump ()
+  (use-package dumb-jump
+    :defer t
+    :commands (dump-jump-mode)
+    :init (progn
+            (add-hook 'c++-mode-hook 'dumb-jump-mode)
+            (add-hook 'c-mode-hook 'dumb-jump-mode)
+            (add-hook 'python-mode-hook 'dumb-jump-mode))))
 ;;; packages.el ends here
