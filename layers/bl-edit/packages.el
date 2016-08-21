@@ -97,6 +97,7 @@ Each entry is either:
 (defun bl-edit/init-dumb-jump ()
   (use-package dumb-jump
     :defer t
+    :if (or (executable-find "ag") (executable-find "grep"))
     :commands (dump-jump-mode)
     :init (progn
             (add-hook 'c++-mode-hook 'dumb-jump-mode)
