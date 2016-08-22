@@ -60,7 +60,14 @@ Each entry is either:
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
-    :ensure company))
+    :ensure company
+    :config
+    (progn
+      (require 'company-rtags)
+      (add-to-list 'company-backends 'company-rtags)
+      (setq company-rtags-begin-after-member-access t)
+      (setq rtags-completions-enabled t)
+      )))
 
 (defun bl-c-c++/init-cmake-ide ()
   (use-package cmake-ide
