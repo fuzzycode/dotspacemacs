@@ -74,10 +74,6 @@ Each entry is either:
     :init (with-eval-after-load 'rtags
             (cmake-ide-setup))))
 
-(defun bl-c-c++/post-init-cmake-ide ()
-  (require 'rtags)
-  (cmake-ide-setup))
-
 ;; Taken from https://github.com/syl20bnr/spacemacs/pull/2834/files
 (defun bl-c-c++/post-init-rtags ()
   (setq company-rtags-begin-after-member-access nil)
