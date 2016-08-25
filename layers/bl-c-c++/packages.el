@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(cmake-ide rtags company irony company-irony)
+  '(cmake-ide rtags company irony company-irony company-irony-c-headers flycheck-irony)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -61,16 +61,18 @@ Each entry is either:
 (defun bl-c-c++/init-irony ()
   (use-package irony
     :defer t
-    :config (progn
+    :commands (irony-mode)
+    :init (progn
               (add-hook 'c++-mode-hook 'irony-mode)
               (add-hook 'c-mode-hook 'irony-mode)
-              (add-hook 'objc-mode-hook 'irony-mode))))
+              (add-hook 'objc-mode-hook 'irony-mode)
+              (spacemacs|diminish irony-mode " Ⓘ" " I"))
+    ))
 
-(defun bl-c-c++/init-company-irony ()
-  (use-package company-irony
+(defun bl-c-c++/init-flycheck-irony ()
+  (use-package flycheck-irony
     :defer t
-    :config (progn
-              (add-to-list 'company-backends 'company-irony))))
+    :init (eval-after-load 'flycheck '(add-to-list 'flycheck-checkers 'irony))))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
