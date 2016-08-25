@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(cmake-ide rtags company)
+  '(cmake-ide rtags company irony company-irony)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -57,6 +57,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-irony ()
+  (use-package irony
+    :defer t
+    :config (progn
+              (add-hook 'c++-mode-hook 'irony-mode)
+              (add-hook 'c-mode-hook 'irony-mode)
+              (add-hook 'objc-mode-hook 'irony-mode))))
+
+(defun bl-c-c++/init-company-irony ()
+  (use-package company-irony
+    :defer t
+    :config (progn
+              (add-to-list 'company-backends 'company-irony))))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
