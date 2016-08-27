@@ -58,6 +58,9 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-c-c++/post-init-company ()
+  (setq company-idle-delay 0.5))
+
 (defun bl-c-c++/init-irony ()
   (use-package irony
     :defer t
