@@ -85,3 +85,8 @@ Each entry is either:
     (progn
       (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
       (push 'company-irony company-backends-c-mode-common))))
+
+(defun bl-c-c++/init-company-irony-c-headers ()
+  (use-package company-irony-c-headers
+    :commands (company-irony-c-headers)
+    :init (push 'company-irony-c-headers company-backends-c-mode-common)))
