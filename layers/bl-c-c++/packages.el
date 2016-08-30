@@ -63,7 +63,11 @@ Each entry is either:
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
+    :defer t
     :init (progn
+            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+            (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+
             (with-eval-after-load 'company
               (push 'company-rtags company-backends-c-mode-common))
 
@@ -73,4 +77,5 @@ Each entry is either:
 
 (defun bl-c-c++/init-cmake-ide ()
   (use-package cmake-ide
+    :defer t
     :init (with-eval-after-load 'rtags (cmake-ide-setup))))
