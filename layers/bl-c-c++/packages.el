@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company irony company-irony company-irony-c-headers irony-eldoc)
+  '(company rtags cmake-ide)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -59,34 +59,12 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun bl-c-c++/post-init-company ()
-  (setq company-idle-delay 0.7))
+  (setq company-idle-delay 0.5))
 
-(defun bl-c-c++/init-irony ()
-  (use-package irony
-    :commands (irony-mode)
-    :init (progn
-              (add-hook 'c++-mode-hook 'irony-mode)
-              (add-hook 'c-mode-hook 'irony-mode)
-              (add-hook 'objc-mode-hook 'irony-mode)
+(defun bl-c-c++/init-rtags ()
+  (use-package rtags
+    :init (with-eval-after-load 'company (push 'company-rtags company-backends-c-mode-common))))
 
-              (defun irony/irony-mode-hook ()
-                (define-key irony-mode-map [remap completion-at-point] 'irony-completion-at-point-async)
-                (define-key irony-mode-map [remap complete-symbol] 'irony-completion-at-point-async))
-
-              (add-hook 'irony-mode-hook 'irony/irony-mode-hook)
-              (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-              (spacemacs|diminish irony-mode " Ⓘ" " I"))
-    ))
-
-(defun bl-c-c++/init-company-irony ()
-  (use-package company-irony
-    :commands (company-irony)
-    :init
-    (progn
-      (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-      (push 'company-irony company-backends-c-mode-common))))
-
-(defun bl-c-c++/init-company-irony-c-headers ()
-  (use-package company-irony-c-headers
-    :commands (company-irony-c-headers)
-    :init (push 'company-irony-c-headers company-backends-c-mode-common)))
+(defun bl-c-c++/init-cmake-ide ()
+  (use-package cmake-ide
+    :init (with-eval-after-load 'rtags (cmake-ide-setup))))
