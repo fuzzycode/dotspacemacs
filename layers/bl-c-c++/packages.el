@@ -58,6 +58,7 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
 (defun bl-c-c++/post-init-company ()
   (setq company-idle-delay 0.5))
 
@@ -65,8 +66,15 @@ Each entry is either:
   (use-package rtags
     :defer t
     :init (progn
-            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
-            (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+            (defun rtags/flycheck-rtags-setup ()
+              "Configures flycheck with rtags"
+              (with-eval-after-load 'flycheck
+                (flycheck-select-checker 'rtags))
+
+              (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+              (setq-local flycheck-check-syntax-automatically nil))
+
+            (add-hook 'c-mode-common-hook 'rtags/flycheck-rtags-setup)
 
             (with-eval-after-load 'company
               (push 'company-rtags company-backends-c-mode-common))
