@@ -63,7 +63,13 @@ Each entry is either:
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
-    :init (with-eval-after-load 'company (push 'company-rtags company-backends-c-mode-common))))
+    :init (progn
+            (with-eval-after-load 'company
+              (push 'company-rtags company-backends-c-mode-common))
+
+            (setq rtags-autostart-diagnostics t)
+            (setq rtags-use-helm t)
+            )))
 
 (defun bl-c-c++/init-cmake-ide ()
   (use-package cmake-ide
