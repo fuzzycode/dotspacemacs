@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags cmake-ide)
+  '(company rtags)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -69,21 +69,22 @@ Each entry is either:
             (defun rtags/flycheck-rtags-setup ()
               "Configures flycheck with rtags"
               (with-eval-after-load 'flycheck
+                (require 'flycheck-rtags)
                 (flycheck-select-checker 'rtags))
 
-              (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+              (setq-local flycheck-highlighting-mode nil)
               (setq-local flycheck-check-syntax-automatically nil))
 
-            (add-hook 'c-mode-common-hook 'rtags/flycheck-rtags-setup)
+            (add-hook 'c-mode-common-hook #'rtags/flycheck-rtags-setup)
 
-            (with-eval-after-load 'company
-              (push 'company-rtags company-backends-c-mode-common))
+            (defun rtags/rtags-c++-hook ()
+              (rtags-start-process-unless-running)
 
-            (setq rtags-autostart-diagnostics t)
+              (define-key c-mode-base-map (kbd "M-.") (function rtags-find-symbol-at-point))
+              (define-key c-mode-base-map (kbd "M-,") (function rtags-find-references-at-point)))
+            (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
+
             (setq rtags-use-helm t)
+            (setq rtags-autostart-diagnostics t)
+            (rtags-diagnostics)
             )))
-
-(defun bl-c-c++/init-cmake-ide ()
-  (use-package cmake-ide
-    :defer t
-    :init (with-eval-after-load 'rtags (cmake-ide-setup))))
