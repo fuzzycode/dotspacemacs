@@ -1,8 +1,8 @@
-;;; packages.el --- bl-key-chords layer packages file for Spacemacs.
+;;; packages.el --- bl-debug layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Björn Larsson <bjornlarsson@MacBookPro>
+;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -18,22 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `bl-key-chords-packages'. Then, for each package PACKAGE:
+;; added to `bl-debug-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `bl-key-chords/init-PACKAGE' to load and initialize the package.
+;;   function `bl-debug/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `bl-key-chords/pre-init-PACKAGE' and/or
-;;   `bl-key-chords/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `bl-debug/pre-init-PACKAGE' and/or
+;;   `bl-debug/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst bl-key-chords-packages
-  '(key-chord
-    avy
-    undo-tree)
-  "The list of Lisp packages required by the bl-key-chords layer.
+(defconst bl-debug-packages
+  '(realgud)
+  "The list of Lisp packages required by the bl-debug layer.
 
 Each entry is either:
 
@@ -60,19 +58,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun bl-key-chords/init-key-chord ()
-  (use-package key-chords
-    :defer t
-    :init
-    (progn
-      (key-chord-define-global "jj" 'avy-goto-word-1)
-      (key-chord-define-global "uu" 'undo-tree-visualize)
-      (key-chord-define-global "xx" 'helm-M-x)
-      (key-chord-define-global "bb" 'helm-mini)
-      (key-chord-define-global "kk" 'just-one-space)
-      (key-chord-mode t)
-      )
-    )
-  )
+(defun bl-debug/init-realgud ()
+  (use-package realgud
+    :config (require 'realgud)))
 
 ;;; packages.el ends here

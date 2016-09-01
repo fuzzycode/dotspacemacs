@@ -54,8 +54,7 @@ values."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory '("~/.spacemacs.d/snippets/bl-snippets/external"
                                                                    "~/.spacemacs.d/snippets/bl-snippets/personal"
-                                                                   "~/.snippets/")
-                      )
+                                                                   "~/.snippets/"))
      better-defaults
      themes-megapack
      theming
@@ -87,6 +86,7 @@ values."
      bl-error
      bl-edit
      bl-bl
+     bl-debug
      ;bl-c-c++
      )
    ;; List of additional packages that will be installed without being
