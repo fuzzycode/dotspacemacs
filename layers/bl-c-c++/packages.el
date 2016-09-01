@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags)
+  '(company rtags (ff-c-style :location local))
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -61,6 +61,10 @@ Each entry is either:
 
 (defun bl-c-c++/post-init-company ()
   (setq company-idle-delay 0.5))
+
+(defun bl-c-c++/init-ff-c-style ()
+  (use-package ff-c-style
+    :config (ff-add-c-style)))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
