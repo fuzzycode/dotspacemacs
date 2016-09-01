@@ -31,7 +31,7 @@
 
 (defconst bl-c-c++-packages
   '(
-    ff-c-style
+    (ff-c-style :location local)
                                         ;irony
                                         ;company-irony
                                         ;flycheck-irony
@@ -71,9 +71,8 @@ Each entry is either:
 
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
-    :defer t
-    )
-  )
+    :config (ff-add-c-style)))
+
 
 (defun bl-c-c++/init-irony ()
   (use-package irony
