@@ -18,14 +18,12 @@
                       (member-init-intro . +)
 
                       (brace-list-intro . +)
-                      (brace-list-member . 0)
 
                       (defun-block-intro . +)
                       (statement . 0)
                       (statement-block-intro . +)
                       (block-open . 0)
 
-                      (c-comment-only-line-set . 0)
                       (innamespace . [0])
                       (namespace-close . 0)
                       (module-open . 0)
