@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags (ff-c-style :location local))
+  '(company rtags (ff-c-style :location local) projectile)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -61,6 +61,10 @@ Each entry is either:
 
 (defun bl-c-c++/post-init-company ()
   (setq company-idle-delay 0.5))
+
+(defun bl-c-c++/post-init-projectile ()
+  (with-eval-after-load 'cc-mode
+    (define-key c-mode-base-map (kbd "<A-tab>") (function projectile-find-other-file))))
 
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
