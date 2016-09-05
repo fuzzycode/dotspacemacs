@@ -81,6 +81,16 @@ Each entry is either:
             (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
             (spacemacs|diminish irony-mode " Ⓘ" " I"))))
 
+(defun bl-c-c++/init-company-irony ()
+  (use-package company-irony
+    :defer t
+    :init (progn
+            (with-eval-after-load 'company (add-to-list 'company-backends 'company-irony))
+
+            (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+            (add-hook 'irony-mode-hook 'company-mode)
+            )))
+
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
