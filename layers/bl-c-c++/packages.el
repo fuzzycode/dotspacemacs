@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags (ff-c-style :location local) projectile)
+  '(company rtags (ff-c-style :location local) projectile irony company-irony)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -70,6 +70,17 @@ Each entry is either:
   (use-package ff-c-style
     :config (ff-add-c-style)))
 
+(defun bl-c-c++/init-irony ()
+  (use-package irony
+    :defer t
+    :init (progn
+            (add-hook 'c++-mode-hook 'irony-mode)
+            (add-hook 'c-mode-hook 'irony-mode)
+            (add-hook 'objc-mode-hook 'irony-mode)
+
+            (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+            (spacemacs|diminish irony-mode " Ⓘ" " I"))))
+
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
@@ -93,6 +104,5 @@ Each entry is either:
             (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
 
             (setq rtags-use-helm t)
-            (setq rtags-autostart-diagnostics t)
-            (rtags-diagnostics)
+            ;; (setq rtags-autostart-diagnostics t)
             )))
