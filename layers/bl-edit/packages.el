@@ -100,7 +100,15 @@ Each entry is either:
     :if (or (executable-find "ag") (executable-find "grep"))
     :commands (dump-jump-mode)
     :init (progn
-            (add-hook 'c++-mode-hook 'dumb-jump-mode)
-            (add-hook 'c-mode-hook 'dumb-jump-mode)
-            (add-hook 'python-mode-hook 'dumb-jump-mode))))
+            (dolist (mode-hook '(c++-mode-hook c-mode-hook python-mode-hook))
+              (add-hook mode-hook 'dumb-jump-mode))
+
+            (dolist (mode '(c++-mode c-mode python-mode))
+              (evil-leader/set-key-for-mode mode
+                "n g" 'dumb-jump-go
+                "n G" 'dumb-jump-go-other-window
+                "n b" 'dumb-jump-back
+                )))
+    ))
+
 ;;; packages.el ends here
