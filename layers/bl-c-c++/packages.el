@@ -60,7 +60,9 @@ Each entry is either:
 
 
 (defun bl-c-c++/post-init-company ()
-  (setq company-idle-delay 0.5))
+  (setq company-idle-delay 0.5)
+  (spacemacs|add-company-hook c++-mode)
+  (spacemacs|add-company-hook c-mode))
 
 (defun bl-c-c++/post-init-projectile ()
   (with-eval-after-load 'cc-mode
@@ -84,11 +86,10 @@ Each entry is either:
 (defun bl-c-c++/init-company-irony ()
   (use-package company-irony
     :defer t
+    :after (irony)
     :init (progn
-            (with-eval-after-load 'company (add-to-list 'company-backends 'company-irony))
-
+            (push 'company-irony company-backends-c++-mode)
             (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-            (add-hook 'irony-mode-hook 'company-mode)
             )))
 
 (defun bl-c-c++/init-rtags ()
@@ -114,5 +115,5 @@ Each entry is either:
             (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
 
             (setq rtags-use-helm t)
-            ;; (setq rtags-autostart-diagnostics t)
+            (setq rtags-autostart-diagnostics t)
             )))
