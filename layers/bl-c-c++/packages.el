@@ -132,4 +132,5 @@ Each entry is either:
 
             (setq rtags-use-helm t)
             (setq rtags-autostart-diagnostics t)
+            (add-hook 'rtags-jump-hook 'evil-set-jump)
             )))
