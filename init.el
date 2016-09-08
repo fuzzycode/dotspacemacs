@@ -77,7 +77,7 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
 
-     semantic
+     ;semantic
 
      ;; My private packages
      bl-spelling
