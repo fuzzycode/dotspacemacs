@@ -137,12 +137,7 @@ git submodule update --init --recursive
 Navigating the kill ring in a visual way
 ** writegood-mode
 Detect bad English writing
-** helm-codesearch
-For using codesearch to search through the code
 ** synonymous
 Looking up synonyms in dictionaries
 ** [[https://github.com/mineo/yatemplate][yatemplate]]
 For automatically inserting yasnippet powered file skeletons when creating new files
-** [[http://editorconfig.org/][editorconfig]]
-For having a unified way of configuring indentation and code style. Enables
-config sharing across multiple editors.
