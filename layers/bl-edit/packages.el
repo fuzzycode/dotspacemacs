@@ -68,7 +68,9 @@ Each entry is either:
   (use-package drag-stuff
     :config
     (progn
-      (drag-stuff-global-mode t))))
+      (drag-stuff-global-mode t)
+      (spacemacs|diminish drag-stuff-mode " DS" " DS")
+      )))
 
 (defun bl-edit/init-multiple-cursors ()
   (use-package multiple-cursors
