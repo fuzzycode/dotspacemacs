@@ -34,7 +34,9 @@
     expand-region
     yatemplate
     editorconfig
-    dumb-jump)
+    dumb-jump
+    drag-stuff)
+
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -61,6 +63,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-drag-stuff ()
+  (use-package drag-stuff
+    :config
+    (progn
+      (drag-stuff-global-mode t))))
 
 (defun bl-edit/init-multiple-cursors ()
   (use-package multiple-cursors
