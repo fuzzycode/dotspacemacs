@@ -31,6 +31,7 @@ git submodule update --init --recursive
   - [ ] Different themes for terminal and UI
 - Work/Private Settings [0/1]
   - [ ] Different E-mail depending on location
+- [ ] Bookmarks
 *** Snippets
 - [X] Able to use 3rd party snippets
 - [X] Able to have a separate repository of custom snippets
@@ -51,14 +52,15 @@ git submodule update --init --recursive
   Using flycheck-irony
 - [ ] Compilation
 - [ ] Debugger
-- [ ] Manage different coding styles
+- [X] Manage different coding styles
 - [ ] Re-factoring support
   - [ ] Create implementation
   - [ ] Smart renaming
-- [ ] Code Navigation
-  - [ ] Go to definition
-  - [ ] Go to declaration
-  - [ ] Find usage
+- [X] Code Navigation
+  Working using RTags
+  - [X] Go to definition
+  - [X] Go to declaration
+  - [X] Find usage
 - [X] Snippets
 ** Python
 - [ ] Debugger
@@ -88,9 +90,9 @@ git submodule update --init --recursive
 - [ ] Setup
 ** Markdown
 - [X] Snippets
-- [ ] Compilation
-- [ ] Syntax highlighting
-- [ ] Preview
+- [X] Compilation
+- [X] Syntax highlighting
+- [X] Preview
 ** Git
 - [X] Github support
 - [X] gitignore file editing
