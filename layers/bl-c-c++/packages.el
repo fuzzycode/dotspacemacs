@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags (ff-c-style :location local) projectile irony company-irony company-irony-c-headers irony-eldoc)
+  '(company rtags (ff-c-style :location local) projectile irony company-irony company-irony-c-headers irony-eldoc smart-tabs-mode)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -58,6 +58,11 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-c-c++/init-smart-tabs-mode ()
+  (use-package smart-tabs-mode
+    :defer t
+    :config (progn
+              (smart-tabs-insinuate 'c 'c++))))
 
 (defun bl-c-c++/post-init-company ()
   (setq company-idle-delay 0.5)
