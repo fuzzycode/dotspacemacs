@@ -1,7 +1,6 @@
 ;;;###autoload
 (defconst ff-c-style
-  '((c-indent-tabs-mode . t)
-    (indent-tabs-mode . t)
+  '((indent-tabs-mode . t)
     (c-indent-level . 4)
     (tab-width . 4)
     (c-basic-offset . 4)
@@ -29,7 +28,7 @@
                       (module-open . 0)
                       (inextern-lang . 0)
                       (extern-lang-close . 0)
-                      (case-label . +)
+                      (case-label . 0)
                       (cpp-macro . -1000)
                       (cpp-macro-cont . +)
 
