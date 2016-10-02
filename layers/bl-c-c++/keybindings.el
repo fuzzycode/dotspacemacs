@@ -10,8 +10,8 @@
     "r Y" 'rtags-cycle-overlays-on-screen
     "r >" 'rtags-find-symbol
     "r <" 'rtags-find-references
-    "r [" 'rtags-location-stack-back
-    "r ]" 'rtags-location-stack-forward
+    "r b" 'rtags-location-stack-back
+    "r f" 'rtags-location-stack-forward
     "r D" 'rtags-diagnostics
     "r G" 'rtags-guess-function-at-point
     "r p" 'rtags-set-current-project
