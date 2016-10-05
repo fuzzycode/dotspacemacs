@@ -131,7 +131,9 @@ Each entry is either:
             (defun rtags/rtags-c++-hook ()
               (rtags-start-process-unless-running)
 
-              (define-key c-mode-base-map (kbd "M-.") (function rtags-find-symbol-at-point))
+              (add-to-list 'spacemacs-default-jump-handlers 'rtags-find-symbol-at-point 'push)
+
+              (define-key c-mode-base-map (kbd "M-.") (function spacemacs/jump-to-definition))
               (define-key c-mode-base-map (kbd "M-,") (function rtags-find-references-at-point)))
             (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
 
