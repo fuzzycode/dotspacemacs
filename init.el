@@ -53,8 +53,7 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory '("~/.spacemacs.d/snippets/bl-snippets/external"
-                                                                   "~/.spacemacs.d/snippets/bl-snippets/personal"
-                                                                   "~/.snippets/"))
+                                                                   "~/.spacemacs.d/snippets/bl-snippets/personal"))
      better-defaults
      themes-megapack
      theming
@@ -338,4 +337,7 @@ you should place you code here."
   ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.d/local.el")
     (load "~/.spacemacs.d/local.el"))
+
+  (when (file-exists-p "~/.snippets/")
+    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
   )
