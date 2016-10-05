@@ -34,7 +34,6 @@
     expand-region
     yatemplate
     editorconfig
-    dumb-jump
     drag-stuff
     goto-last-change)
   "The list of Lisp packages required by the bl-edit layer.
@@ -74,8 +73,7 @@ Each entry is either:
     :config
     (progn
       (drag-stuff-global-mode t)
-      (spacemacs|diminish drag-stuff-mode " DS" " DS")
-      )))
+      (spacemacs|diminish drag-stuff-mode " DS" " DS"))))
 
 (defun bl-edit/init-multiple-cursors ()
   (use-package multiple-cursors
@@ -84,15 +82,11 @@ Each entry is either:
     (progn
       (spacemacs/set-leader-keys "ic" 'mc/mark-next-like-this)
       (spacemacs/set-leader-keys "iC" 'mc/mark-previous-like-this)
-      (spacemacs/set-leader-keys "ia" 'mc/mark-all-like-this)
-      )
-    )
-  )
+      (spacemacs/set-leader-keys "ia" 'mc/mark-all-like-this))))
 
 (defun bl-edit/post-init-expand-region ()
   (global-set-key (kbd "C-+") 'er/expand-region)
-  (global-set-key (kbd "M-+") 'er/contract-region)
-  )
+  (global-set-key (kbd "M-+") 'er/contract-region))
 
 (defun bl-edit/init-yatemplate ()
   "A package for allowing yasnippets as file skeletons for auto-fill "
@@ -101,29 +95,9 @@ Each entry is either:
     :config (progn
               (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
               (setq auto-insert t)
-              ))
-  )
+              )))
 
 (defun bl-edit/init-editorconfig ()
   (use-package editorconfig
-    :defer t
     :config (editorconfig-mode 1)))
-
-(defun bl-edit/init-dumb-jump ()
-  (use-package dumb-jump
-    :defer t
-    :if (or (executable-find "ag") (executable-find "grep"))
-    :commands (dump-jump-mode)
-    :init (progn
-            (dolist (mode-hook '(c++-mode-hook c-mode-hook python-mode-hook))
-              (add-hook mode-hook 'dumb-jump-mode))
-
-            (dolist (mode '(c++-mode c-mode python-mode))
-              (evil-leader/set-key-for-mode mode
-                "n g" 'dumb-jump-go
-                "n G" 'dumb-jump-go-other-window
-                "n b" 'dumb-jump-back
-                )))
-    ))
-
 ;;; packages.el ends here
