@@ -72,6 +72,12 @@ Each entry is either:
   (use-package drag-stuff
     :config
     (progn
+
+      (add-hook 'drag-stuff-mode-hook (lambda ()
+                                        (define-key drag-stuff-mode-map (drag-stuff--kbd 'right) nil)
+                                        (define-key drag-stuff-mode-map (drag-stuff--kbd 'left) nil)
+                                        ))
+
       (drag-stuff-global-mode t)
       (spacemacs|diminish drag-stuff-mode " DS" " DS"))))
 
