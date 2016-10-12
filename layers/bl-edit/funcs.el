@@ -39,7 +39,7 @@
         (with-current-buffer buffer
           **(goto-char 1)**
           (search-forward "warning" nil t))))
-      (run-with-timer 1 nil
+      (run-with-timer spacemacs/compile-auto-close-time nil
                       (lambda (buf)
                         (bury-buffer buf)
                         (switch-to-prev-buffer (get-buffer-window buf) 'kill))
