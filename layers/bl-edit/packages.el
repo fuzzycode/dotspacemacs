@@ -30,12 +30,12 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(multiple-cursors
-    expand-region
-    yatemplate
+  '(drag-stuff
     editorconfig
-    drag-stuff
-    goto-last-change)
+    expand-region
+    goto-last-change
+    multiple-cursors
+    yatemplate)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:

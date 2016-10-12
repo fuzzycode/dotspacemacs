@@ -17,7 +17,9 @@
 ;;   SPC h SPC layers RET
 ;;
 ;;; Code:
+
 ;; https://www.emacswiki.org/emacs/SortWords
+;; http://emacs.stackexchange.com/questions/7548/sorting-words-with-hyphens-e-g-in-a-lisp-mode
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.
     Prefixed with negative \\[universal-argument], sorts in reverse.
@@ -27,7 +29,11 @@
 
     See `sort-regexp-fields'."
   (interactive "*P\nr")
-  (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+  (let ((temp-table (copy-syntax-table text-mode-syntax-table)))
+    (with-syntax-table temp-table
+      (modify-syntax-entry ?- "w" temp-table)
+      (modify-syntax-entry ?_ "w" temp-table)
+      (sort-regexp-fields reverse "\\w+" "\\&" beg end))))
 
 ;; http://stackoverflow.com/questions/11043004/emacs-compile-buffer-auto-close
 (defun bury-compile-buffer-if-successful (buffer string)
