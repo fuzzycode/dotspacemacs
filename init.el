@@ -45,6 +45,7 @@ values."
      github
 
      ;; General layers
+     ycmd
      spotify
      fasd
      (auto-completion :variables
@@ -58,7 +59,6 @@ values."
      better-defaults
      themes-megapack
      theming
-     eyebrowse
      ranger
 
      (org :variables
