@@ -30,7 +30,12 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company rtags (ff-c-style :location local) projectile smart-tabs-mode)
+  '(company
+    rtags
+    (ff-c-style :location local)
+    projectile
+    smart-tabs-mode
+    ycmd :toggle (configuration-layer/package-usedp 'ycmd))
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -57,6 +62,10 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/post-init-ycmd ()
+  (require 'ycmd-eldoc)
+  (add-hook 'ycmd-mode-hook 'ycmd-eldoc-setup))
 
 (defun bl-c-c++/init-smart-tabs-mode ()
   (use-package smart-tabs-mode
