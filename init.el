@@ -331,6 +331,10 @@ you should place you code here."
   (setq require-final-newline t)
   (add-hook 'text-mode-hook 'auto-fill-mode)
 
+  ;;; Setup ycmd
+  (setq ycmd-server-command (list "python" (file-truename "~/.ycmd/ycmd")))
+  (setq ycmd-force-semantic-completion t)
+
   ;; Automatic update of the copyright year in file headers
   (when (fboundp 'copyright-update)
     (add-hook 'before-save-hook 'copyright-update))
