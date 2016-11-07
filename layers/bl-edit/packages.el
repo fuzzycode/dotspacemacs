@@ -105,5 +105,8 @@ Each entry is either:
 
 (defun bl-edit/init-editorconfig ()
   (use-package editorconfig
-    :config (editorconfig-mode 1)))
+    :config(progn
+             (editorconfig-mode 1)
+             (spacemacs|diminish editorconfig-mode " EC" " EC"))))
+
 ;;; packages.el ends here
