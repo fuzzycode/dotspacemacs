@@ -89,6 +89,7 @@ Each entry is either:
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
+    :if bl-c-c++-enable-rtags
     :init (progn
             (defun rtags/flycheck-rtags-setup ()
               "Configures flycheck with rtags"
@@ -106,7 +107,6 @@ Each entry is either:
 
               (add-to-list 'spacemacs-jump-handlers-c++-mode 'rtags-find-symbol-at-point)
 
-              (define-key c-mode-base-map (kbd "M-.") (function spacemacs/jump-to-definition))
               (define-key c-mode-base-map (kbd "M-,") (function rtags-find-references-at-point)))
             (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
 
