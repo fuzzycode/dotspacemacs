@@ -30,9 +30,7 @@
 ;;; Code:
 
 (defconst bl-key-chords-packages
-  '(key-chord
-    avy
-    undo-tree)
+  '(key-chord)
   "The list of Lisp packages required by the bl-key-chords layer.
 
 Each entry is either:
@@ -60,15 +58,22 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+
+(defun bl-key-chords/post-init-avy ()
+  (key-chord-define-global "jj" 'avy-goto-word-1))
+
+(defun bl-key-chors/post-init-undo-tree ()
+  (key-chord-define-global "uu" 'undo-tree-visualize))
+
 (defun bl-key-chords/init-key-chord ()
   (use-package key-chords
     :defer t
     :init
     (progn
-      (key-chord-define-global "jj" 'avy-goto-word-1)
-      (key-chord-define-global "uu" 'undo-tree-visualize)
-      (key-chord-define-global "xx" 'helm-M-x)
-      (key-chord-define-global "bb" 'helm-mini)
+      (when (configuration-layer/package-usedp 'helm)
+        (key-chord-define-global "xx" 'helm-M-x)
+        (key-chord-define-global "bb" 'helm-mini))
+
       (key-chord-define-global "kk" 'just-one-space)
       (key-chord-mode t)
       )
