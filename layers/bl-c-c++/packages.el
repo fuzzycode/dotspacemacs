@@ -35,7 +35,7 @@
     (ff-c-style :location local)
     projectile
     smart-tabs-mode
-    ycmd :toggle (configuration-layer/package-usedp 'ycmd))
+    ycmd)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
