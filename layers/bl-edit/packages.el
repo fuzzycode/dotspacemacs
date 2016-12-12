@@ -71,15 +71,16 @@ Each entry is either:
 (defun bl-edit/init-drag-stuff ()
   (use-package drag-stuff
     :config
-    (progn
+    :defer t
+    :init (progn
+            (drag-stuff-global-mode t)
+            (spacemacs|diminish drag-stuff-mode " DS" " DS"))
 
+    :config (progn
       (add-hook 'drag-stuff-mode-hook (lambda ()
                                         (define-key drag-stuff-mode-map (drag-stuff--kbd 'right) nil)
                                         (define-key drag-stuff-mode-map (drag-stuff--kbd 'left) nil)
-                                        ))
-
-      (drag-stuff-global-mode t)
-      (spacemacs|diminish drag-stuff-mode " DS" " DS"))))
+                                        )))))
 
 (defun bl-edit/init-multiple-cursors ()
   (use-package multiple-cursors
@@ -98,14 +99,15 @@ Each entry is either:
   "A package for allowing yasnippets as file skeletons for auto-fill "
   (use-package yatemplate
     :defer t
-    :config (progn
+    :init (progn
               (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
               (setq auto-insert t)
               )))
 
 (defun bl-edit/init-editorconfig ()
   (use-package editorconfig
-    :config(progn
+    :defer t
+    :init (progn
              (editorconfig-mode 1)
              (spacemacs|diminish editorconfig-mode " EC" " EC"))))
 
