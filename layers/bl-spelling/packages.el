@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-spelling-packages
-  '(flyspell helm-flyspell)
+  '((helm-flyspell :toggle (configuration-layer/package-usedp 'helm)))
   "The list of Lisp packages required by the bl-spelling layer.
 
 Each entry is either:
@@ -59,6 +59,7 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun bl-spelling/init-helm-flyspell ()
-  (use-package helm-flyspell))
+  (use-package helm-flyspell
+    :defer t))
 
 ;;; packages.el ends here
