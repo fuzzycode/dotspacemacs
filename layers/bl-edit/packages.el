@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-edit layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -30,12 +30,9 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(drag-stuff
-    editorconfig
+  '(editorconfig
     expand-region
     goto-last-change
-    multiple-cursors
-    yatemplate)
     yatemplate
     helm-flycheck)
   "The list of Lisp packages required by the bl-edit layer.
@@ -69,29 +66,6 @@ Each entry is either:
   (use-package goto-last-change
     :defer t
     :bind ("C--" . goto-last-change)))
-
-(defun bl-edit/init-drag-stuff ()
-  (use-package drag-stuff
-    :config
-    :defer t
-    :init (progn
-            (drag-stuff-global-mode t)
-            (spacemacs|diminish drag-stuff-mode " DS" " DS"))
-
-    :config (progn
-      (add-hook 'drag-stuff-mode-hook (lambda ()
-                                        (define-key drag-stuff-mode-map (drag-stuff--kbd 'right) nil)
-                                        (define-key drag-stuff-mode-map (drag-stuff--kbd 'left) nil)
-                                        )))))
-
-(defun bl-edit/init-multiple-cursors ()
-  (use-package multiple-cursors
-    :defer t
-    :config
-    (progn
-      (spacemacs/set-leader-keys "ic" 'mc/mark-next-like-this)
-      (spacemacs/set-leader-keys "iC" 'mc/mark-previous-like-this)
-      (spacemacs/set-leader-keys "ia" 'mc/mark-all-like-this))))
 
 (defun bl-edit/post-init-expand-region ()
   (global-set-key (kbd "C-+") 'er/expand-region)
