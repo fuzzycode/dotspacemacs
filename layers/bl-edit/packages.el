@@ -36,6 +36,8 @@
     goto-last-change
     multiple-cursors
     yatemplate)
+    yatemplate
+    helm-flycheck)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -110,5 +112,14 @@ Each entry is either:
     :init (progn
              (editorconfig-mode 1)
              (spacemacs|diminish editorconfig-mode " EC" " EC"))))
+
+(defun bl-error/init-helm-flycheck ()
+  (use-package helm-flycheck
+    :ensure t
+    :defer t
+    :init
+    (eval-after-load 'flycheck
+      (spacemacs/set-leader-keys "eH" 'helm-flycheck))
+    ))
 
 ;;; packages.el ends here

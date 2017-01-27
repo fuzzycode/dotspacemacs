@@ -83,7 +83,6 @@ values."
      bl-spelling
      bl-git
      bl-key-chords
-     bl-error
      bl-edit
      bl-bl
      bl-debug
