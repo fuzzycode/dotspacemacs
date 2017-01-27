@@ -67,7 +67,6 @@
 (defun ff-add-c-style ()
   "Adds ff-c-style"
   (interactive)
-  (message "Adding FF C Style")
   (c-add-style "FF" ff-c-style nil))
 
 ;;;###autoload
