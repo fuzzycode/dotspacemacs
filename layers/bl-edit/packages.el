@@ -110,7 +110,7 @@ Each entry is either:
   (use-package editorconfig
     :defer t
     :init (progn
-             (editorconfig-mode 1)
+             (editorconfig-mode t)
              (spacemacs|diminish editorconfig-mode " EC" " EC"))))
 
 (defun bl-error/init-helm-flycheck ()
