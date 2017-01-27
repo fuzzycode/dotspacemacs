@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-key-chords layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <bjornlarsson@MacBookPro>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -58,13 +58,6 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
-(defun bl-key-chords/post-init-avy ()
-  (key-chord-define-global "jj" 'avy-goto-word-1))
-
-(defun bl-key-chors/post-init-undo-tree ()
-  (key-chord-define-global "uu" 'undo-tree-visualize))
-
 (defun bl-key-chords/init-key-chord ()
   (use-package key-chords
     :defer t
@@ -74,7 +67,7 @@ Each entry is either:
         (key-chord-define-global "xx" 'helm-M-x)
         (key-chord-define-global "bb" 'helm-mini))
 
-      (key-chord-define-global "kk" 'just-one-space)
+      (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
       (key-chord-mode t)
       )
     )
