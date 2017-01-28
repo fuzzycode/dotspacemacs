@@ -330,6 +330,8 @@ you should place you code here."
   (setq require-final-newline t)
   (add-hook 'text-mode-hook 'auto-fill-mode)
 
+  (global-git-commit-mode t)
+
   ;;; Setup ycmd
   (setq ycmd-server-command (list "python" (file-truename "~/.ycmd/ycmd")))
   (setq ycmd-force-semantic-completion t)
