@@ -67,7 +67,6 @@ Each entry is either:
         (key-chord-define-global "xx" 'helm-M-x)
         (key-chord-define-global "bb" 'helm-mini))
 
-      (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
       (key-chord-mode t)
       )
     )
