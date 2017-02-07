@@ -82,7 +82,7 @@ Each entry is either:
              (editorconfig-mode t)
              (spacemacs|diminish editorconfig-mode " EC" " EC"))))
 
-(defun bl-error/init-helm-flycheck ()
+(defun bl-edit/init-helm-flycheck ()
   (use-package helm-flycheck
     :ensure t
     :defer t
