@@ -72,8 +72,7 @@ Each entry is either:
     :defer t
     :init (progn
               (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
-              (setq auto-insert t)
-              )))
+              (setq auto-insert t))))
 
 (defun bl-edit/init-editorconfig ()
   (use-package editorconfig
@@ -88,7 +87,6 @@ Each entry is either:
     :defer t
     :init
     (eval-after-load 'flycheck
-      (spacemacs/set-leader-keys "eH" 'helm-flycheck))
-    ))
+      (spacemacs/set-leader-keys "eH" 'helm-flycheck))))
 
 ;;; packages.el ends here
