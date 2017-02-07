@@ -31,7 +31,6 @@
 
 (defconst bl-edit-packages
   '(editorconfig
-    expand-region
     goto-last-change
     yatemplate
     helm-flycheck)
@@ -66,10 +65,6 @@ Each entry is either:
   (use-package goto-last-change
     :defer t
     :bind ("C--" . goto-last-change)))
-
-(defun bl-edit/post-init-expand-region ()
-  (global-set-key (kbd "C-+") 'er/expand-region)
-  (global-set-key (kbd "M-+") 'er/contract-region))
 
 (defun bl-edit/init-yatemplate ()
   "A package for allowing yasnippets as file skeletons for auto-fill "
