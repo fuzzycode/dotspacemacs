@@ -337,8 +337,8 @@ you should place you code here."
     (add-hook 'before-save-hook 'copyright-update))
 
   ;;; Load local config file if present
-  (when (file-exists-p "~/.spacemacs.d/local.el")
-    (load "~/.spacemacs.d/local.el"))
+  (when (file-exists-p "~/.spacemacs.local.el")
+    (load "~/.spacemacs.local.el"))
 
   (when (file-exists-p "~/.snippets/")
     (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
