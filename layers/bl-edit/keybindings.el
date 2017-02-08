@@ -11,3 +11,5 @@
 (define-key evil-visual-state-map "\C-p" 'evil-previous-line)
 
 (spacemacs/set-leader-keys "ws" 'sort-words)
+
+(global-set-key (kbd "<f2>") 'flyspell-correct-previous-word-generic)

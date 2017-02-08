@@ -76,15 +76,11 @@ values."
      jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-
      ;semantic
 
      ;; My private packages
-     bl-spelling
      bl-git
-     bl-key-chords
      bl-edit
-     bl-bl
      bl-debug
      bl-c-c++
      )

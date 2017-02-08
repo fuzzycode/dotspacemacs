@@ -33,7 +33,8 @@
   '(editorconfig
     goto-last-change
     yatemplate
-    helm-flycheck)
+    (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
+    key-chord)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -88,5 +89,20 @@ Each entry is either:
     :init
     (eval-after-load 'flycheck
       (spacemacs/set-leader-keys "eH" 'helm-flycheck))))
+
+(defun bl-edit/init-key-chord ()
+  (use-package key-chords
+    :defer t
+    :init
+    (progn
+      (when (configuration-layer/package-usedp 'helm)
+        (key-chord-define-global "xx" 'helm-M-x)
+        (key-chord-define-global "bb" 'helm-mini))
+
+      (key-chord-mode t)
+      )
+    )
+  )
+
 
 ;;; packages.el ends here
