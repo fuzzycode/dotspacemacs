@@ -19,6 +19,3 @@
 ;;; Code:
 (defvar spacemacs/compile-auto-close-time 4
   "The time in seconds that the compile buffer will be closed after a successful compile.")
-
-;; Return to normal state when the buffer is saved
-(add-hook 'after-save-hook 'evil-normal-state)
