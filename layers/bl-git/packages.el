@@ -30,8 +30,7 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '(magithub
-    magit-filenotify)
+  '(magithub)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -66,12 +65,5 @@ Each entry is either:
   (use-package magithub
     :after magit
     :config (magithub-feature-autoinject t)))
-
-(defun bl-git/init-magit-filenotify ()
-  (use-package magit-filenotify
-    :defer t
-    :init (progn
-            (add-hook 'magit-status-mode-hook 'magit-filenotify-mode)
-            (spacemacs|diminish magit-filenotify-mode " gn" " gn"))))
 
 ;;; packages.el ends here
