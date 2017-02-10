@@ -33,6 +33,7 @@
   '(editorconfig
     goto-last-change
     yatemplate
+    helm-describe-modes
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm)))
   "The list of Lisp packages required by the bl-edit layer.
 
@@ -89,4 +90,8 @@ Each entry is either:
     (eval-after-load 'flycheck
       (spacemacs/set-leader-keys "eH" 'helm-flycheck))))
 
+(defun bl-edit/init-helm-describe-modes ()
+  (use-package helm-describe-modes
+    :defer t
+    :init (global-set-key [remap spacemacs/describe-mode] #'helm-describe-modes)))
 ;;; packages.el ends here
