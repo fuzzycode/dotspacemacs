@@ -34,6 +34,8 @@
     goto-last-change
     yatemplate
     helm-describe-modes
+    visual-regexp-steroids
+    visual-regexp
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm)))
   "The list of Lisp packages required by the bl-edit layer.
 
@@ -61,6 +63,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-visual-regexp-steroids ()
+  (use-package visual-regexp-steroids
+    :defer t
+    :after visual-regexp
+    :init (progn
+            (global-set-key [remap replace-regexp] #'vr/replace)
+            (global-set-key [remap query-replace-regexp] #'vr/query-replace)
+            (global-set-key [remap isearch-forward] #'vr/isearch-forward)
+            (global-set-key [remap isearch-backward] #'vr/isearch-backward))))
+
+(defun bl-edit/init-visual-regexp ()
+  (use-package visual-regexp
+    :defer t))
 
 (defun bl-edit/init-goto-last-change()
   (use-package goto-last-change
