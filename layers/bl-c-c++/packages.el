@@ -79,7 +79,8 @@ Each entry is either:
 
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
-    :config (ff-add-c-style)))
+    :defer t
+    :init (with-eval-after-load 'cc-mode (ff-add-c-style))))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
