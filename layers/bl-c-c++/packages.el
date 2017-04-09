@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-c-c++ layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -34,8 +34,7 @@
     rtags
     (ff-c-style :location local)
     projectile
-    smart-tabs-mode
-    ycmd)
+    smart-tabs-mode)
   "The list of Lisp packages required by the bl-c-c++ layer.
 
 Each entry is either:
@@ -62,10 +61,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-(defun bl-c-c++/post-init-ycmd ()
-  (require 'ycmd-eldoc)
-  (add-hook 'ycmd-mode-hook 'ycmd-eldoc-setup))
 
 (defun bl-c-c++/init-smart-tabs-mode ()
   (use-package smart-tabs-mode
