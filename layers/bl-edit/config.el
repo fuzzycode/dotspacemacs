@@ -20,6 +20,9 @@
 (defvar spacemacs/compile-auto-close-time 4
   "The time in seconds that the compile buffer will be closed after a successful compile.")
 
+(defvar bl-edit-use-beacon t
+  "Control of the beacon package should be used or not")
+
 (defun bl-edit/manual-save-hook ()
   "Used in `after-save-hook'."
   (when (memq this-command '(save-buffer save-some-buffers))

@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(editorconfig
+  '(beacon
+    editorconfig
     goto-last-change
     yatemplate
     helm-describe-modes
@@ -63,6 +64,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-beacon ()
+  (use-package beacon
+    :defer t
+    :if bl-edit-use-beacon
+    :init (beacon-mode 1)))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
