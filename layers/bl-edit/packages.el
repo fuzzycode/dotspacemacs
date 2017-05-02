@@ -81,6 +81,8 @@ Each entry is either:
     :init (progn
             ;; Allow cross-buffer 'next'
             (setq bm-cycle-all-buffers t)
+            ;; Only show bookmark in fringe
+            (setq bm-highlight-style 'bm-highlight-only-fringe)
             ;; save bookmarks
             (setq-default bm-buffer-persistence t)
             ;; where to store persistant files
