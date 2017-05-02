@@ -88,9 +88,9 @@ Each entry is either:
             (spacemacs|define-transient-state bm
               :title "Visual Bookmarks Transient State"
               :doc "
- Go to bookmark^^^^^^            Toggle^^                    Other^^
- ──────────────^^^^^^─────     ──────^^───────────────  ─────^^───
- [_n_/_p_(_N_)] next/previous    [_t_] bookmark at point     [_q_] quit"
+ Go to bookmark^^^^^^            Toggle^^                  Annotate^^       Other^^
+ ──────────────^^^^^^─────     ──────^^────────────   ───────^^────   ─────^^───
+ [_n_/_p_(_N_)] next/previous    [_t_] bookmark at point   [_a_] annotate   [_q_] quit"
               :bindings
               ("q" nil :exit t)
               ;; Go to bookmark
@@ -98,7 +98,10 @@ Each entry is either:
               ("N" bm-previous)
               ("p" bm-previous)
               ;; Toggle
-              ("t" bm-toggle))
+              ("t" bm-toggle)
+              ;; Annotate
+              ("a" bm-bookmark-annotate))
+
             (evil-leader/set-key
               "ab" 'spacemacs/bm-transient-state/body)
             (advice-add 'spacemacs/bm-transient-state/body
