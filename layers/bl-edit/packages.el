@@ -75,7 +75,6 @@ Each entry is either:
             (spacemacs|diminish beacon-mode "" ""))))
 
 (defun bl-edit/init-bm ()
-  "initializes bm-emacs and adds a key binding to `SPC f z'"
   (use-package bm
     :defer t
     :commands (bm-buffer-restore)
