@@ -70,7 +70,9 @@ Each entry is either:
   (use-package beacon
     :defer t
     :if bl-edit-use-beacon
-    :init (beacon-mode 1)))
+    :init (progn
+            (beacon-mode 1)
+            (spacemacs|diminish beacon-mode "" ""))))
 
 (defun bl-edit/init-bm ()
   "initializes bm-emacs and adds a key binding to `SPC f z'"
