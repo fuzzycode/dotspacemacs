@@ -29,3 +29,12 @@
     (evil-normal-state)))
 
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
+
+;; Theme modifications
+(setq-default
+ theming-modifications
+ '((dracula
+
+    ;; Magit
+    (magit-diff-lines-boundary :foreground "#f1fa8c" :background "#f1fa8c" :inherit magit-diff-lines-heading)
+    )))
