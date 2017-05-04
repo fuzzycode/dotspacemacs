@@ -77,7 +77,8 @@ Each entry is either:
 (defun bl-edit/init-bm ()
   (use-package bm
     :defer t
-    :commands (bm-buffer-restore)
+    :commands (bm-buffer-restore bm-toggle-mouse)
+    :bind (("<left-fringe> <S-mouse-1>" . bm-toggle-mouse))
     :init (progn
             ;; Allow cross-buffer 'next'
             (setq bm-cycle-all-buffers t)
