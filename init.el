@@ -410,4 +410,8 @@ you should place you code here."
   ;;; Setup the auto mode list for files without extensions
   (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\.clang-tidy\\'" . yaml-mode))
+
+  ;; Remove line highlight when in magit mode
+  (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
+
 )
