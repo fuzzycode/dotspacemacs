@@ -408,6 +408,6 @@ you should place you code here."
     (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
 
   ;;; Setup the auto mode list for files without extensions
-  (add-to-list 'auto-mode-alist '(".clang-format\\" . yaml-mode))
-  (add-to-list 'auto-mode-alist '(".clang-tidy\\" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.clang-tidy\\'" . yaml-mode))
 )
