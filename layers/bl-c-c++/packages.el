@@ -31,6 +31,7 @@
 
 (defconst bl-c-c++-packages
   '(company
+    modern-cpp-font-lock
     rtags
     (ff-c-style :location local)
     projectile
@@ -76,6 +77,15 @@ Each entry is either:
 (defun bl-c-c++/post-init-projectile ()
   (with-eval-after-load 'cc-mode
     (define-key c-mode-base-map (kbd "<A-tab>") (function projectile-find-other-file))))
+
+(defun bl-c-c++/init-modern-cpp-font-lock ()
+  (use-package modern-cpp-font-lock
+    :defer t
+    :init
+    (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
+    :config
+    (spacemacs|diminish modern-c++-font-lock-mode)
+    ))
 
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
