@@ -35,6 +35,7 @@
     editorconfig
     goto-last-change
     yatemplate
+    helm-bm
     helm-describe-modes
     org-trello
     visual-regexp-steroids
@@ -142,6 +143,13 @@ Each entry is either:
               (add-hook 'find-file-hooks   #'bm-buffer-restore)
               ;; Make sure bookmarks is saved before check-in (and revert-buffer)
               (add-hook 'vc-before-checkin-hook #'bm-buffer-save))))
+
+(defun bl-edit/init-helm-bm ()
+  (use-package helm-bm
+    :defer t
+    :after bm
+    :commands (helm-bm)
+    :bind (("C-c b" . helm-bm))))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
