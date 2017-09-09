@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '(magithub)
+  '(magithub
+    magit-imerge)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -66,5 +67,9 @@ Each entry is either:
     :disabled t
     :after magit
     :config (magithub-feature-autoinject t)))
+
+(defun bl-git/init-magit-imerge ()
+  (use-package magit-imerge
+    :defer t))
 
 ;;; packages.el ends here
