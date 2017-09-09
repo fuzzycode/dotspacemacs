@@ -63,6 +63,7 @@ Each entry is either:
 
 (defun bl-git/init-magithub ()
   (use-package magithub
+    :disabled t
     :after magit
     :config (magithub-feature-autoinject t)))
 
