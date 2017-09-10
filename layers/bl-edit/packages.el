@@ -30,17 +30,19 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(beacon
+  '(all-the-icons
+    beacon
     bm
     editorconfig
     goto-last-change
     yatemplate
-    helm-bm
-    helm-describe-modes
+    (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
+    (helm-bm :toggle (configuration-layer/package-usedp 'helm))
+    (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
     visual-regexp-steroids
     visual-regexp
-    (helm-flycheck :toggle (configuration-layer/package-usedp 'helm)))
+    spaceline-all-the-icons)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -67,6 +69,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-all-the-icons ()
+  (use-package all-the-icons
+    :defer t))
+
+(defun bl-edit/init-spaceline-all-the-icons ()
+  (use-package spaceline-all-the-icons
+    :after spaceline
+    :defer t
+    :config (progn
+              (spaceline-all-the-icons-theme)
+              (spaceline-all-the-icons--setup-neotree)
+              (spaceline-all-the-icons--setup-git-ahead)
+              (spaceline-all-the-icons--setup-anzu))))
 
 (defun bl-edit/init-org-trello ()
   (use-package org-trello
