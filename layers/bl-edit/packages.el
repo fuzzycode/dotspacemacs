@@ -82,7 +82,15 @@ Each entry is either:
               (spaceline-all-the-icons-theme)
               (spaceline-all-the-icons--setup-neotree)
               (spaceline-all-the-icons--setup-git-ahead)
-              (spaceline-all-the-icons--setup-anzu))))
+              (spaceline-all-the-icons--setup-anzu)
+
+              (setq spaceline-all-the-icons-icon-set-git-stats 'diff-icons)
+              (setq spaceline-all-the-icons-icon-set-window-numbering 'square)
+              (setq spaceline-all-the-icons-separator-type 'arrow)
+
+              (spaceline-toggle-all-the-icons-buffer-position-on)
+              (spaceline-toggle-all-the-icons-which-function-on)
+              )))
 
 (defun bl-edit/init-org-trello ()
   (use-package org-trello
