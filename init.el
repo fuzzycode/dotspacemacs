@@ -90,7 +90,7 @@ values."
      jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-     ;semantic
+     semantic
 
      ;; My private packages
      bl-git
