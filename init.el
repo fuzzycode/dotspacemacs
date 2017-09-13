@@ -92,6 +92,7 @@ values."
               ibuffer-group-buffers-by 'projects)
      semantic
      gtags
+     dash
 
      ;; My private packages
      bl-git
