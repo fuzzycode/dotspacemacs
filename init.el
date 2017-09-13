@@ -91,6 +91,7 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      semantic
+     gtags
 
      ;; My private packages
      bl-git
