@@ -13,3 +13,11 @@
 (spacemacs/set-leader-keys "xws" 'sort-words)
 
 (global-set-key (kbd "<f2>") 'flyspell-correct-previous-word-generic)
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (local-set-key (kbd "<f6>") 'projectile-compile-project)
+            (local-set-key (kbd "<f5>") 'projectile-run-project)))
+
+;; Setup key chords
+(key-chord-define-global "uu" 'undo-tree-undo)
