@@ -34,6 +34,7 @@
     beacon
     bm
     editorconfig
+    use-package-chords
     goto-last-change
     yatemplate
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
@@ -69,6 +70,10 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-use-package-chords ()
+  (use-package use-package-chords
+    :config (key-chord-mode t)))
 
 (defun bl-edit/init-all-the-icons ()
   (use-package all-the-icons
