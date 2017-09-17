@@ -73,6 +73,7 @@ Each entry is either:
 
 (defun bl-edit/init-use-package-chords ()
   (use-package use-package-chords
+    :init  (setq key-chord-two-keys-delay 0.15)
     :config (key-chord-mode t)))
 
 (defun bl-edit/init-all-the-icons ()
