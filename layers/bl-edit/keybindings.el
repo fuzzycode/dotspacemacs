@@ -16,7 +16,7 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (local-set-key (kbd "<f6>") 'projectile-compile-project)
+            (local-set-key (kbd "<f6>") 'bl-maybe-save-and-compile)
             (local-set-key (kbd "<f5>") 'projectile-run-project)))
 
 ;; Setup key chords

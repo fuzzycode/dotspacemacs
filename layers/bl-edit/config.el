@@ -23,12 +23,27 @@
 (defvar bl-edit-use-beacon t
   "Control of the beacon package should be used or not")
 
+(defvar bl-save-project-when-compile t
+  "")
+
 (defun bl-edit/manual-save-hook ()
   "Used in `after-save-hook'."
   (when (memq this-command '(save-buffer save-some-buffers))
     (evil-normal-state)))
 
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
+
+(add-hook 'semantic-mode-hook 'semantic-decoration-mode)
+
+
+(defun bl-maybe-save-and-compile ()
+  "Depending on the value of bl-save-project-when compile, the project is saved and compiled"
+  (interactive)
+  (if (projectile-project-p)
+      (progn
+        (when bl-save-project-when-compile
+          (projectile-save-project-buffers))
+        (projectile-compile-project))))
 
 ;; Theme modifications
 (setq-default
