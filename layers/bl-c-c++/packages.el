@@ -31,6 +31,7 @@
 
 (defconst bl-c-c++-packages
   '(company
+    company-qml
     modern-cpp-font-lock
     rtags
     (ff-c-style :location local)
@@ -62,6 +63,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-company-qml ()
+  (use-package company-qml
+    :defer t
+    :ensure company
+    :config (add-to-list 'company-backends 'company-qml)))
 
 (defun bl-c-c++/init-smart-tabs-mode ()
   (use-package smart-tabs-mode
