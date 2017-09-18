@@ -419,4 +419,7 @@ you should place you code here."
   ;; Remove line highlight when in magit mode
   (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
 
+  ;; Automaticaly make scrpts executable
+  (add-hook 'after-save-hook
+            'executable-make-buffer-file-executable-if-script-p)
 )
