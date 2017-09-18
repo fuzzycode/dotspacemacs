@@ -97,7 +97,7 @@ values."
      ;; My private packages
      bl-git
      bl-edit
-     bl-debug
+     ;;bl-debug
      bl-c-c++
      )
    ;; List of additional packages that will be installed without being
