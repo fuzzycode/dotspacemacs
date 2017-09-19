@@ -59,7 +59,7 @@ values."
      github
 
      ;; General layers
-     ycmd
+     ;; ycmd
      spotify
      fasd
      (auto-completion :variables
