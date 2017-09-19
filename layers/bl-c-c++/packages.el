@@ -81,9 +81,7 @@ Each entry is either:
               (smart-tabs-insinuate 'c 'c++))))
 
 (defun bl-c-c++/post-init-company ()
-  (setq company-idle-delay 0.2)
-  (spacemacs|add-company-hook c++-mode)
-  (spacemacs|add-company-hook c-mode))
+  (setq company-idle-delay 0.2))
 
 (defun bl-c-c++/post-init-projectile ()
   (with-eval-after-load 'cc-mode
