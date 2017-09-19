@@ -37,6 +37,7 @@
     flycheck-rtags
     helm-rtags
     modern-cpp-font-lock
+    (qmake-mode :location (recipe :fetcher github :repo "fuzzycode/qmake-mode"))
     rtags
     (ff-c-style :location local)
     projectile
@@ -67,6 +68,10 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-qmake-mode ()
+  (use-package qmake-mode
+    :defer t))
 
 (defun bl-c-c++/init-company-qml ()
   (use-package company-qml
