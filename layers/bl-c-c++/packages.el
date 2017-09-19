@@ -30,8 +30,12 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(company
+  '(cmake-ide
+    company-rtags
     company-qml
+    company
+    flycheck-rtags
+    helm-rtags
     modern-cpp-font-lock
     rtags
     (ff-c-style :location local)
@@ -100,31 +104,43 @@ Each entry is either:
     :disabled t
     :init (with-eval-after-load 'cc-mode (ff-add-c-style))))
 
+(defun bl-c-c++/init-cmake-ide ()
+  (use-package cmake-ide
+    :defer t
+    :init (with-eval-after-load 'rtags
+            (cmake-ide-setup))))
+
+(defun bl-c-c++/init-company-rtags ()
+  (use-package company-rtags
+    :ensure rtags
+    :if bl-c-c++-enable-rtags
+    :config (push 'company-rtags company-backends-c-mode-common)))
+
+(defun bl-c-c++/init-flycheck-rtags ()
+  (use-package flycheck-rtags
+    :defer t
+    :ensure rtags
+    :if bl-c-c++-enable-rtags))
+
+(defun bl-c-c++/init-helm-rtags ()
+  (use-package helm-rtags
+    :defer t
+    :if bl-c-c++-enable-rtags
+    :config (setq rtags-use-helm t)))
+
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
     :if bl-c-c++-enable-rtags
-    :init (progn
-            (defun rtags/flycheck-rtags-setup ()
-              "Configures flycheck with rtags"
-              (with-eval-after-load 'flycheck
-                (require 'flycheck-rtags)
-                (flycheck-select-checker 'rtags))
-
-              (setq-local flycheck-highlighting-mode nil)
-              (setq-local flycheck-check-syntax-automatically nil))
-
-            (add-hook 'c-mode-common-hook #'rtags/flycheck-rtags-setup)
-
-            (defun rtags/rtags-c++-hook ()
-              (rtags-start-process-unless-running)
+    :config (progn
+              (setq rtags-autostart-diagnostics t
+                    rtags-completions-enabled t
+                    rtags-display-result-backend 'helm)
 
               (add-to-list 'spacemacs-jump-handlers-c++-mode 'rtags-find-symbol-at-point)
 
-              (define-key c-mode-base-map (kbd "M-,") (function rtags-find-references-at-point)))
-            (add-hook 'c-mode-common-hook #'rtags/rtags-c++-hook)
+              (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
 
-            (setq rtags-use-helm t)
-            (setq rtags-autostart-diagnostics t)
-            (add-hook 'rtags-jump-hook 'evil-set-jump)
-            )))
+              (add-hook 'c-mode-hook #'bl-c-c++/flycheck-rtags-setup)
+              (add-hook 'c++-mode-hook #'bl-c-c++/flycheck-rtags-setup)
+              (add-hook 'objc-mode-hook #'bl-c-c++/flycheck-rtags-setup))))
