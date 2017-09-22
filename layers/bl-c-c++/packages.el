@@ -34,6 +34,7 @@
     company-rtags
     company-qml
     company
+    flycheck-clang-analyzer
     flycheck-rtags
     helm-rtags
     modern-cpp-font-lock
@@ -107,43 +108,34 @@ Each entry is either:
     :disabled t
     :init (with-eval-after-load 'cc-mode (ff-add-c-style))))
 
-(defun bl-c-c++/init-cmake-ide ()
-  (use-package cmake-ide
-    :defer t
-    :init (with-eval-after-load 'rtags
-            (cmake-ide-setup))))
-
-(defun bl-c-c++/init-company-rtags ()
-  (use-package company-rtags
-    :ensure rtags
-    :if bl-c-c++-enable-rtags
-    :config (push 'company-rtags company-backends-c-mode-common)))
-
-(defun bl-c-c++/init-flycheck-rtags ()
-  (use-package flycheck-rtags
-    :defer t
-    :ensure rtags
-    :if bl-c-c++-enable-rtags))
-
-(defun bl-c-c++/init-helm-rtags ()
-  (use-package helm-rtags
-    :defer t
-    :if bl-c-c++-enable-rtags
-    :config (setq rtags-use-helm t)))
+(defun bl-c-c++/init-flycheck-clang-analyzer ()
+  (use-package flycheck-clang-analyze
+    :after flycheck
+    :config (flycheck-clang-analyzer-setup)))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
-    :if bl-c-c++-enable-rtags
-    :config (progn
-              (setq rtags-autostart-diagnostics t
-                    rtags-completions-enabled t
-                    rtags-display-result-backend 'helm)
+    :init
+    (setq rtags-autostart-diagnostics t
+          rtags-completions-enabled t)
+    :config
+    (rtags-enable-standard-keybindings)))
 
-              (add-to-list 'spacemacs-jump-handlers-c++-mode 'rtags-find-symbol-at-point)
+(defun bl-c-c++/init-helm-rtags ()
+  (use-package helm-rtags
+    :defer t
+    :init (setq rtags-display-result-backend 'helm)))
 
-              (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+(defun bl-c-c++/init-company-rtags ()
+  (use-package company-rtags
+    :defer t
+    :init (progn
+              (setq company-rtags-begin-after-member-access t)
+              (push '(company-rtags) company-backends-c-mode-common))))
 
-              (add-hook 'c-mode-hook #'bl-c-c++/flycheck-rtags-setup)
-              (add-hook 'c++-mode-hook #'bl-c-c++/flycheck-rtags-setup)
-              (add-hook 'objc-mode-hook #'bl-c-c++/flycheck-rtags-setup))))
+(defun bl-c-c++/init-flycheck-rtags ()
+  (use-package flycheck-rtags
+    :after flycheck
+    :init (add-hook 'c-mode-common-hook 'spacemacs/c++-rtags-takeover-flycheck)
+    ))

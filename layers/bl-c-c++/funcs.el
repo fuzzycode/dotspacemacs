@@ -1,5 +1,5 @@
-
-(defun bl-c-c++/flycheck-rtags-setup ()
+(defun spacemacs/c++-rtags-takeover-flycheck ()
+  (flycheck-mode)
   (flycheck-select-checker 'rtags)
-  (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+  (setq-local flycheck-highlighting-mode nil)
   (setq-local flycheck-check-syntax-automatically nil))
