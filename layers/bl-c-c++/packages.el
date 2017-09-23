@@ -117,8 +117,11 @@ Each entry is either:
   (use-package rtags
     :defer t
     :init
-    (setq rtags-autostart-diagnostics t
-          rtags-completions-enabled t)
+    (progn (setq rtags-autostart-diagnostics t
+                 rtags-completions-enabled t)
+
+           (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+           (add-hook 'rtags-jump-hook 'evil-set-jump))
     :config
     (rtags-enable-standard-keybindings)))
 
@@ -130,12 +133,15 @@ Each entry is either:
 (defun bl-c-c++/init-company-rtags ()
   (use-package company-rtags
     :defer t
+    :ensure company
     :init (progn
               (setq company-rtags-begin-after-member-access t)
               (push '(company-rtags) company-backends-c-mode-common))))
 
 (defun bl-c-c++/init-flycheck-rtags ()
   (use-package flycheck-rtags
+    :defer t
     :after flycheck
-    :init (add-hook 'c-mode-common-hook 'spacemacs/c++-rtags-takeover-flycheck)
+    :ensure flycheck
+    :init (add-hook 'c++-mode-hook #'spacemacs/c++-rtags-takeover-flycheck)
     ))
