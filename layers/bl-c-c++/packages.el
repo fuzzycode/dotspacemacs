@@ -108,8 +108,8 @@ Each entry is either:
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
   (use-package flycheck-clang-analyze
-    :defer t
-    :disabled t))
+    :after flycheck
+    ))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
@@ -119,7 +119,6 @@ Each entry is either:
                  rtags-completions-enabled nil)
 
            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
-
            (add-hook 'rtags-jump-hook 'evil-set-jump))
     :config
     (rtags-enable-standard-keybindings)))
