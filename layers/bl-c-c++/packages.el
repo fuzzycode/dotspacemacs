@@ -30,9 +30,7 @@
 ;;; Code:
 
 (defconst bl-c-c++-packages
-  '(cmake-ide
-    company-rtags
-    company-qml
+  '(company-qml
     company
     flycheck-clang-analyzer
     flycheck-rtags
@@ -110,17 +108,18 @@ Each entry is either:
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
   (use-package flycheck-clang-analyze
-    :after flycheck
-    :config (flycheck-clang-analyzer-setup)))
+    :defer t
+    :disabled t))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
     :init
     (progn (setq rtags-autostart-diagnostics t
-                 rtags-completions-enabled t)
+                 rtags-completions-enabled nil)
 
            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+
            (add-hook 'rtags-jump-hook 'evil-set-jump))
     :config
     (rtags-enable-standard-keybindings)))
@@ -129,14 +128,6 @@ Each entry is either:
   (use-package helm-rtags
     :defer t
     :init (setq rtags-display-result-backend 'helm)))
-
-(defun bl-c-c++/init-company-rtags ()
-  (use-package company-rtags
-    :defer t
-    :ensure company
-    :init (progn
-              (setq company-rtags-begin-after-member-access t)
-              (push '(company-rtags) company-backends-c-mode-common))))
 
 (defun bl-c-c++/init-flycheck-rtags ()
   (use-package flycheck-rtags
