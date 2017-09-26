@@ -37,7 +37,7 @@
     helm-rtags
     modern-cpp-font-lock
     (qmake-mode :location (recipe :fetcher github :repo "fuzzycode/qmake-mode"))
-    rtags
+    (rtags :toggle bl-c-c++-enable-rtags)
     (ff-c-style :location local)
     projectile
     smart-tabs-mode)
@@ -109,16 +109,20 @@ Each entry is either:
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
   (use-package flycheck-clang-analyze
     :after flycheck
+    :if bl-c-c++-enable-rtags ;; This requires rtags to work
     ))
 
 (defun bl-c-c++/init-rtags ()
   (use-package rtags
     :defer t
+    :if bl-c-c++-enable-rtags
     :init
     (progn (setq rtags-autostart-diagnostics t
                  rtags-completions-enabled nil)
 
            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+           (add-to-list 'spacemacs-jump-handlers-c++-mode '(rtags-find-symbol-at-point :async t))
+           (add-to-list 'spacemacs-jump-handlers-c-mode '(rtags-find-symbol-at-point :async t))
            (add-hook 'rtags-jump-hook 'evil-set-jump))
     :config
     (rtags-enable-standard-keybindings)))
@@ -126,12 +130,15 @@ Each entry is either:
 (defun bl-c-c++/init-helm-rtags ()
   (use-package helm-rtags
     :defer t
+    :if bl-c-c++-enable-rtags
     :init (setq rtags-display-result-backend 'helm)))
+
 
 (defun bl-c-c++/init-flycheck-rtags ()
   (use-package flycheck-rtags
-    :defer t
-    :after flycheck
-    :ensure flycheck
-    :init (add-hook 'c++-mode-hook #'spacemacs/c++-rtags-takeover-flycheck)
-    ))
+	       :defer t
+	       :if bl-c-c++-enable-rtags
+	       :after flycheck
+	       :ensure flycheck
+	       :init (add-hook 'c++-mode-hook #'spacemacs/c++-rtags-takeover-flycheck)
+	       ))
