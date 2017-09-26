@@ -28,6 +28,9 @@
 
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
 
+;; Auto close compile buffer
+(add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+
 ;; Theme modifications
 (setq-default
  theming-modifications
