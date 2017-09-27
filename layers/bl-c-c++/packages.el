@@ -121,8 +121,9 @@ Each entry is either:
                  rtags-completions-enabled nil)
 
            (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
-           (add-to-list 'spacemacs-jump-handlers-c++-mode '(rtags-find-symbol-at-point :async t))
-           (add-to-list 'spacemacs-jump-handlers-c-mode '(rtags-find-symbol-at-point :async t))
+           (setq spacemacs-jump-handlers-c++-mode '(rtags-find-symbol-at-point :async t))
+           (setq spacemacs-jump-handlers-c-mode '(rtags-find-symbol-at-point :async t))
+
            (add-hook 'rtags-jump-hook 'evil-set-jump))
     :config
     (rtags-enable-standard-keybindings)))
