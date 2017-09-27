@@ -103,7 +103,7 @@ Each entry is either:
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
     :defer t
-    :disabled t
+    :commands (ff-add-c-style)
     :init (with-eval-after-load 'cc-mode (ff-add-c-style))))
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
