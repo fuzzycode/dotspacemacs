@@ -70,7 +70,8 @@ Each entry is either:
 
 (defun bl-c-c++/init-qmake-mode ()
   (use-package qmake-mode
-    :defer t))
+    :defer t
+    :mode ("\\.pr\\(i\\|o\\|f\\)\\'" . qmake-mode)))
 
 (defun bl-c-c++/init-company-qml ()
   (use-package company-qml
