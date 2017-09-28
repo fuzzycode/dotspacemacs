@@ -34,6 +34,7 @@
     beacon
     bm
     editorconfig
+    drag-stuff
     use-package-chords
     goto-last-change
     yatemplate
@@ -70,6 +71,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-drag-stuff ()
+  (use-package drag-stuff
+    :defer t
+    :init (drag-stuff-global-mode 1)
+    :config (drag-stuff-define-keys)))
 
 (defun bl-edit/init-use-package-chords ()
   (use-package use-package-chords
