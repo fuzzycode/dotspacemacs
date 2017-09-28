@@ -31,7 +31,7 @@ git submodule update --init --recursive
   - [ ] Different themes for terminal and UI
 - Work/Private Settings [0/1]
   - [ ] Different E-mail depending on location
-- [ ] Bookmarks
+- [X] Bookmarks
 *** Snippets
 - [X] Able to use 3rd party snippets
 - [X] Able to have a separate repository of custom snippets
@@ -86,8 +86,8 @@ git submodule update --init --recursive
 - [X] Snippets
 - [ ] Jira Integration
 *** Capture
-- [ ] Templates
-- [ ] Setup
+- [X] Templates
+- [X] Setup
 ** Markdown
 - [X] Snippets
 - [X] Compilation
@@ -135,8 +135,6 @@ git submodule update --init --recursive
 - [ ] Remove hard coded paths to ~/.spacemacs.d/ and sub directories
 
 * Interesting Packages
-** [[http://github.com/rolandwalker/back-button][back-button]]
-Navigating the kill ring in a visual way
 ** writegood-mode
 Detect bad English writing
 ** synonymous
