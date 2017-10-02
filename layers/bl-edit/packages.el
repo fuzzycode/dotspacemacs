@@ -75,6 +75,7 @@ Each entry is either:
 (defun bl-edit/init-drag-stuff ()
   (use-package drag-stuff
     :defer t
+    :disabled t
     :init (drag-stuff-global-mode 1)
     :config (drag-stuff-define-keys)))
 
