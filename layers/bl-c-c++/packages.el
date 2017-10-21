@@ -32,6 +32,7 @@
 (defconst bl-c-c++-packages
   '(company-qml
     company
+    function-args
     flycheck-clang-analyzer
     flycheck-rtags
     helm-rtags
@@ -67,6 +68,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-function-args ()
+  (use-package function-args
+    :init (set-default 'semantic-case-fold t)
+    :config (fa-config-default)))
 
 (defun bl-c-c++/init-qmake-mode ()
   (use-package qmake-mode
