@@ -401,6 +401,7 @@ you should place you code here."
   ;;; Setup ycmd
   (setq ycmd-server-command (list "python" (file-truename "~/.ycmd/ycmd")))
   (setq ycmd-force-semantic-completion t)
+  (setq ycmd-startup-timeout 10)
 
   ;; Automatic update of the copyright year in file headers
   (when (fboundp 'copyright-update)
