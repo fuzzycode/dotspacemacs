@@ -66,4 +66,10 @@
                       (bury-buffer buf)
                       (switch-to-prev-buffer (get-buffer-window buf) 'kill))
                     buffer)))
+
+;; http://emacsredux.com/blog/2013/05/30/joining-lines/
+(defun bl/top-join-line ()
+  "Join the current line with the line beneath it."
+  (interactive)
+  (delete-indentation 1))
 ;;; funcs.el ends here

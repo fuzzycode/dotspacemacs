@@ -27,3 +27,7 @@
 (key-chord-define-global " 2" 'winum-select-window-2)
 (key-chord-define-global " 3" 'winum-select-window-3)
 (key-chord-define-global " 4" 'winum-select-window-4)
+
+
+(global-set-key (kbd "<A-up>") 'join-line)
+(global-set-key (kbd "<A-down>") 'bl/top-join-line)
