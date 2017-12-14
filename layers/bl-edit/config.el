@@ -26,6 +26,9 @@
 (defvar bl-edit-save-project-when-compile t
   "Configure if a project is saved before compile or not")
 
+(defvar bl-edit-enable-abbrev-mode t
+  "Configure usage of abbreviation mode")
+
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
 
 ;; Auto close compile buffer
@@ -42,3 +45,11 @@
     ;; Misc
     (sp-show-pair-match-face :underline t)
     )))
+
+;; Define abbreviations
+(define-abbrev-table 'global-abbrev-table
+  '(
+    ("teh" "the")
+    ))
+
+(setq default-abbrev-mode bl-edit-enable-abbrev-mode)
