@@ -41,6 +41,7 @@ values."
      ;;Language layers
      python
      django
+     clojure
      emacs-lisp
      yaml
      lua
