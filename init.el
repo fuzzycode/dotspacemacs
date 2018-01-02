@@ -402,6 +402,8 @@ you should place you code here."
   (setq ycmd-force-semantic-completion t)
   (setq ycmd-startup-timeout 10)
 
+  (setq company-minimum-prefix-length 2)
+
   ;; Automatic update of the copyright year in file headers
   (when (fboundp 'copyright-update)
     (add-hook 'before-save-hook 'copyright-update))
