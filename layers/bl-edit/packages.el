@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-edit layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -85,13 +85,10 @@ Each entry is either:
     :config (key-chord-mode t)))
 
 (defun bl-edit/init-all-the-icons ()
-  (use-package all-the-icons
-    :defer t))
+  (use-package all-the-icons))
 
 (defun bl-edit/init-spaceline-all-the-icons ()
   (use-package spaceline-all-the-icons
-    :after spaceline
-    :defer t
     :config (progn
               (spaceline-all-the-icons-theme)
               (spaceline-all-the-icons--setup-neotree)
