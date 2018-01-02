@@ -94,10 +94,9 @@ values."
      gtags
      dash
 
-     ;; My private packages
+     ;; My private layers
      bl-git
      bl-edit
-     ;;bl-debug
      (bl-c-c++ :variables
                bl-c-c++-enable-rtags nil)
      )
