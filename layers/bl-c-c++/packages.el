@@ -71,6 +71,7 @@ Each entry is either:
 
 (defun bl-c-c++/init-function-args ()
   (use-package function-args
+    :defer t
     :init (set-default 'semantic-case-fold t)
     :config (fa-config-default)))
 
