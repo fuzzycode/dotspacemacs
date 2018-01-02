@@ -23,10 +23,6 @@
 (key-chord-define-global "uu" 'undo-tree-undo)
 (key-chord-define-global "jj" 'avy-goto-word-1)
 (key-chord-define-global "kk" 'just-one-space)
-(key-chord-define-global " 1" 'winum-select-window-1)
-(key-chord-define-global " 2" 'winum-select-window-2)
-(key-chord-define-global " 3" 'winum-select-window-3)
-(key-chord-define-global " 4" 'winum-select-window-4)
 
 
 (global-set-key (kbd "<A-up>") 'join-line)
