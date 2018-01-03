@@ -116,8 +116,9 @@ Each entry is either:
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
   (use-package flycheck-clang-analyze
+    :defer t
     :after flycheck
-    :if bl-c-c++-enable-rtags ;; This requires rtags to work
+    :config (flycheck-clang-analyzer-setup)
     ))
 
 (defun bl-c-c++/init-rtags ()
