@@ -121,9 +121,12 @@ Each entry is either:
 (defun bl-edit/init-beacon ()
   (use-package beacon
     :defer t
-    :if bl-edit-use-beacon
     :init (progn
-            (beacon-mode 1)
+            (spacemacs|add-toggle beacon
+              :mode beacon-mode
+              :documentation "Enable Beacon."
+              :evil-leader "otb")
+            (beacon-mode bl-edit-use-beacon)
             (spacemacs|diminish beacon-mode "" ""))))
 
 (defun bl-edit/init-bm ()
