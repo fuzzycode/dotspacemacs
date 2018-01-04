@@ -32,7 +32,3 @@
       "r T" 'rtags-taglist
       "r h" 'rtags-print-class-hierarchy
       "r a" 'rtags-print-source-arguments)))
-
-(add-hook 'c-mode-common-hook
-          (lambda()
-                (define-key c-mode-base-map (kbd "M-.") (function spacemacs/jump-to-definition))))
