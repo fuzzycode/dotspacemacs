@@ -1,3 +1,5 @@
+(spacemacs/declare-prefix "ot" "Toggles")
+
 ;; Evil-mode or no Evil mode, I NEED some of the emacs navigation keys
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-visual-state-map "\C-e" 'evil-end-of-line)
