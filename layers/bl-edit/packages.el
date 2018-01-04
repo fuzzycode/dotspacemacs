@@ -189,12 +189,15 @@ Each entry is either:
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
     :defer t
-    :after visual-regexp
     :init (progn
             (global-set-key [remap replace-regexp] #'vr/replace)
             (global-set-key [remap query-replace-regexp] #'vr/query-replace)
             (global-set-key [remap isearch-forward] #'vr/isearch-forward)
-            (global-set-key [remap isearch-backward] #'vr/isearch-backward))))
+            (global-set-key [remap isearch-backward] #'vr/isearch-backward)
+
+            (global-set-key (kbd "C-c r") 'vr/replace)
+            (global-set-key (kbd "C-c q") 'vr/query-replace)
+            (global-set-key (kbd "C-c m") 'vr/mc-mark))))
 
 (defun bl-edit/init-visual-regexp ()
   (use-package visual-regexp
