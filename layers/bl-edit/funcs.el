@@ -60,6 +60,7 @@
 (defun bury-compile-buffer-if-successful (buffer string)
   "Bury a compilation buffer if succeeded without warnings "
   (when (and
+         (bl-edit-close-compile-on-success)
          (buffer-live-p buffer)
          (string-match "compilation" (buffer-name buffer))
          (string-match "finished" string)

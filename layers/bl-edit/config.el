@@ -17,11 +17,14 @@
 ;;   SPC h SPC layers RET
 ;;
 ;;; Code:
-(defvar bl-edit-compile-auto-close-time 4
-  "The time in seconds that the compile buffer will be closed after a successful compile.")
-
 (defvar bl-edit-use-beacon t
   "Control of the beacon package should be used or not")
+
+(defvar bl-edit-close-compile-on-success t
+  "Control if a compile buffer should be automatically closed on success.")
+
+(defvar bl-edit-compile-auto-close-time 4
+  "The time in seconds that the compile buffer will be closed after a successful compile.")
 
 (defvar bl-edit-save-project-when-compile t
   "Configure if a project is saved before compile or not")
