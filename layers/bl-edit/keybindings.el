@@ -25,7 +25,7 @@
 (key-chord-define-global "uu" 'undo-tree-undo)
 (key-chord-define-global "jj" 'avy-goto-word-1)
 (key-chord-define-global "kk" 'just-one-space)
-(key-chord-define-global "ff" 'spacemacs/jump-to-definition)
+(key-chord-define-global "rr" 'spacemacs/jump-to-definition)
 (key-chord-define-global "hh" 'evil-jump-backward)
 
 (global-set-key (kbd "<A-up>") 'join-line)
