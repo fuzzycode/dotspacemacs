@@ -34,6 +34,11 @@
 ;; Auto close compile buffer
 (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
 
+;; Make sure that point is in the right place for typing when editing commit messages
+(add-hook 'find-file-hook (lambda ()
+                            (when (string-suffix-p "COMMIT_EDITMSG" buffer-file-name)
+                              (bl-edit/goto-first-empty-line))))
+
 ;; Theme modifications
 (setq-default
  theming-modifications

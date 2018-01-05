@@ -18,6 +18,12 @@
 ;;
 ;;; Code:
 
+(defun bl-edit/goto-first-empty-line ()
+  "Finds the first empty line and moves point to it"
+  (interactive)
+  (beginning-of-buffer)
+  (re-search-forward "^$"))
+
 (defun bl-edit/manual-save-hook ()
   "Used in `after-save-hook' to reset the edit mode to normal mode again."
   (when (memq this-command '(save-buffer save-some-buffers))
