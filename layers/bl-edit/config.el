@@ -29,7 +29,7 @@
 (defvar bl-edit-save-project-when-compile t
   "Configure if a project is saved before compile or not")
 
-(defvar bl-edit-enable-abbrev-mode t
+(defvar bl-edit-enable-abbrev-mode nil
   "Configure usage of abbreviation mode")
 
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
