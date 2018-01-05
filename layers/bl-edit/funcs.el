@@ -1,6 +1,6 @@
 ;;; funcs.el --- bl-edit layer functions file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -19,7 +19,7 @@
 ;;; Code:
 
 (defun bl-edit/manual-save-hook ()
-  "Used in `after-save-hook'."
+  "Used in `after-save-hook' to reset the edit mode to normal mode again."
   (when (memq this-command '(save-buffer save-some-buffers))
     (evil-normal-state)))
 
