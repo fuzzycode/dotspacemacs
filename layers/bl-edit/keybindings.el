@@ -29,4 +29,6 @@
 (key-chord-define-global "hh" 'evil-jump-backward)
 
 (global-set-key (kbd "<A-up>") 'join-line)
-(global-set-key (kbd "<A-down>") 'bl/top-join-line)
+(global-set-key (kbd "<A-down>") 'bl-edit/top-join-line)
+
+(global-set-key (kbd "C-c u") 'undo)
