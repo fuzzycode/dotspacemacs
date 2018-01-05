@@ -17,7 +17,7 @@
 ;;   SPC h SPC layers RET
 ;;
 ;;; Code:
-(defvar spacemacs/compile-auto-close-time 4
+(defvar bl-edit-compile-auto-close-time 4
   "The time in seconds that the compile buffer will be closed after a successful compile.")
 
 (defvar bl-edit-use-beacon t

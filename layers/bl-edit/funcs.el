@@ -61,14 +61,15 @@
           (with-current-buffer buffer
             (goto-char (point-min))
             (search-forward "warning" nil t))))
-    (run-with-timer 4 nil
+    (run-with-timer bl-edit-compile-auto-close-time nil
                     (lambda (buf)
                       (bury-buffer buf)
-                      (switch-to-prev-buffer (get-buffer-window buf) 'kill))
+                      (switch-to-prev-buffer (get-buffer-window buf) 'kill)
+                      (redraw-display))
                     buffer)))
 
 ;; http://emacsredux.com/blog/2013/05/30/joining-lines/
-(defun bl/top-join-line ()
+(defun bl-edit/top-join-line ()
   "Join the current line with the line beneath it."
   (interactive)
   (delete-indentation 1))
