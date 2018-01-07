@@ -18,10 +18,13 @@
 ;;
 ;;; Code:
 
-(defun bl-edit/goto-first-empty-line ()
-  "Finds the first empty line and moves point to it"
+(defun bl-edit/goto-first-empty-line (&optional from-top)
+  "Finds the first empty line and moves point to it. If from-top is true the search will start from the top of the buffer."
   (interactive)
-  (beginning-of-buffer)
+  (when from-top
+    (beginning-of-buffer))
+
+  (forward-char)
   (re-search-forward "^$"))
 
 (defun bl-edit/manual-save-hook ()
