@@ -42,7 +42,10 @@
                             (when (string-suffix-p "COMMIT_EDITMSG" buffer-file-name)
                               (bl-edit/goto-first-empty-line t))))
 
-(define-key git-commit-mode-map (kbd "TAB") 'bl-edit/goto-first-empty-line)
+(add-hook 'git-commit-mode-hook (lambda ()
+                                  (define-key git-commit-mode-map (kbd "TAB") 'bl-edit/goto-first-empty-line)
+                                  ))
+
 
 ;; Theme modifications
 (setq-default
