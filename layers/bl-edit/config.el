@@ -57,6 +57,9 @@
 
     ;; Misc
     (sp-show-pair-match-face :underline t)
+
+    ;; lsp mode
+    (lsp-face-highlight-textual :background "#464752")
     )))
 
 ;; Define abbreviations
