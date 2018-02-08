@@ -92,8 +92,8 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      semantic
-     gtags
-     dash
+     ;;gtags
+      dash
 
      ;; My private layers
      bl-git
