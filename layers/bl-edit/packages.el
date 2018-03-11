@@ -31,7 +31,6 @@
 
 (defconst bl-edit-packages
   '(beacon
-    editorconfig
     drag-stuff
     use-package-chords
     goto-last-change
@@ -135,13 +134,6 @@ Each entry is either:
     :init (progn
               (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
               (setq auto-insert t))))
-
-(defun bl-edit/init-editorconfig ()
-  (use-package editorconfig
-    :defer t
-    :init (progn
-             (editorconfig-mode t)
-             (spacemacs|diminish editorconfig-mode " EC" " EC"))))
 
 (defun bl-edit/init-helm-flycheck ()
   (use-package helm-flycheck
