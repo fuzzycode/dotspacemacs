@@ -30,8 +30,7 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(all-the-icons
-    beacon
+  '(beacon
     bm
     editorconfig
     drag-stuff
@@ -43,8 +42,7 @@
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
     visual-regexp-steroids
-    visual-regexp
-    spaceline-all-the-icons)
+    visual-regexp)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -83,25 +81,6 @@ Each entry is either:
   (use-package use-package-chords
     :init  (setq key-chord-two-keys-delay 0.15)
     :config (key-chord-mode t)))
-
-(defun bl-edit/init-all-the-icons ()
-  (use-package all-the-icons))
-
-(defun bl-edit/init-spaceline-all-the-icons ()
-  (use-package spaceline-all-the-icons
-    :config (progn
-              (spaceline-all-the-icons-theme)
-              (spaceline-all-the-icons--setup-neotree)
-              (spaceline-all-the-icons--setup-git-ahead)
-              (spaceline-all-the-icons--setup-anzu)
-
-              (setq spaceline-all-the-icons-icon-set-git-stats 'diff-icons)
-              (setq spaceline-all-the-icons-icon-set-window-numbering 'square)
-              (setq spaceline-all-the-icons-separator-type 'arrow)
-
-              (spaceline-toggle-all-the-icons-buffer-position-on)
-              (spaceline-toggle-all-the-icons-which-function-on)
-              )))
 
 (defun bl-edit/init-org-trello ()
   (use-package org-trello
