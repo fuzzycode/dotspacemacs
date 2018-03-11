@@ -1,1 +1,1 @@
-(spacemacs|defvar-company-backends c++-mode)
+(defvar cquery-extra-init-params '(:cacheFormat "msgpack"))

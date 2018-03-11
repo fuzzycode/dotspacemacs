@@ -29,13 +29,7 @@
 
 ;;; Code:
 
-(defconst bl-cquery-packages
-  '(lsp-mode
-    lsp-ui
-    (cquery :location (recipe :fetcher github :repo "cquery-project/emacs-cquery"))
-    company-lsp
-    helm-xref
-    )
+(defconst bl-cquery-packages '(cquery)
   "The list of Lisp packages required by the bl-cquery layer.
 
 Each entry is either:
@@ -63,43 +57,14 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun bl-cquery/init-lsp-mode ()
-  (use-package lsp-mode
-    :config (require 'lsp-flycheck)))
 
-(defun bl-cquery/init-lsp-ui ()
-  (use-package lsp-ui
-    :config
-    (setq lsp-ui-sideline-show-symbol nil)
-    (setq lsp-ui-sideline-ignore-duplicate t)
-
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode)))
-
+;; See also https://github.com/cquery-project/cquery/wiki/Emacs
 (defun bl-cquery/init-cquery ()
   (use-package cquery
-    :after lsp-mode
-    :init (progn
-            (setq cquery-sem-highlight-method 'font-lock)
-            (setq cquery-enable-sem-highlight t)
-            (setq cquery-extra-init-params '(:enableComments 2 :cacheFormat "msgpack"))
-            (spacemacs/add-to-hooks #'lsp-cquery-enable '(c-mode-hook c++-mode-hook)))
-    ))
-
-(defun bl-cquery/init-company-lsp ()
-  (use-package company-lsp
-    :defer t
+    :commands lsp-cquery-enable
     :init
-    (setq company-quickhelp-delay 0)
-    ;; Language servers have better idea filtering and sorting,
-    ;; don't filter results on the client side.
-    (setq company-transformers nil
-          company-lsp-async t
-          company-lsp-cache-candidates nil)
-
+    ;; Customize `lsp-project-whitelist' `lsp-project-blacklist' to disable auto initialization.
+    (add-hook 'c-mode-common-hook #'cquery//enable)
     ))
-
-(defun bl-cquery/init-helm-xref ()
-  (use-package helm-xref
-    :defer t))
 
 ;;; packages.el ends here
