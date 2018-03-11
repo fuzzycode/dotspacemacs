@@ -98,9 +98,8 @@ values."
      ;; My private layers
      bl-git
      bl-edit
-     (bl-c-c++ :variables
-               bl-c-c++-enable-rtags nil)
      bl-cquery
+     bl-c-c++
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
