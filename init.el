@@ -45,6 +45,7 @@ values."
      emacs-lisp
      yaml
      lua
+     lsp
      html
      latex
      markdown
