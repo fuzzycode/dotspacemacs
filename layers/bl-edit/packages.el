@@ -31,14 +31,12 @@
 
 (defconst bl-edit-packages
   '(beacon
-    bm
     editorconfig
     drag-stuff
     use-package-chords
     goto-last-change
     yatemplate
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
-    (helm-bm :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
     visual-regexp-steroids
@@ -107,66 +105,6 @@ Each entry is either:
               :evil-leader "otb")
             (beacon-mode bl-edit-use-beacon)
             (spacemacs|diminish beacon-mode "" ""))))
-
-(defun bl-edit/init-bm ()
-  (use-package bm
-    :defer t
-    :commands (bm-buffer-restore bm-toggle-mouse)
-    :bind (("<left-fringe> <S-mouse-1>" . bm-toggle-mouse))
-    :init (progn
-            ;; Allow cross-buffer 'next'
-            (setq bm-cycle-all-buffers t)
-            ;; Only show bookmark in fringe
-            (setq bm-highlight-style 'bm-highlight-only-fringe)
-            ;; save bookmarks
-            (setq-default bm-buffer-persistence t)
-            ;; where to store persistant files
-            (setq bm-repository-file (format "%sbm-repository"
-                                             spacemacs-cache-directory))
-            (spacemacs|define-transient-state bm
-              :title "Visual Bookmarks Transient State"
-              :doc "
- Go to bookmark^^^^^^            Toggle^^                  Annotate^^      Global         Other^^
- ──────────────^^^^^^─────     ──────^^────────────   ───────^^────  ─────^^────   ─────^^───
- [_n_/_p_(_N_)] next/previous    [_t_] bookmark at point   [_a_] annotate  [_g_] toggle   [_q_] quit"
-              :bindings
-              ("q" nil :exit t)
-              ;; Go to bookmark
-              ("n" bm-next)
-              ("N" bm-previous)
-              ("p" bm-previous)
-              ;; Toggle
-              ("t" bm-toggle)
-              ;; Annotate
-              ("a" bm-bookmark-annotate)
-              ("g" ((lambda () (setq bm-cycle-all-buffers (not bm-cycle-all-buffers))
-                      (message (format "Global Visual Bookmark state is: %s" (if bm-cycle-all-buffers "On" "Off")))))))
-
-            (evil-leader/set-key
-              "ab" 'spacemacs/bm-transient-state/body)
-            (advice-add 'spacemacs/bm-transient-state/body
-                        :before #'bm-buffer-restore))
-    :config (progn
-              (bm-load-and-restore)
-              ;; Saving bookmarks
-              (add-hook 'kill-buffer-hook #'bm-buffer-save)
-              ;; Saving the repository to file when on exit.
-              ;; kill-buffer-hook is not called when Emacs is killed, so we
-              ;; must save all bookmarks first.
-              (add-hook 'kill-emacs-hook #'(lambda nil
-                                             (bm-buffer-save-all)
-                                             (bm-repository-save)))
-              ;; Restoring bookmarks
-              (add-hook 'find-file-hooks   #'bm-buffer-restore)
-              ;; Make sure bookmarks is saved before check-in (and revert-buffer)
-              (add-hook 'vc-before-checkin-hook #'bm-buffer-save))))
-
-(defun bl-edit/init-helm-bm ()
-  (use-package helm-bm
-    :defer t
-    :after bm
-    :commands (helm-bm)
-    :bind (("C-c b" . helm-bm))))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
