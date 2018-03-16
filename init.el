@@ -61,7 +61,7 @@ values."
      github
 
      ;; General layers
-     ycmd
+     ;ycmd
      spotify
      fasd
      (auto-completion :variables
@@ -76,7 +76,6 @@ values."
      themes-megapack
      theming
      ranger
-
      (org :variables
           org-enable-github-support t)
 
@@ -92,7 +91,7 @@ values."
      jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-     semantic
+     ;;semantic
      ;;gtags
       dash
 
