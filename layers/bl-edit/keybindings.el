@@ -25,8 +25,9 @@
 (key-chord-define-global "uu" 'undo-tree-undo)
 (key-chord-define-global "jj" 'avy-goto-word-1)
 (key-chord-define-global "kk" 'just-one-space)
-(key-chord-define-global "rr" 'spacemacs/jump-to-definition)
-(key-chord-define-global "hh" 'evil-jump-backward)
+(key-chord-define-global "BB" 'helm-buffers-list)
+(key-chord-define-global "FF" 'find-file)
+
 (add-hook 'prog-mode-hook (lambda ()
                             (key-chord-define-local "ii" 'spacemacs/jump-to-definition)
                             (key-chord-define-local "jb" 'evil-jump-backward)))
