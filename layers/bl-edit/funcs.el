@@ -83,4 +83,9 @@
   "Join the current line with the line beneath it."
   (interactive)
   (delete-indentation 1))
+
+;; https://emacs.stackexchange.com/questions/2105/how-do-i-disable-key-chord-mode-in-the-minibuffer
+(defun disable-key-chord-mode ()
+  (set (make-local-variable 'input-method-function) nil))
+
 ;;; funcs.el ends here

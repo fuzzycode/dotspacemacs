@@ -46,6 +46,8 @@
                                   (define-key git-commit-mode-map (kbd "TAB") 'bl-edit/goto-first-empty-line)
                                   ))
 
+;; Make sure that key-chords is disabled in minibuffer
+(add-hook 'minibuffer-setup-hook #'disable-key-chord-mode)
 
 ;; Theme modifications
 (setq-default
