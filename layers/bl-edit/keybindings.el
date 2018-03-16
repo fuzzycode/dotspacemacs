@@ -27,6 +27,9 @@
 (key-chord-define-global "kk" 'just-one-space)
 (key-chord-define-global "rr" 'spacemacs/jump-to-definition)
 (key-chord-define-global "hh" 'evil-jump-backward)
+(add-hook 'prog-mode-hook (lambda ()
+                            (key-chord-define-local "ii" 'spacemacs/jump-to-definition)
+                            (key-chord-define-local "jb" 'evil-jump-backward)))
 
 (global-set-key (kbd "<A-up>") 'join-line)
 (global-set-key (kbd "<A-down>") 'bl-edit/top-join-line)
