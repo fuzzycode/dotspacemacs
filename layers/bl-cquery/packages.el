@@ -63,8 +63,11 @@ Each entry is either:
   (use-package cquery
     :commands lsp-cquery-enable
     :init
-    ;; Customize `lsp-project-whitelist' `lsp-project-blacklist' to disable auto initialization.
     (add-hook 'c-mode-common-hook #'cquery//enable)
+    :config (progn
+              (setq lsp-ui-doc-include-signature nil)
+              (setq lsp-ui-sideline-show-symbol nil)
+              (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack" :completion (:detailedLabel t))))
     ))
 
 ;;; packages.el ends here
