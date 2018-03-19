@@ -29,7 +29,7 @@
 
 ;;; Code:
 
-(defconst bl-cquery-packages '(cquery)
+(defconst bl-cquery-packages '(cquery company-lsp)
   "The list of Lisp packages required by the bl-cquery layer.
 
 Each entry is either:
@@ -70,4 +70,7 @@ Each entry is either:
               (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack" :completion (:detailedLabel t))))
     ))
 
+(defun bl-cquery/post-init-company-lsp ()
+  (spacemacs|add-company-backends :backends company-lsp
+                                  :modes c-mode-common))
 ;;; packages.el ends here
