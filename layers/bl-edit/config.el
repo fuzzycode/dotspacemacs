@@ -35,7 +35,7 @@
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
 
 ;; Auto close compile buffer
-(add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+;; (add-hook 'compilation-finish-functions 'bl-edit/bury-compile-buffer-if-successful)
 
 ;; Make sure that point is in the right place for typing when editing commit messages
 (add-hook 'find-file-hook (lambda ()
