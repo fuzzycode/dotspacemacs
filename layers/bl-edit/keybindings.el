@@ -12,7 +12,7 @@
 (define-key evil-normal-state-map "\C-p" 'evil-previous-line)
 (define-key evil-visual-state-map "\C-p" 'evil-previous-line)
 
-(spacemacs/set-leader-keys "xws" 'sort-words)
+(spacemacs/set-leader-keys "xws" 'bl-edit/sort-words)
 
 (global-set-key (kbd "<f2>") 'flyspell-correct-previous-word-generic)
 

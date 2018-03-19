@@ -47,7 +47,7 @@
                                   ))
 
 ;; Make sure that key-chords is disabled in minibuffer
-(add-hook 'minibuffer-setup-hook #'disable-key-chord-mode)
+(add-hook 'minibuffer-setup-hook #'bl-edit/disable-key-chord-mode)
 
 ;; Theme modifications
 (setq-default

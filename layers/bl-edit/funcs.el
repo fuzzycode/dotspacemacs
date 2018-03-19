@@ -44,7 +44,7 @@
 
 ;; https://www.emacswiki.org/emacs/SortWords
 ;; http://emacs.stackexchange.com/questions/7548/sorting-words-with-hyphens-e-g-in-a-lisp-mode
-(defun sort-words (reverse beg end)
+(defun bl-edit/sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.
     Prefixed with negative \\[universal-argument], sorts in reverse.
 
@@ -60,7 +60,7 @@
       (sort-regexp-fields reverse "\\w+" "\\&" beg end))))
 
 ;; http://stackoverflow.com/questions/11043004/emacs-compile-buffer-auto-close
-(defun bury-compile-buffer-if-successful (buffer string)
+(defun bl-edit/bury-compile-buffer-if-successful (buffer string)
   "Bury a compilation buffer if succeeded without warnings "
   (when (and
          (bl-edit-close-compile-on-success)
@@ -85,7 +85,7 @@
   (delete-indentation 1))
 
 ;; https://emacs.stackexchange.com/questions/2105/how-do-i-disable-key-chord-mode-in-the-minibuffer
-(defun disable-key-chord-mode ()
+(defun bl-edit/disable-key-chord-mode ()
   (set (make-local-variable 'input-method-function) nil))
 
 ;;; funcs.el ends here
