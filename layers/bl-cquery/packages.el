@@ -29,7 +29,9 @@
 
 ;;; Code:
 
-(defconst bl-cquery-packages '(cquery company-lsp)
+(defconst bl-cquery-packages '(cquery
+                               company-lsp
+                               projectile)
   "The list of Lisp packages required by the bl-cquery layer.
 
 Each entry is either:
@@ -73,4 +75,9 @@ Each entry is either:
 (defun bl-cquery/post-init-company-lsp ()
   (spacemacs|add-company-backends :backends company-lsp
                                   :modes c-mode-common))
+
+(defun cquery/pre-init-projectile ()
+  (spacemacs|use-package-add-hook
+      :post-init
+    (add-to-list 'projectile-globally-ignored-directories ".cquery_cached_index")))
 ;;; packages.el ends here
