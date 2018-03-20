@@ -76,7 +76,7 @@ Each entry is either:
   (spacemacs|add-company-backends :backends company-lsp
                                   :modes c-mode-common))
 
-(defun cquery/pre-init-projectile ()
+(defun bl-cquery/pre-init-projectile ()
   (spacemacs|use-package-add-hook
       :post-init
     (add-to-list 'projectile-globally-ignored-directories ".cquery_cached_index")))
