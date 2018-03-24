@@ -62,6 +62,7 @@ values."
 
      ;; General layers
      ;ycmd
+     bm
      spotify
      fasd
      (auto-completion :variables
