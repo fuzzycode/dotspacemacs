@@ -63,13 +63,16 @@ Each entry is either:
 ;; See also https://github.com/cquery-project/cquery/wiki/Emacs
 (defun bl-cquery/init-cquery ()
   (use-package cquery
-    :commands lsp-cquery-enable
+    :defer t
     :init
-    (add-hook 'c-mode-common-hook #'cquery//enable)
+    (add-hook 'c-mode-common-hook #'bl-cquery/enable)
     :config (progn
-              (setq lsp-ui-doc-include-signature nil)
-              (setq lsp-ui-sideline-show-symbol nil)
-              (setq cquery-extra-init-params '(:index (:comments 2) :cacheFormat "msgpack" :completion (:detailedLabel t))))
+              (dolist (mode c-c++-modes)
+                ;(spacemacs/lsp-append-jump-handlers mode)
+                ;(spacemacs/lsp-bind-keys-for-mode mode)
+                (bl-cquery/define-keys-for-mode mode))
+              (bl-cquery/customise-lsp-ui-peek)
+              )
     ))
 
 (defun bl-cquery/post-init-company-lsp ()
