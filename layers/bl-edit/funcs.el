@@ -59,24 +59,21 @@
       (modify-syntax-entry ?_ "w" temp-table)
       (sort-regexp-fields reverse "\\w+" "\\&" beg end))))
 
-;; http://stackoverflow.com/questions/11043004/emacs-compile-buffer-auto-close
+
+https://emacs.stackexchange.com/questions/62/hide-compilation-window
 (defun bl-edit/bury-compile-buffer-if-successful (buffer string)
-  "Bury a compilation buffer if succeeded without warnings "
-  (when (and
-         (bl-edit-close-compile-on-success)
-         (buffer-live-p buffer)
-         (string-match "compilation" (buffer-name buffer))
-         (string-match "finished" string)
-         (not
-          (with-current-buffer buffer
-            (goto-char (point-min))
-            (search-forward "warning" nil t))))
-    (run-with-timer bl-edit-compile-auto-close-time nil
-                    (lambda (buf)
-                      (bury-buffer buf)
-                      (switch-to-prev-buffer (get-buffer-window buf) 'kill)
-                      (redraw-display))
-                    buffer)))
+
+  (if (and
+       (null (string-match ".*exited abnormally.*" string))
+       (bound-and-true-p  bl-edit-close-compile-on-success))
+      ;;no errors, make the compilation window go away in a few seconds
+      (progn
+        (run-at-time
+         (format "%d sec" bl-edit-compile-auto-close-time) nil 'delete-windows-on
+         (get-buffer-create "*compilation*"))
+        (message "No Compilation Errors!")))
+
+  )
 
 ;; http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun bl-edit/top-join-line ()
