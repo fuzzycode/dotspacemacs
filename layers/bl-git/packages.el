@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-git layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <bjornlarsson@MacBookPro>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -30,8 +30,7 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '(magithub
-    magit-imerge)
+  '(magit-imerge)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -61,12 +60,6 @@ Each entry is either:
 
 (defun bl-git/post-init-gitignore-mode ()
   (add-hook 'gitignore-mode-hook 'flyspell-prog-mode))
-
-(defun bl-git/init-magithub ()
-  (use-package magithub
-    :disabled t
-    :after magit
-    :config (magithub-feature-autoinject t)))
 
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
