@@ -60,7 +60,7 @@
       (sort-regexp-fields reverse "\\w+" "\\&" beg end))))
 
 
-https://emacs.stackexchange.com/questions/62/hide-compilation-window
+;; https://emacs.stackexchange.com/questions/62/hide-compilation-window
 (defun bl-edit/bury-compile-buffer-if-successful (buffer string)
 
   (if (and
