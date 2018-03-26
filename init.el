@@ -416,7 +416,8 @@ you should place you code here."
     (load "~/.spacemacs.local.el"))
 
   (when (file-exists-p "~/.snippets/")
-    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
+    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/")
+    (yas-load-directory "~/.snippets"))
 
   ;;; Setup the auto mode list for files without extensions
   (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
