@@ -427,7 +427,9 @@ you should place you code here."
   ;; Remove line highlight when in magit mode
   (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
 
-  ;; Automaticaly make scrpts executable
+  ;; Remove automatic new line. Temporary workaround until its fixed upstream
+  (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )
+
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
 )
