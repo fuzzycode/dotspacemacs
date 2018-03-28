@@ -430,6 +430,11 @@ you should place you code here."
   ;; Remove line highlight when in magit mode
   (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
 
+  ;; Configure ranger
+  (setq ranger-override-dired t)
+  (setq ranger-cleanup-on-disable t)
+  (setq ranger-dont-show-binary t)
+
   ;; Remove automatic new line. Temporary workaround until its fixed upstream
   (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )
 
