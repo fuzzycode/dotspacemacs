@@ -369,9 +369,14 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (when (file-exists-p custom-file)
     (load custom-file))
 
+
+  (when (file-exists-p "~/.snippets/")
+    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
+
   (setq
    user-full-name "Björn Larsson"
-   user-mail-address "develop@bjornlarsson.net"))
+   user-mail-address "develop@bjornlarsson.net")
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -414,10 +419,6 @@ you should place you code here."
   ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.local.el")
     (load "~/.spacemacs.local.el"))
-
-  (when (file-exists-p "~/.snippets/")
-    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/")
-    (yas-load-directory "~/.snippets"))
 
   ;;; Setup the auto mode list for files without extensions
   (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
