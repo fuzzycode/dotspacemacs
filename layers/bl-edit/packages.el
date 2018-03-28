@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(beacon
+  '(all-the-icons-dired
+    beacon
     drag-stuff
     use-package-chords
     goto-last-change
@@ -66,6 +67,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-all-the-icons-dired ()
+  (use-package all-the-icons-dired
+    :defer t
+    :init (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)))
 
 (defun bl-edit/init-drag-stuff ()
   (use-package drag-stuff
