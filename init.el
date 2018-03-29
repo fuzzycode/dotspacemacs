@@ -369,10 +369,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (when (file-exists-p custom-file)
     (load custom-file))
 
-
-  (when (file-exists-p "~/.snippets/")
-    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
-
   (setq
    user-full-name "Björn Larsson"
    user-mail-address "develop@bjornlarsson.net")
@@ -434,6 +430,10 @@ you should place you code here."
   (setq ranger-override-dired t)
   (setq ranger-cleanup-on-disable t)
   (setq ranger-dont-show-binary t)
+
+  (when (file-exists-p "~/.snippets/")
+    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
+
 
   ;; Remove automatic new line. Temporary workaround until its fixed upstream
   (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )
