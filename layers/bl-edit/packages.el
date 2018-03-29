@@ -40,7 +40,8 @@
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
     visual-regexp-steroids
-    visual-regexp)
+    visual-regexp
+    smartscan)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -67,6 +68,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-smartscan ()
+  (use-package smartscan
+    :defer t
+    :init (global-smartscan-mode 1)))
 
 (defun bl-edit/init-all-the-icons-dired ()
   (use-package all-the-icons-dired
