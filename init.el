@@ -92,6 +92,7 @@ values."
      jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
+     osx
      ;;semantic
      ;;gtags
       dash
@@ -440,4 +441,9 @@ you should place you code here."
 
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
-)
+
+  (setq mac-option-key-is-meta nil)
+  (setq mac-command-key-is-meta t)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil)
+  )
