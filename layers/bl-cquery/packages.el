@@ -68,8 +68,6 @@ Each entry is either:
     (add-hook 'c-mode-common-hook #'bl-cquery/enable)
     :config (progn
               (dolist (mode c-c++-modes)
-                ;(spacemacs/lsp-append-jump-handlers mode)
-                ;(spacemacs/lsp-bind-keys-for-mode mode)
                 (bl-cquery/define-keys-for-mode mode))
               (bl-cquery/customise-lsp-ui-peek)
               )
