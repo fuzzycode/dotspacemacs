@@ -40,16 +40,16 @@ values."
 
      ;;Language layers
      python
-     django
-     clojure
+     ;;django
+     ;;clojure
      emacs-lisp
      yaml
      lua
      lsp
-     html
+     ;;html
      latex
      markdown
-     javascript
+     ;;javascript
      shell-scripts
      (c-c++ :variables
             c-c++-enable-clang-support t
@@ -89,7 +89,7 @@ values."
      syntax-checking
      version-control
      restclient
-     jabber
+     ;;jabber
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      osx
