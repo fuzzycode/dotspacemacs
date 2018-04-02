@@ -93,7 +93,7 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      osx
-     ;;semantic
+     semantic
      ;;gtags
       dash
 
@@ -103,6 +103,7 @@ values."
      bl-cquery
      bl-c-c++
      )
+
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -442,13 +443,23 @@ you should place you code here."
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
 
+  ;; Setup mac modifier keys
   (setq mac-option-key-is-meta nil)
   (setq mac-command-key-is-meta t)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
 
+  ;; Use Hunspell as spellchecker
   (when (executable-find "hunspell")
     (setq-default ispell-program-name "hunspell")
     (setq ispell-really-hunspell t))
+
+  ;; Make sure that semantic does not go crazy on elisp comments
+  ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
+  (use-package semantic
+    :config
+    (setq-mode-local emacs-lisp-mode
+                     semanticdb-find-default-throttle
+                     (default-value 'semanticdb-find-default-throttle)))
   )

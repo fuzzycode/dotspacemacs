@@ -42,8 +42,8 @@
   "Define key bindings for the specific MODE."
 
   ;; lsp layer uses =,l,t,r as prefixes for format, lsp, toggle and refactor -- extend these
-  (spacemacs/declare-prefix-for-mode mode "mr" "refactor")
   (spacemacs/declare-prefix-for-mode mode "mh" "hierarchy")
+
   (spacemacs/set-leader-keys-for-major-mode mode
     ;; hierarchy
     "hb" #'cquery/base
@@ -62,6 +62,6 @@
     "lt" #'text-document/type-definition
     "lv" #'cquery/vars
     ;; Refactor
-    "rr" #'lsp-rename
+    "mR" #'lsp-rename
     )
   )
