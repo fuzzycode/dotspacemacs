@@ -42,10 +42,10 @@
   "Define key bindings for the specific MODE."
 
   ;; lsp layer uses =,l,t,r as prefixes for format, lsp, toggle and refactor -- extend these
-  (spacemacs/declare-prefix-for-mode mode "mh" "heirarchy")
   (spacemacs/declare-prefix-for-mode mode "mr" "refactor")
+  (spacemacs/declare-prefix-for-mode mode "mh" "hierarchy")
   (spacemacs/set-leader-keys-for-major-mode mode
-    ;; heirarchy
+    ;; hierarchy
     "hb" #'cquery/base
     "hd" #'cquery/derived
     "hc" #'cquery-call-hierarchy
