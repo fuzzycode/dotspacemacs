@@ -447,4 +447,8 @@ you should place you code here."
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
+
+  (when (executable-find "hunspell")
+    (setq-default ispell-program-name "hunspell")
+    (setq ispell-really-hunspell t))
   )
