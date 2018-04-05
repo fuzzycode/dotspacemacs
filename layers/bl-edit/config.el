@@ -49,6 +49,21 @@
 ;; Make sure that key-chords is disabled in minibuffer
 (add-hook 'minibuffer-setup-hook #'bl-edit/disable-key-chord-mode)
 
+(spacemacs|add-toggle delete-selection
+  :mode delete-selection-mode
+  :documentation "Enable Delete Selection"
+  :evil-leader "otd")
+
+;; Enable by default
+(delete-selection-mode 1)
+
+(spacemacs|add-toggle decoration-mode
+  :if (configuration-layer/package-usedp 'semantic)
+  :mode semantic-decoration-mode
+  :documentation "Enable Decoration Mode"
+  :evil-leader "otD")
+
+
 ;; Theme modifications
 (setq-default
  theming-modifications
