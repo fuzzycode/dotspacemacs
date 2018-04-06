@@ -62,9 +62,7 @@
         (run-at-time
          (format "%d sec" bl-edit-compile-auto-close-time) nil 'delete-windows-on
          (get-buffer-create "*compilation*"))
-        (message "No Compilation Errors!")))
-
-  )
+        (message "%s" (propertize "Compilation finished OK!" 'face '(:foreground "green"))))))
 
 ;; http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun bl-edit/top-join-line ()
