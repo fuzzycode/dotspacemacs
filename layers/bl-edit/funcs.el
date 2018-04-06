@@ -32,15 +32,6 @@
   (when (memq this-command '(save-buffer save-some-buffers))
     (evil-normal-state)))
 
-(defun bl-edit/maybe-save-and-compile ()
-  "Depending on the value of bl-save-project-when compile, the project is saved and compiled"
-  (interactive)
-  (if (projectile-project-p)
-      (progn
-        (when bl-edit-save-project-when-compile
-          (projectile-save-project-buffers))
-        (projectile-compile-project nil nil))))
-
 
 ;; https://www.emacswiki.org/emacs/SortWords
 ;; http://emacs.stackexchange.com/questions/7548/sorting-words-with-hyphens-e-g-in-a-lisp-mode
