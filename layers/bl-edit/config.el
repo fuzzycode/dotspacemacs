@@ -77,6 +77,7 @@
 
     ;; lsp mode
     (lsp-face-highlight-textual :background "#464752")
+    (lsp-ui-peek-header :box "white")
     )))
 
 ;; Define abbreviations
