@@ -364,8 +364,6 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
-  (setq ispell-dictionary "british")
-
   ;; Load the custom file
   (setq custom-file "~/.spacemacs.d/emacs-custom.el")
   (when (file-exists-p custom-file)
@@ -450,10 +448,15 @@ you should place you code here."
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
 
-  ;; Use Hunspell as spellchecker
-  (when (executable-find "hunspell")
-    (setq-default ispell-program-name "hunspell")
-    (setq ispell-really-hunspell t))
+  (with-eval-after-load "ispell"
+
+    ;; Use Hunspell as spellchecker
+    (when (executable-find "hunspell")
+      (setq-default ispell-program-name "hunspell")
+      (setq ispell-really-hunspell t))
+
+    (ispell-set-spellchecker-params)
+    (setq ispell-dictionary "british"))
 
   ;; Make sure that semantic does not go crazy on elisp comments
   ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
