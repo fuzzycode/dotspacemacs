@@ -41,7 +41,8 @@
     org-trello
     visual-regexp-steroids
     visual-regexp
-    smartscan)
+    smartscan
+    rainbow-mode)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -68,6 +69,15 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+(defun bl-edit/init-rainbow-mode ()
+  (use-package rainbow-mode
+    :defer t
+    :init (progn
+            (spacemacs|add-toggle rainbow
+              :mode rainbow-mode
+              :documentation "Enable Rainbow Mode"
+              :evil-leader "otc")
+            (rainbow-mode 1))))
 
 (defun bl-edit/init-smartscan ()
   (use-package smartscan
