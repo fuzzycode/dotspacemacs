@@ -69,7 +69,10 @@ Each entry is either:
     :config (progn
               (dolist (mode c-c++-modes)
                 (bl-cquery/define-keys-for-mode mode))
+
+              (cquery-use-default-rainbow-sem-highlight)
               (bl-cquery/customise-lsp-ui-peek)
+              (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))
               )
     ))
 
