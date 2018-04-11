@@ -49,7 +49,7 @@ values."
      ;;html
      latex
      markdown
-     ;;javascript
+     javascript
      shell-scripts
      (c-c++ :variables
             c-c++-enable-clang-support t
