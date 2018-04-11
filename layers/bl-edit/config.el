@@ -23,7 +23,7 @@
 (defvar bl-edit-close-compile-on-success t
   "Control if a compile buffer should be automatically closed on success.")
 
-(defvar bl-edit-compile-auto-close-time 4
+(defvar bl-edit-compile-auto-close-time 2
   "The time in seconds that the compile buffer will be closed after a successful compile.")
 
 (defvar bl-edit-save-project-when-compile t
