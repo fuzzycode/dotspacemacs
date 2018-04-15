@@ -449,11 +449,10 @@ you should place you code here."
   (setq mac-right-command-modifier nil)
 
   (with-eval-after-load "ispell"
-
     ;; Use Hunspell as spellchecker
-    (when (executable-find "hunspell")
-      (setq-default ispell-program-name "hunspell")
-      (setq ispell-really-hunspell t))
+    (when (executable-find "aspell")
+      (setq-default ispell-program-name "aspell")
+      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
 
     (ispell-set-spellchecker-params)
     (setq ispell-dictionary "british"))
