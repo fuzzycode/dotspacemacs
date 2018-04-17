@@ -457,6 +457,8 @@ you should place you code here."
     (ispell-set-spellchecker-params)
     (setq ispell-dictionary "british"))
 
+  (add-to-list 'magit-no-confirm 'stage-all-changes)
+
   ;; Make sure that semantic does not go crazy on elisp comments
   ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
   (use-package semantic
