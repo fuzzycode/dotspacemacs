@@ -71,6 +71,7 @@
 
     ;; Magit
     (magit-diff-lines-boundary :foreground "#f1fa8c" :background "#f1fa8c" :inherit magit-diff-lines-heading)
+    (magit-section-secondary-heading :inherit magit-section-heading)
 
     ;; Misc
     (sp-show-pair-match-face :underline t)
