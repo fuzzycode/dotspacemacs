@@ -79,12 +79,10 @@
     ;; lsp mode
     (lsp-face-highlight-textual :background "#464752")
     (lsp-ui-peek-header :box "white")
-    )))
+    )
 
-;; Define abbreviations
-(define-abbrev-table 'global-abbrev-table
-  '(
-    ("teh" "the")
-    ))
+   (solarized-dark
 
-(setq default-abbrev-mode bl-edit-enable-abbrev-mode)
+    ;; lsp mode
+    (lsp-ui-peek-header :box "white"))
+   ))
