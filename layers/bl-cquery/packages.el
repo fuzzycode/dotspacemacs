@@ -31,6 +31,7 @@
 
 (defconst bl-cquery-packages '(cquery
                                company-lsp
+                               lsp-ui
                                projectile)
   "The list of Lisp packages required by the bl-cquery layer.
 
@@ -75,6 +76,10 @@ Each entry is either:
               (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-gcc))
               )
     ))
+
+(defun bl-cquery/post-init-lsp-ui ()
+  (lsp-ui-doc-mode nil)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
 
 (defun bl-cquery/post-init-company-lsp ()
   (spacemacs|add-company-backends :backends company-lsp
