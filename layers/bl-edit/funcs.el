@@ -74,4 +74,9 @@
 (defun bl-edit/disable-key-chord-mode ()
   (set (make-local-variable 'input-method-function) nil))
 
+;; https://github.com/domtronn/emacs/blob/6a94813c69a9704094778e3f09cb35e834924d9f/init/advice.el
+(defun bl-edit/remove-mode-line-box (&rest args)
+  (set-face-attribute 'mode-line nil :box nil :underline nil)
+  (set-face-attribute 'mode-line-inactive nil :box nil :underline nil))
+
 ;;; funcs.el ends here

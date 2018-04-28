@@ -63,6 +63,10 @@
   :documentation "Enable Decoration Mode"
   :evil-leader "otD")
 
+(advice-add 'load-theme :after 'bl-edit/remove-mode-line-box)
+
+(when window-system
+  (bl-edit/remove-mode-line-box))
 
 ;; Theme modifications
 (setq-default
