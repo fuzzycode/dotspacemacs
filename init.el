@@ -448,6 +448,7 @@ you should place you code here."
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
 
+  ;; Configure spelling
   (with-eval-after-load "ispell"
     ;; Use Hunspell as spellchecker
     (when (executable-find "aspell")
@@ -457,6 +458,7 @@ you should place you code here."
     (ispell-set-spellchecker-params)
     (setq ispell-dictionary "british"))
 
+  ;; Configure magit
   (add-to-list 'magit-no-confirm 'stage-all-changes)
 
   ;; Make sure that semantic does not go crazy on elisp comments
