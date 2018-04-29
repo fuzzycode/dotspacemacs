@@ -43,6 +43,7 @@
     visual-regexp
     smartscan
     smart-comment
+    smart-backspace
     rainbow-mode)
   "The list of Lisp packages required by the bl-edit layer.
 
@@ -70,6 +71,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-smart-backspace ()
+  (use-package smart-backspace
+    :init (progn
+            (global-set-key  [remap backward-delete-char-untabify] 'smart-backspace))))
+
 (defun bl-edit/init-smart-comment ()
   (use-package smart-comment
     :init (global-set-key [remap comment-dwim] 'smart-comment)))
