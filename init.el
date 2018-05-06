@@ -449,6 +449,9 @@ you should place you code here."
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
 
+  ;; Not needed and it speeds up scrolling long lines
+  (setq bidi-display-reordering nil)
+
   ;; Configure spelling
   (with-eval-after-load "ispell"
     ;; Use aspell as spellchecker
