@@ -451,7 +451,7 @@ you should place you code here."
 
   ;; Configure spelling
   (with-eval-after-load "ispell"
-    ;; Use Hunspell as spellchecker
+    ;; Use aspell as spellchecker
     (when (executable-find "aspell")
       (setq-default ispell-program-name "aspell")
       (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB" "--run-together" "--run-together-limit=5" "--run-together-min=2")))
