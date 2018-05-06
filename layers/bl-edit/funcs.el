@@ -79,4 +79,12 @@
   (set-face-attribute 'mode-line nil :box nil :underline nil)
   (set-face-attribute 'mode-line-inactive nil :box nil :underline nil))
 
+(defun bl-edit/disable-all-themes ()
+  "disable all active themes."
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
+
+(defun bl-edit/disable-themes (&rest args)
+  (bl-edit/disable-all-themes))
+
 ;;; funcs.el ends here

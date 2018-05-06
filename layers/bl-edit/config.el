@@ -64,6 +64,7 @@
   :evil-leader "otD")
 
 (advice-add 'load-theme :after 'bl-edit/remove-mode-line-box)
+(advice-add 'load-theme :before 'bl-edit/disable-themes)
 
 (when window-system
   (bl-edit/remove-mode-line-box))
