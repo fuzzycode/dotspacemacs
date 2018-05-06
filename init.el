@@ -465,6 +465,9 @@ you should place you code here."
   ;; Configure magit
   (add-to-list 'magit-no-confirm 'stage-all-changes)
 
+  ;; Projectile
+  (setq projectile-enable-caching t)
+
   ;; Make sure that semantic does not go crazy on elisp comments
   ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
   (use-package semantic
