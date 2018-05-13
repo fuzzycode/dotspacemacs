@@ -33,6 +33,7 @@
   '(all-the-icons-dired
     beacon
     drag-stuff
+    lsp-ui
     use-package-chords
     goto-last-change
     yatemplate
@@ -71,6 +72,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/post-init-lsp-ui ()
+  (spacemacs|add-toggle lsp-ui
+    :mode lsp-ui-mode
+    :documentation "Enable lsp-ui."
+    :evil-leader "otu")
+  )
 
 (defun bl-edit/init-smart-backspace ()
   (use-package smart-backspace
