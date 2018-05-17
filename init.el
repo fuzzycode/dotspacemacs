@@ -435,10 +435,6 @@ you should place you code here."
   (when (file-exists-p "~/.snippets/")
     (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
 
-
-  ;; Remove automatic new line. Temporary workaround until its fixed upstream
-  (remove-hook 'c-mode-common-hook 'spacemacs//c-toggle-auto-newline )
-
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
 
