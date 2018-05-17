@@ -96,7 +96,8 @@ values."
      osx
      semantic
      ;;gtags
-      dash
+     dash
+     treemacs
 
      ;; My private layers
      bl-git
