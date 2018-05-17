@@ -50,6 +50,7 @@ values."
      latex
      markdown
      javascript
+     json
      shell-scripts
      (c-c++ :variables
             c-c++-enable-clang-support t
