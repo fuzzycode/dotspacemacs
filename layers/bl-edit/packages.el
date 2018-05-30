@@ -36,7 +36,6 @@
     lsp-ui
     use-package-chords
     goto-last-change
-    yatemplate
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
@@ -173,14 +172,6 @@ Each entry is either:
   (use-package goto-last-change
     :defer t
     :bind ("C--" . goto-last-change)))
-
-(defun bl-edit/init-yatemplate ()
-  "A package for allowing yasnippets as file skeletons for auto-fill "
-  (use-package yatemplate
-    :defer t
-    :init (progn
-              (setq yatemplate-dir "~/.spacemacs.d/snippets/templates")
-              (setq auto-insert t))))
 
 (defun bl-edit/init-helm-flycheck ()
   (use-package helm-flycheck
