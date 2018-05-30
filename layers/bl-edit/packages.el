@@ -45,6 +45,7 @@
     smartscan
     smart-comment
     smart-backspace
+    sort-words
     rainbow-mode)
   "The list of Lisp packages required by the bl-edit layer.
 
@@ -72,6 +73,10 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-sort-words ()
+  (use-package sort-words
+    :defer t))
 
 (defun bl-edit/post-init-lsp-ui ()
   (spacemacs|add-toggle lsp-ui

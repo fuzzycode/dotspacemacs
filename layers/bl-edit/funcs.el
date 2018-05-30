@@ -32,25 +32,6 @@
   (when (memq this-command '(save-buffer save-some-buffers))
     (evil-normal-state)))
 
-
-;; https://www.emacswiki.org/emacs/SortWords
-;; http://emacs.stackexchange.com/questions/7548/sorting-words-with-hyphens-e-g-in-a-lisp-mode
-(defun bl-edit/sort-words (reverse beg end)
-  "Sort words in region alphabetically, in REVERSE if negative.
-    Prefixed with negative \\[universal-argument], sorts in reverse.
-
-    The variable `sort-fold-case' determines whether alphabetic case
-    affects the sort order.
-
-    See `sort-regexp-fields'."
-  (interactive "*P\nr")
-  (let ((temp-table (copy-syntax-table text-mode-syntax-table)))
-    (with-syntax-table temp-table
-      (modify-syntax-entry ?- "w" temp-table)
-      (modify-syntax-entry ?_ "w" temp-table)
-      (sort-regexp-fields reverse "\\w+" "\\&" beg end))))
-
-
 ;; https://emacs.stackexchange.com/questions/62/hide-compilation-window
 (defun bl-edit/bury-compile-buffer-if-successful (buffer string)
 
