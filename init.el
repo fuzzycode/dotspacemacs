@@ -455,7 +455,7 @@ you should place you code here."
     ;; Use aspell as spellchecker
     (when (executable-find "aspell")
       (setq-default ispell-program-name "aspell")
-      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB" "--run-together" "--run-together-limit=5" "--run-together-min=2")))
+      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
 
     (ispell-set-spellchecker-params)
     (setq ispell-dictionary "british"))
