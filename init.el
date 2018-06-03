@@ -98,6 +98,7 @@ values."
      ;;gtags
      dash
      treemacs
+     (templates :variables templates-private-directory "~/.templates")
 
      ;; My private layers
      bl-git
