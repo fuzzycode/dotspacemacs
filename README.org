@@ -16,9 +16,9 @@ git submodule update --init --recursive
 * Requirements
 ** Common
 - [X] Key-chords
-- [ ] File skeletons
+- [X] File skeletons
 - [X] Automatic license headers for code files
-- [ ] Unique buffer names
+- [X] Unique buffer names
 - [X] Jenkins Support
 - [X] Travis Support
 - [X] Multi cursor
@@ -26,11 +26,11 @@ git submodule update --init --recursive
 - [X] Extend helm usage
   - [X] Helm Flycheck errors
 - [ ] Encrypted settings
-- Platform dependent settings [0/2]
+- Platform dependent settings [1/2]
   - [ ] Platform dependent layers
-  - [ ] Different themes for terminal and UI
-- Work/Private Settings [0/1]
-  - [ ] Different E-mail depending on location
+  - [X] Different themes for terminal and UI
+- Work/Private Settings [1/1]
+  - [X] Different E-mail depending on location
 - [X] Bookmarks
 *** Snippets
 - [X] Able to use 3rd party snippets
@@ -47,20 +47,17 @@ git submodule update --init --recursive
 - [X] Code formatting
   Using clang_format
 - [X] Auto Complete
-  Using Irony mode
+  - Using cquery
 - [X] Code Checker
   Using flycheck-irony
-- [ ] Compilation
+- [X] Compilation
 - [ ] Debugger
 - [X] Manage different coding styles
 - [ ] Re-factoring support
   - [ ] Create implementation
   - [ ] Smart renaming
 - [X] Code Navigation
-  Working using RTags
-  - [X] Go to definition
-  - [X] Go to declaration
-  - [X] Find usage
+  - Works using cquery
 - [X] Snippets
 ** Python
 - [ ] Debugger
@@ -108,11 +105,10 @@ git submodule update --init --recursive
 ** LateX
 - [ ] Auto completion
 - [ ] Compilation with different engines
-- [ ] Snippets
 - [ ] Preview
 - [ ] Debugging
 - [ ] Syntax highlighting
-- [ ] Snippets
+- [X] Snippets
 - [ ] Spell checking
 ** Arduino
 - [ ] Support for developing arduino source
@@ -139,5 +135,3 @@ git submodule update --init --recursive
 Detect bad English writing
 ** synonymous
 Looking up synonyms in dictionaries
-** [[https://github.com/mineo/yatemplate][yatemplate]]
-For automatically inserting yasnippet powered file skeletons when creating new files
