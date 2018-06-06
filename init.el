@@ -416,9 +416,6 @@ you should place you code here."
   (when (fboundp 'copyright-update)
     (add-hook 'before-save-hook 'copyright-update))
 
-  ;;; Load local config file if present
-  (when (file-exists-p "~/.spacemacs.local.el")
-    (load "~/.spacemacs.local.el"))
 
   ;;; Setup the auto mode list for files without extensions
   (add-to-list 'auto-mode-alist '("\\.clang-format\\'" . yaml-mode))
@@ -474,4 +471,9 @@ you should place you code here."
     (setq-mode-local emacs-lisp-mode
                      semanticdb-find-default-throttle
                      (default-value 'semanticdb-find-default-throttle)))
+
+    ;;; Load local config file if present
+  (when (file-exists-p "~/.spacemacs.local.el")
+    (load "~/.spacemacs.local.el"))
+
   )
