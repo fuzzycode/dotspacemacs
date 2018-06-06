@@ -72,7 +72,8 @@ values."
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
-                      auto-completion-private-snippets-directory '("~/.spacemacs.d/snippets/bl-snippets/external"
+                      auto-completion-private-snippets-directory '("~/.snippets"
+                                                                   "~/.spacemacs.d/snippets/bl-snippets/external"
                                                                    "~/.spacemacs.d/snippets/bl-snippets/personal"))
      better-defaults
      themes-megapack
@@ -431,9 +432,6 @@ you should place you code here."
   (setq ranger-override-dired t)
   (setq ranger-cleanup-on-disable t)
   (setq ranger-dont-show-binary t)
-
-  (when (file-exists-p "~/.snippets/")
-    (add-to-list 'auto-completion-private-snippets-directory  "~/.snippets/"))
 
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
