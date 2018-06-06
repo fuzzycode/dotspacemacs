@@ -86,8 +86,13 @@
     (lsp-ui-peek-header :box "white")
     )
 
+   (solarized-light
+    (company-tooltip-selection :foreground "#d33682"))
+
    (solarized-dark
+    (company-tooltip-selection :foreground "#d33682")
 
     ;; lsp mode
-    (lsp-ui-peek-header :box "white"))
+    (lsp-ui-peek-header :box "white")
+    )
    ))
