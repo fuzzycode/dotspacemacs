@@ -28,6 +28,7 @@
 (key-chord-define-global "kk" 'just-one-space)
 (key-chord-define-global "BB" 'helm-buffers-list)
 
+(global-set-key (kbd "<A-return>") 'lsp-ui-sideline-apply-code-actions)
 
 (add-hook 'prog-mode-hook (lambda ()
                             (key-chord-define-local "ii" 'spacemacs/jump-to-definition)
