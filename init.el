@@ -39,7 +39,11 @@ values."
      ;; ----------------------------------------------------------------
 
      ;;Language layers
-     python
+     (python :variables python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t
+             python-save-before-test t
+             python-backend 'lsp)
+
      ;;django
      ;;clojure
      emacs-lisp
