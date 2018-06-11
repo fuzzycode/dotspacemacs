@@ -401,6 +401,10 @@ you should place you code here."
    version-control t
    vc-make-backup-files t)
 
+  ;; Disable lock files
+  (setq create-lockfiles nil)
+
+  (setq vc-follow-symlinks t)
   ;;Configure auto save
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
