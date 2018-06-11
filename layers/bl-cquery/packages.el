@@ -78,8 +78,9 @@ Each entry is either:
     ))
 
 (defun bl-cquery/post-init-lsp-ui ()
-  (lsp-ui-doc-mode nil)
-  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+  (with-eval-after-load 'lsp-ui
+    (lsp-ui-mode nil)
+    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)))
 
 (defun bl-cquery/post-init-company-lsp ()
   (setq company-lsp-enable-snippet t
