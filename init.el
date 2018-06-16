@@ -106,6 +106,7 @@ values."
      dash
      treemacs
      (templates :variables templates-private-directory "~/.templates")
+     sphinx
 
      ;; My private layers
      bl-git
