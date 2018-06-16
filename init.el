@@ -455,7 +455,7 @@ you should place you code here."
       (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
 
     (ispell-set-spellchecker-params)
-    (setq ispell-dictionary "british"))
+    (setq ispell-dictionary "english"))
 
   ;; Configure magit
   (add-to-list 'magit-no-confirm 'stage-all-changes)
