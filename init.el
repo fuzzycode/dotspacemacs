@@ -519,14 +519,10 @@ you should place you code here."
   (setq bidi-display-reordering nil)
 
   ;; Configure spelling
-  (with-eval-after-load "ispell"
-    ;; Use aspell as spellchecker
-    (when (executable-find "aspell")
-      (setq-default ispell-program-name "aspell")
-      (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
-
-    (ispell-set-spellchecker-params)
-    (setq ispell-dictionary "english"))
+  (when (executable-find "aspell")
+    (setq ispell-program-name "aspell")
+    (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
+  (setq ispell-dictionary "english")
 
   ;; Configure magit
   (add-to-list 'magit-no-confirm 'stage-all-changes)
