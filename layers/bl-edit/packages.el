@@ -44,8 +44,7 @@
     smartscan
     smart-comment
     smart-backspace
-    sort-words
-    rainbow-mode)
+    sort-words)
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -92,16 +91,6 @@ Each entry is either:
 (defun bl-edit/init-smart-comment ()
   (use-package smart-comment
     :init (global-set-key [remap comment-dwim] 'smart-comment)))
-
-(defun bl-edit/init-rainbow-mode ()
-  (use-package rainbow-mode
-    :defer t
-    :init (progn
-            (spacemacs|add-toggle rainbow
-              :mode rainbow-mode
-              :documentation "Enable Rainbow Mode"
-              :evil-leader "otc")
-            (rainbow-mode 1))))
 
 (defun bl-edit/init-smartscan ()
   (use-package smartscan

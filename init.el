@@ -83,6 +83,7 @@ values."
      themes-megapack
      theming
      ranger
+     colors
      (org :variables
           org-enable-github-support t)
 
