@@ -138,7 +138,9 @@ Each entry is either:
               :documentation "Enable Beacon."
               :evil-leader "otb")
             (beacon-mode bl-edit-use-beacon)
-            (spacemacs|diminish beacon-mode "" ""))))
+            (spacemacs|diminish beacon-mode "" "")
+
+            (setq beacon-dont-blink-major-modes '(eshell-mode)))))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
