@@ -478,11 +478,6 @@ you should place you code here."
 
   (global-git-commit-mode t)
 
-  ;;; Setup ycmd
-  (setq ycmd-server-command (list "python" (file-truename "~/.ycmd/ycmd")))
-  (setq ycmd-force-semantic-completion t)
-  (setq ycmd-startup-timeout 10)
-
   (setq company-minimum-prefix-length 2)
 
   ;; Automatic update of the copyright year in file headers
