@@ -166,7 +166,6 @@ Each entry is either:
 
 (defun bl-edit/init-helm-flycheck ()
   (use-package helm-flycheck
-    :ensure t
     :defer t
     :init
     (eval-after-load 'flycheck
