@@ -140,7 +140,7 @@ Each entry is either:
             (beacon-mode bl-edit-use-beacon)
             (spacemacs|diminish beacon-mode "" "")
 
-            (setq beacon-dont-blink-major-modes '(eshell-mode spacemacs-buffer-mode)))))
+            (setq beacon-dont-blink-major-modes '(eshell-mode spacemacs-buffer-mode term-mode)))))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
