@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '(magit-imerge)
+  '(magit
+    magit-imerge)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -64,5 +65,12 @@ Each entry is either:
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
     :defer t))
+
+(defun bl-git/post-init-magit ()
+  (setq git-commit-summary-max-length 50
+        git-commit-fill-column 72
+        git-commit-turn-on-flyspell t
+        git-commit-turn-on-auto-fill t))
+
 
 ;;; packages.el ends here
