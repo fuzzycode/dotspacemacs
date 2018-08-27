@@ -33,7 +33,6 @@
   '(company-qml
     company
     function-args
-    flycheck-clang-analyzer
     modern-cpp-font-lock
     (qmake-mode :location (recipe :fetcher github :repo "fuzzycode/qmake-mode"))
     (ff-c-style :location local)
@@ -110,10 +109,3 @@ Each entry is either:
     :defer t
     :commands (ff-add-c-style)
     :init (with-eval-after-load 'cc-mode (ff-add-c-style))))
-
-(defun bl-c-c++/init-flycheck-clang-analyzer ()
-  (use-package flycheck-clang-analyze
-    :defer t
-    :after flycheck
-    :config (flycheck-clang-analyzer-setup)
-    ))
