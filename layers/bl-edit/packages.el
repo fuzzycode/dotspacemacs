@@ -32,13 +32,16 @@
 (defconst bl-edit-packages
   '(all-the-icons-dired
     beacon
+    demo-it
     drag-stuff
+    fancy-narrow
     lsp-ui
     use-package-chords
     goto-last-change
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-trello
+    org-tree-slide
     visual-regexp-steroids
     visual-regexp
     smartscan
@@ -71,6 +74,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-fancy-narrow()
+  "Requirement of demo-it"
+  (use-package fabcy-narrow
+    :defer t))
+
+(defun bl-edit/init-org-tree-slide ()
+  "Requirement of demo-it"
+  (use-package org-tree-slide
+    :defer t))
+
+(defun bl-edit/init-demo-it ()
+  (use-package demo-it
+    :defer t))
 
 (defun bl-edit/init-sort-words ()
   (use-package sort-words
