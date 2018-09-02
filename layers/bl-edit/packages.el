@@ -40,7 +40,6 @@
     goto-last-change
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
-    org-trello
     org-tree-slide
     visual-regexp-steroids
     visual-regexp
@@ -130,21 +129,6 @@ Each entry is either:
   (use-package use-package-chords
     :init  (setq key-chord-two-keys-delay 0.15)
     :config (key-chord-mode t)))
-
-(defun bl-edit/init-org-trello ()
-  (use-package org-trello
-    :defer t
-    :init
-    ;; org-trello major mode for all .trello files
-    (add-to-list 'auto-mode-alist '("\\.trello$" . org-mode))
-
-    ;; add a hook function to check if this is trello file, then activate the org-trello minor mode.
-    (add-hook 'org-mode-hook
-              (lambda ()
-                (let ((filename (buffer-file-name (current-buffer))))
-                  (when (and filename (string= "trello" (file-name-extension filename)))
-                    (org-trello-mode)))))
-    ))
 
 (defun bl-edit/init-beacon ()
   (use-package beacon
