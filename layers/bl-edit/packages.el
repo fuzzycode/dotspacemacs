@@ -96,8 +96,7 @@ Each entry is either:
   (spacemacs|add-toggle lsp-ui
     :mode lsp-ui-mode
     :documentation "Enable lsp-ui."
-    :evil-leader "otu")
-  )
+    :evil-leader "otu"))
 
 (defun bl-edit/init-smart-backspace ()
   (use-package smart-backspace
@@ -141,7 +140,9 @@ Each entry is either:
             (beacon-mode bl-edit-use-beacon)
             (spacemacs|diminish beacon-mode "" "")
 
-            (setq beacon-dont-blink-major-modes '(eshell-mode spacemacs-buffer-mode term-mode)))))
+            (setq beacon-dont-blink-major-modes '(eshell-mode
+                                                  spacemacs-buffer-mode
+                                                  term-mode)))))
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
