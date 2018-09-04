@@ -68,4 +68,16 @@
 (defun bl-edit/disable-themes (&rest args)
   (bl-edit/disable-all-themes))
 
+;; Hack to workaround bug
+;; https://github.com/syl20bnr/spacemacs/issues/11058
+(defun bl-edit/semantic-remove-hooks ()
+  (remove-hook 'completion-at-point-functions
+               'semantic-analyze-completion-at-point-function)
+  (remove-hook 'completion-at-point-functions
+               'semantic-analyze-notc-completion-at-point-function)
+  (remove-hook 'completion-at-point-functions
+               'semantic-analyze-nolongprefix-completion-at-point-function))
+
+(add-hook 'semantic-mode-hook #'bl-edit/semantic-remove-hooks)
+
 ;;; funcs.el ends here
