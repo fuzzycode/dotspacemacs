@@ -504,6 +504,7 @@ you should place you code here."
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'alt)
   (setq mac-right-command-modifier nil)
+  (setq mac-right-option-modifier nil)
 
   ;; Not needed and it speeds up scrolling long lines
   (setq bidi-display-reordering nil)
