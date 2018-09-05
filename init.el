@@ -49,7 +49,9 @@ This function should only modify configuration layer settings."
      ;;django
      ;;clojure
      cmake
+     csv
      emacs-lisp
+     html
      yaml
      lua
      lsp
