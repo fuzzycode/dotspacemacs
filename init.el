@@ -486,6 +486,8 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("\\.zshrc.local\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.zshenv.local\\'" . shell-script-mode))
   (add-to-list 'auto-mode-alist '("\\.projectile\\'" . gitignore-mode))
+  (add-to-list 'auto-mode-alist '("\\.ignore\\'" . gitignore-mode))
+  (add-to-list 'auto-mode-alist '("\\.qss\\'" . css-mode))
 
   ;; Remove line highlight when in magit mode
   (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
