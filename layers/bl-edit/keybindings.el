@@ -24,7 +24,7 @@
 
 ;; Setup key chords
 (key-chord-define-global "uu" 'undo-tree-undo)
-(key-chord-define-global "jj" 'avy-goto-word-1)
+(key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
 (key-chord-define-global "kk" 'just-one-space)
 (key-chord-define-global "BB" 'helm-buffers-list)
 
