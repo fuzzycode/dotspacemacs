@@ -30,11 +30,13 @@
 ;;; Code:
 
 (defconst bl-edit-packages
-  '(all-the-icons-dired
+  '(ace-isearch
+    all-the-icons-dired
     beacon
     demo-it
     drag-stuff
     fancy-narrow
+    helm-swoop
     lsp-ui
     use-package-chords
     goto-last-change
@@ -74,7 +76,18 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun bl-edit/init-fancy-narrow()
+(defun bl-edit/init-ace-isearch ()
+  (use-package ace-isearch
+    :defer t
+    :init (global-ace-isearch-mode t)
+    :config (setq ace-isearch-jump-delay 0.5
+                  ace-isearch-function 'avy-goto-word-1)))
+
+(defun bl-edit/post-init-helm-swoop ()
+  (define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
+  (define-key helm-swoop-map (kbd "C-s") 'helm-next-line))
+
+(defun bl-edit/init-fancy-narrow ()
   "Requirement of demo-it"
   (use-package fabcy-narrow
     :defer t))
@@ -150,8 +163,8 @@ Each entry is either:
     :init (progn
             (global-set-key [remap replace-regexp] #'vr/replace)
             (global-set-key [remap query-replace-regexp] #'vr/query-replace)
-            (global-set-key [remap isearch-forward] #'vr/isearch-forward)
-            (global-set-key [remap isearch-backward] #'vr/isearch-backward)
+            ;(global-set-key [remap isearch-forward] #'vr/isearch-forward)
+            ;(global-set-key [remap isearch-backward] #'vr/isearch-backward)
 
             (global-set-key (kbd "C-c r") 'vr/replace)
             (global-set-key (kbd "C-c q") 'vr/query-replace)
