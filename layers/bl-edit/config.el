@@ -92,6 +92,9 @@
    (solarized-dark
     (company-tooltip-selection :foreground "#d33682")
 
+    ;; Misc
+    (sp-show-pair-match-face :underline t)
+
     ;; lsp mode
     (lsp-ui-peek-header :box "white")
     )
