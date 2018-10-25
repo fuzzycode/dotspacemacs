@@ -2,3 +2,6 @@ local.el
 
 #If I make custom changes to Emacs  treat them as local config
 emacs-custom.el
+
+#Ignore spacemacs environment file, use the one local to each machine
+.spacemacs.env
