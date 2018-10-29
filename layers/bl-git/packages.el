@@ -71,7 +71,9 @@ Each entry is either:
         git-commit-fill-column 72
         git-commit-turn-on-flyspell t
         git-commit-turn-on-auto-fill t)
-  (magit-wip-after-save-mode))
+  (magit-wip-after-save-mode)
 
+  (magit-define-popup-action 'magit-submodule-popup
+	  ?r "Recursive Update" 'bl-git/magit-submodule-update-recursive ?u))
 
 ;;; packages.el ends here
