@@ -70,7 +70,8 @@ Each entry is either:
   (setq git-commit-summary-max-length 50
         git-commit-fill-column 72
         git-commit-turn-on-flyspell t
-        git-commit-turn-on-auto-fill t))
+        git-commit-turn-on-auto-fill t)
+  (magit-wip-after-save-mode))
 
 
 ;;; packages.el ends here
