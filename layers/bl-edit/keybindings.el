@@ -38,3 +38,5 @@
 (global-set-key (kbd "<A-down>") 'bl-edit/top-join-line)
 
 (global-set-key (kbd "C-c u") 'undo)
+
+(spacemacs/set-leader-keys "opC" 'projectile-configure-project)
