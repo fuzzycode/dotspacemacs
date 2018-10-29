@@ -43,7 +43,6 @@
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-tree-slide
-    projectile
     visual-regexp-steroids
     visual-regexp
     smartscan
@@ -76,10 +75,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-(defun bl-edit/post-init-projectile ()
-  (setq projectile-keymap-prefix (kbd "C-x p")
-        projectile-switch-project-action #'projectile-commander))
 
 (defun bl-edit/init-ace-isearch ()
   (use-package ace-isearch

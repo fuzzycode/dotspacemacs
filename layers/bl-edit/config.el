@@ -99,3 +99,7 @@
     (lsp-ui-peek-header :box "white")
     )
    ))
+
+;; Projectile
+(setq projectile-keymap-prefix (kbd "C-x p")
+      projectile-switch-project-action #'projectile-commander)
