@@ -45,6 +45,7 @@
     org-tree-slide
     visual-regexp-steroids
     visual-regexp
+    projectile
     smartscan
     smart-comment
     smart-backspace
@@ -75,6 +76,9 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/post-init-projectile ()
+  (setq projectile-git-command "fd --color never --type file --print0"))
 
 (defun bl-edit/init-ace-isearch ()
   (use-package ace-isearch
