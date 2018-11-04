@@ -78,7 +78,8 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun bl-edit/post-init-projectile ()
-  (setq projectile-git-command "fd --color never --type file --print0"))
+  (setq projectile-git-command "fd --color never --type file --print0")
+  (setq projectile-git-submodule-command nil))
 
 (defun bl-edit/init-ace-isearch ()
   (use-package ace-isearch
