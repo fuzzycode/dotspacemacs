@@ -37,6 +37,7 @@
     drag-stuff
     fancy-narrow
     helm-swoop
+    keyfreq
     lsp-ui
     use-package-chords
     goto-last-change
@@ -76,6 +77,31 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-keyfreq ()
+  (use-package keyfreq
+    :defer t
+    :init (progn
+            (spacemacs|add-toggle key-freq
+              :status (and
+                       (bound-and-true-p keyfreq-mode)
+                       (bound-and-true-p keyfreq-autosave-mode))
+              :on (progn
+                    (keyfreq-mode 1)
+                    (keyfreq-autosave-mode 1))
+              :on-message (message "Enabling Key Frequency")
+              :off (progn
+                     (keyfreq-mode -1)
+                     (keyfreq-autosave-mode -1))
+              :off-message (message "Disabling Key Frequency")
+              :documentation "Enable Key Frequency Tracking"
+              :evil-leader "otk")
+
+            (spacemacs/toggle-key-freq-on)
+            (setq keyfreq-file (concat spacemacs-cache-directory "keyfreq.file")
+                  keyfreq-file-lock (concat spacemacs-cache-directory "keyfreq.file.lock")
+                  keyfreq-excluded-commands bl-edit-key-freq-ignore
+                  ))))
 
 (defun bl-edit/post-init-projectile ()
   (setq projectile-git-command "fd --color never --type file --print0")

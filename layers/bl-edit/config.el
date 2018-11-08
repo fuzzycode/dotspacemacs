@@ -32,6 +32,23 @@
 (defvar bl-edit-enable-abbrev-mode nil
   "Configure usage of abbreviation mode")
 
+(defvar bl-edit-key-freq-ignore '(self-insert-command
+                                  abort-recursive-edit
+                                  forward-char
+                                  backward-char
+                                  previous-line
+                                  next-line
+                                  smart-backspace
+                                  left-char
+                                  right-char
+                                  save-buffer
+                                  forward-word
+                                  backward-word
+                                  undo-tree-redo
+                                  undo-tree-undo
+                                  )
+  "Functions to ignore when calculating key-frequency")
+
 (add-hook 'after-save-hook 'bl-edit/manual-save-hook)
 
 ;; Auto close compile buffer
