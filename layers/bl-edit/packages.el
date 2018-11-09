@@ -36,6 +36,7 @@
     demo-it
     drag-stuff
     fancy-narrow
+    easy-kill
     helm-swoop
     keyfreq
     lsp-ui
@@ -77,6 +78,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-easy-kill ()
+  (use-package easy-kill
+    :ensure t
+    :config
+    (global-set-key [remap kill-ring-save] #'easy-kill)
+    (global-set-key [remap mark-sexp] #'easy-mark)))
 
 (defun bl-edit/init-keyfreq ()
   (use-package keyfreq
