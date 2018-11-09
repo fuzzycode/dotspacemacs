@@ -46,8 +46,6 @@ This function should only modify configuration layer settings."
              python-save-before-test t
              python-backend 'lsp)
 
-     ;;django
-     ;;clojure
      cmake
      csv
      emacs-lisp
@@ -55,7 +53,6 @@ This function should only modify configuration layer settings."
      yaml
      lua
      lsp
-     ;;html
      latex
      markdown
      javascript
@@ -75,7 +72,6 @@ This function should only modify configuration layer settings."
      github
 
      ;; General layers
-     ;ycmd
      bm
      spotify
      fasd
@@ -111,7 +107,6 @@ This function should only modify configuration layer settings."
               ibuffer-group-buffers-by 'projects)
      osx
      semantic
-     ;;gtags
      dash
      treemacs
      (templates :variables templates-private-directory "~/.templates")
