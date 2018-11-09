@@ -62,8 +62,11 @@ This function should only modify configuration layer settings."
      json
      shell-scripts
      (c-c++ :variables
-            c-c++-enable-clang-support t
-            c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-adopt-subprojects t
+            c-c++-lsp-sem-highlight-rainbow t
+            c-c++-lsp-sem-highlight-method 'font-lock
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-backend 'lsp-cquery)
      restructuredtext
 
      ;; Git
@@ -117,7 +120,6 @@ This function should only modify configuration layer settings."
      ;; My private layers
      bl-git
      bl-edit
-     bl-cquery
      bl-c-c++
      )
 
