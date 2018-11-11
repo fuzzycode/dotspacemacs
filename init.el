@@ -73,6 +73,7 @@ This function should only modify configuration layer settings."
 
      ;; General layers
      bm
+     mu4e
      spotify
      fasd
      (auto-completion :variables
