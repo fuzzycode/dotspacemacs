@@ -73,7 +73,31 @@ This function should only modify configuration layer settings."
 
      ;; General layers
      bm
-     mu4e
+
+     (mu4e :variables
+           mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e"
+           mu4e-headers-date-format "%Y-%m-%d %H:%M"
+           mu4e-enable-mode-line t
+           mu4e-enable-notifications t
+           mu4e-enable-async-operations t
+           mu4e-use-maildirs-extension t
+           mu4e-spacemacs-layout-name "@Mu4e"
+           mu4e-spacemacs-layout-binding "m"
+           mu4e-spacemacs-kill-layout-on-exit t
+           mu4e-view-show-images t
+           mu4e-view-show-addresses t
+           mu4e-confirm-quit nil
+
+           org-mu4e-link-query-in-headers-mode nil
+
+           mu4e-headers-fields '((:human-date    . 16)
+                                 (:flags         . 5)
+                                 (:from-or-to    . 25)
+                                 (:subject       . nil))
+
+           mu4e-view-fields '(:from :to :cc :subject :flags :date :maildir :tags :attachments)
+           )
+
      spotify
      fasd
      (auto-completion :variables
@@ -529,6 +553,16 @@ you should place you code here."
     (setq-mode-local emacs-lisp-mode
                      semanticdb-find-default-throttle
                      (default-value 'semanticdb-find-default-throttle)))
+
+  ;; Setup Mail
+  (with-eval-after-load 'mu4e-alert
+    (mu4e-alert-set-default-style 'notifier)) ;; Requires $> brew install terminal-notifier
+
+  ;; Mail composing
+  (add-hook 'mu4e-compose-mode-hook (lambda ()
+                                      (flyspell-mode-on)
+                                      (set-fill-column 72)
+                                      ))
 
     ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.local.el")
