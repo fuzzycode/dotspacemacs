@@ -1,0 +1,8 @@
+
+* Blogs                                                              :elfeed:
+** Comics                                                            :comics:
+*** http://xkcd.com/rss.xml
+** Emacs                                                              :emacs:
+*** http://planet.emacsen.org/atom.xml                                :emacs:
+*** http://endlessparentheses.com/atom.xml                            :emacs:
+*** http://whattheemacsd.com/atom.xml                                 :emacs:

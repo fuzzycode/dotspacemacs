@@ -73,6 +73,8 @@ This function should only modify configuration layer settings."
 
      ;; General layers
      bm
+     (elfeed :variables
+             rmh-elfeed-org-files (list "~/.spacemacs.d/elfeed.org"))
 
      (mu4e :variables
            mu4e-installation-path "/usr/local/share/emacs/site-lisp/mu/mu4e"
