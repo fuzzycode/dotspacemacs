@@ -60,8 +60,8 @@ This function should only modify configuration layer settings."
      shell-scripts
      (c-c++ :variables
             c-c++-adopt-subprojects t
-            c-c++-lsp-sem-highlight-rainbow t
-            c-c++-lsp-sem-highlight-method 'font-lock
+            c-c++-lsp-sem-highlight-rainbow nil
+            c-c++-lsp-sem-highlight-method 'overlay
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-backend 'lsp-cquery)
      restructuredtext
