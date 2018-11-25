@@ -118,7 +118,7 @@ This function should only modify configuration layer settings."
      colors
      (org :variables
           org-enable-github-support t
-          org-enable-trello-support t)
+          org-enable-trello-support nil)
 
      (shell :variables
             shell-default-height 30
