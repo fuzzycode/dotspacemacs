@@ -35,6 +35,7 @@
     beacon
     demo-it
     drag-stuff
+    deadgrep
     fancy-narrow
     easy-kill
     helm-swoop
@@ -78,6 +79,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-deadgrep ()
+  (use-package deadgrep
+    :defer t
+    :commands deadgrep
+    :bind ("<f12>" . deadgrep)))
 
 (defun bl-edit/init-easy-kill ()
   (use-package easy-kill
