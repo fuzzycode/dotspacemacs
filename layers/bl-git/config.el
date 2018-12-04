@@ -6,3 +6,6 @@
 
                           (setq git-commit-turn-on-flyspell t)
                           (setq git-commit-turn-on-auto-fill t)))
+
+;; Disable arrows in magit buffers
+(setq magit-section-visibility-indicator nil)
