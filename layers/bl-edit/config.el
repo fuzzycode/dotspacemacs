@@ -134,3 +134,6 @@
 
 ;; Helm
 (setq helm-buffer-max-length 45)
+
+;; Magit
+(setq magit-refs-primary-column-width '(16 . 52))
