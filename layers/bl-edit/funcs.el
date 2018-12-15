@@ -80,4 +80,9 @@
 
 (add-hook 'semantic-mode-hook #'bl-edit/semantic-remove-hooks)
 
+(defun bl-edit/newline-at-end-of-line ()
+  "Adds a new line at the end of the line"
+  (interactive)
+  (move-end-of-line 1)
+  (newline-and-indent))
 ;;; funcs.el ends here

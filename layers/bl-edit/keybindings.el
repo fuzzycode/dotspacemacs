@@ -39,4 +39,6 @@
 
 (global-set-key (kbd "C-c u") 'undo)
 
+(global-set-key (kbd "S-<return>") 'bl-edit/newline-at-end-of-line)
+
 (spacemacs/set-leader-keys "opC" 'projectile-configure-project)
