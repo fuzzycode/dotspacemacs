@@ -566,6 +566,10 @@ you should place you code here."
                                       (set-fill-column 72)
                                       ))
 
+  (with-eval-after-load 'paradox
+    (setq paradox-column-width-package 30
+          paradox-column-width-version 15))
+
     ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.local.el")
     (load "~/.spacemacs.local.el"))
