@@ -31,7 +31,8 @@
 
 (defconst bl-git-packages
   '(magit
-    magit-imerge)
+    magit-imerge
+    magit-todos)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -58,6 +59,14 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-git/init-magit-todos ()
+  (use-package magit-todos
+    :after magit
+    :config (progn
+              (setq magit-todos-recursive t
+                    magit-todos-require-colon t)
+              (magit-todos-mode 1))))
 
 (defun bl-git/post-init-gitignore-mode ()
   (add-hook 'gitignore-mode-hook 'flyspell-prog-mode))
