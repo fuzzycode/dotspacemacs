@@ -65,7 +65,7 @@ Each entry is either:
     :after magit
     :config (progn
               (setq magit-todos-recursive t
-                    magit-todos-require-colon t)
+                    magit-todos-require-colon nil)
               (magit-todos-mode 1))))
 
 (defun bl-git/post-init-gitignore-mode ()
