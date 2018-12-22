@@ -82,6 +82,26 @@ Each entry is either:
         git-commit-turn-on-auto-fill t)
   (magit-wip-after-save-mode)
 
+  (add-hook 'after-save-hook #'magit-after-save-refresh-status)
+  (add-hook 'magit-refresh-buffer-hook #'vc-refresh-state)
+
+  (with-eval-after-load 'magit
+    (magit-add-section-hook 'magit-status-sections-hook
+                            'magit-insert-modules-unpulled-from-upstream
+                            'magit-insert-unpulled-from-upstream)
+    (magit-add-section-hook 'magit-status-sections-hook
+                            'magit-insert-modules-unpulled-from-pushremote
+                            'magit-insert-unpulled-from-upstream)
+    (magit-add-section-hook 'magit-status-sections-hook
+                            'magit-insert-modules-unpushed-to-upstream
+                            'magit-insert-unpulled-from-upstream)
+    (magit-add-section-hook 'magit-status-sections-hook
+                            'magit-insert-modules-unpushed-to-pushremote
+                            'magit-insert-unpulled-from-upstream)
+    (magit-add-section-hook 'magit-status-sections-hook
+                            'magit-insert-modules-overview
+                            'magit-insert-unpulled-from-upstream))
+
   (magit-define-popup-action 'magit-submodule-popup
 	  ?r "Recursive Update" 'bl-git/magit-submodule-update-recursive ?u))
 
