@@ -149,8 +149,8 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(f ;emacs-ycmd depends on f but it is not properly listed as a dependency
-                                      )
+   dotspacemacs-additional-packages '()
+
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(firebelly-theme niflheim-theme pastels-on-dark-theme tronesque-theme zonokai-theme)
    ;; Defines the behaviour of Spacemacs when installing packages.
