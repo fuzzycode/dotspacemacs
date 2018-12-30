@@ -152,9 +152,6 @@ Each entry is either:
     :defer t))
 
 (defun bl-edit/post-init-lsp-ui ()
-  (with-eval-after-load 'lsp-ui
-    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
-
   (spacemacs|add-toggle lsp-ui
     :mode lsp-ui-mode
     :documentation "Enable lsp-ui."

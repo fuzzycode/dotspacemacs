@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
      html
      yaml
      lua
-     lsp
+     (lsp :variables lsp-remap-xref-keybindings t)
      latex
      markdown
      javascript
