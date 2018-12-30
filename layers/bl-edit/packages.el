@@ -39,6 +39,7 @@
     fancy-narrow
     easy-kill
     helm-swoop
+    highlight-doxygen
     keyfreq
     lsp-ui
     use-package-chords
@@ -79,6 +80,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-highlight-doxygen ()
+  (use-package highlight-doxygen
+    :ensure t
+    :config (highlight-doxygen-global-mode 1)))
 
 (defun bl-edit/init-deadgrep ()
   (use-package deadgrep
