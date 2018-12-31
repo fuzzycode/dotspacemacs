@@ -63,10 +63,10 @@ Each entry is either:
 (defun bl-git/init-magit-todos ()
   (use-package magit-todos
     :after magit
+    :hook (magit-mode . magit-todos-mode)
     :config (progn
               (setq magit-todos-recursive t
-                    magit-todos-require-colon nil)
-              (magit-todos-mode 1))))
+                    magit-todos-require-colon nil))))
 
 (defun bl-git/post-init-gitignore-mode ()
   (add-hook 'gitignore-mode-hook 'flyspell-prog-mode))
