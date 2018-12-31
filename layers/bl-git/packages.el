@@ -75,9 +75,6 @@ Each entry is either:
               (setq magit-todos-recursive t
                     magit-todos-require-colon nil))))
 
-(defun bl-git/post-init-gitignore-mode ()
-  (add-hook 'gitignore-mode-hook 'flyspell-prog-mode))
-
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
     :defer t))
