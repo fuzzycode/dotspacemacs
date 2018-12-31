@@ -32,7 +32,8 @@
 (defconst bl-git-packages
   '(magit
     magit-imerge
-    magit-todos)
+    magit-todos
+    rigid-tabs)
   "The list of Lisp packages required by the bl-git layer.
 
 Each entry is either:
@@ -59,6 +60,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-git/init-rigid-tabs ()
+  (use-package rigid-tabs
+    :defer t
+    :hook ((diff-mode-hook . rigid-tabs-diff-align)
+           (magit-refresh-buffer-hook . rigid-tabs-diff-align))))
 
 (defun bl-git/init-magit-todos ()
   (use-package magit-todos
