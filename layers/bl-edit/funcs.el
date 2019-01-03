@@ -1,6 +1,6 @@
 ;;; funcs.el --- bl-edit layer functions file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -85,4 +85,32 @@
   (interactive)
   (move-end-of-line 1)
   (newline-and-indent))
+
+
+(defun bl-edit/run-current-file ()
+  "http://ergoemacs.org/emacs/elisp_run_current_file.html"
+  (interactive)
+
+  (when (not (buffer-file-name)) (save-buffer))
+  (when (buffer-modified-p) (save-buffer))
+
+  (let* ((resize-mini-windows nil)
+         (_fname (buffer-file-name))
+         (_output (get-buffer-create (format "*run: %s*" _fname)))
+         (_fsuffix (file-name-extension _fname))
+         (_suffix-map '(
+                        ("py" . "python")
+                        ("sh" . "bash")))
+         (_program (cdr (assoc _fsuffix _suffix-map)))
+         (_cmd (concat _program " \"" _fname "\"")))
+
+    (cond
+     ((string-equal _fsuffix "el")
+      (load _fname))
+     (t (if _program
+            (progn
+              (message "Running current file")
+              (async-shell-command _cmd _output))
+          (error (format "No executor available for file suffix %s" _fsuffix)))))))
+
 ;;; funcs.el ends here

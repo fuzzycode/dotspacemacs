@@ -42,3 +42,8 @@
 (global-set-key (kbd "S-<return>") 'bl-edit/newline-at-end-of-line)
 
 (spacemacs/set-leader-keys "opC" 'projectile-configure-project)
+
+(dolist (hook '(python-mode-hook sh-mode-hook))
+        (add-hook hook
+                  (lambda ()
+                    (local-set-key (kbd "<f5>") 'bl-edit/run-current-file))))
