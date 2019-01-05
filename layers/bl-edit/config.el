@@ -104,7 +104,10 @@
     )
 
    (solarized-light
-    (company-tooltip-selection :foreground "#d33682"))
+    (company-tooltip-selection :foreground "#d33682")
+
+    ;; Misc
+    (sp-show-pair-match-face :underline t))
 
    (solarized-dark
     (company-tooltip-selection :foreground "#d33682")
