@@ -531,6 +531,7 @@ you should place you code here."
 
   ;; Not needed and it speeds up scrolling long lines
   (setq bidi-display-reordering nil)
+  (setq inhibit-compacting-font-caches t)
 
   ;; Configure spelling
   (when (executable-find "aspell")
