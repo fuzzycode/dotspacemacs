@@ -483,6 +483,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
+  ;; TODO: Remove this when melpa version is fixed
+  (push '("melpa-stable" . "https://stable.melpa.org/packages/") package-archives)
+  (use-package spaceline :ensure t :pin melpa-stable)
+
   ;; Disable lock files
   (setq create-lockfiles nil)
 
