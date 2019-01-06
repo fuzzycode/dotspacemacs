@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-git layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <bjornlarsson@MacBookPro>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -83,11 +83,19 @@ Each entry is either:
   (setq git-commit-summary-max-length 50
         git-commit-fill-column 72
         git-commit-turn-on-flyspell t
-        git-commit-turn-on-auto-fill t)
+        git-commit-turn-on-auto-fill t
+        magit-wip-merge-branch t)
+
   (magit-wip-after-save-mode)
 
-  (add-hook 'after-save-hook #'magit-after-save-refresh-status)
   (add-hook 'magit-refresh-buffer-hook #'vc-refresh-state)
+
+  ;; Remove line highlight when in magit mode
+  (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
+
+  (add-to-list 'magit-no-confirm 'stage-all-changes)
+  (add-to-list 'magit-no-confirm 'trash)
+  (add-to-list 'magit-no-confirm 'safe-with-wip)
 
   (with-eval-after-load 'magit
     (magit-add-section-hook 'magit-status-sections-hook

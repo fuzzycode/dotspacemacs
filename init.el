@@ -513,9 +513,6 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("\\.ignore\\'" . gitignore-mode))
   (add-to-list 'auto-mode-alist '("\\.qss\\'" . css-mode))
 
-  ;; Remove line highlight when in magit mode
-  (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
-
   ;; Configure ranger
   (setq ranger-override-dired t)
   (setq ranger-cleanup-on-disable t)
@@ -540,9 +537,6 @@ you should place you code here."
     (setq ispell-program-name "aspell")
     (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
   (setq ispell-dictionary "english")
-
-  ;; Configure magit
-  (add-to-list 'magit-no-confirm 'stage-all-changes)
 
   ;; Projectile
   (setq projectile-enable-caching nil)
