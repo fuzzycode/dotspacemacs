@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-c-c++ layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -64,6 +64,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-flycheck-clang-analyzer ()
+  (use-package flycheck-clang-analyzer
+    :after flycheck
+    :config (flycheck-clang-analyzer-setup)))
+
+(defun bl-c-c++/init-flycheck-clang-tidy ()
+  (use-package flycheck-clang-tidy
+    :after flycheck-clang-analyzer
+    :config (progn
+              (flycheck-clang-tidy-setup)
+              (flycheck-add-next-checker 'clang-analyzer '(warning . c/c++-clang-tidy))
+              (flycheck-add-next-checker 'c/c++-clang-tidy '(warning . c/c++-cppcheck))
+              )))
 
 (defun bl-c-c++/init-function-args ()
   (use-package function-args
