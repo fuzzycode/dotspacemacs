@@ -1,6 +1,6 @@
 ;;; config.el --- bl-edit layer configuration file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -85,6 +85,17 @@
 
 (when window-system
   (bl-edit/remove-mode-line-box))
+
+;; Make more room for the file name in the error list
+(with-eval-after-load 'flycheck
+  (setq flycheck-error-list-format `[("File" 25)
+                                    ("Line" 5 flycheck-error-list-entry-< :right-align t)
+                                    ("Col" 3 nil :right-align t)
+                                    ("Level" 8 flycheck-error-list-entry-level-<)
+                                    ("ID" 6 t)
+                                    (#("Message (Checker)" 9 16
+                                       (face flycheck-error-list-checker-name))
+                                     0 t)]))
 
 ;; Theme modifications
 (setq-default
