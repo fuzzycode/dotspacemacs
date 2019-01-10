@@ -70,10 +70,10 @@ Each entry is either:
 (defun bl-git/init-magit-todos ()
   (use-package magit-todos
     :after magit
-    :hook (magit-mode . magit-todos-mode)
     :config (progn
               (setq magit-todos-recursive t
-                    magit-todos-require-colon nil))))
+                    magit-todos-require-colon nil)
+              (magit-todos-mode))))
 
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
