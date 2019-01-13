@@ -107,7 +107,8 @@ Each entry is either:
 
 (defun bl-c-c++/post-init-projectile ()
   (with-eval-after-load 'cc-mode
-    (define-key c-mode-base-map (kbd "<A-tab>") (function projectile-find-other-file))))
+    (define-key c-mode-base-map (kbd "<A-tab>") (function projectile-find-other-file))
+    (define-key c-mode-base-map (kbd "<C-tab>") (function projectile-find-other-file-other-window))))
 
 (defun bl-c-c++/init-modern-cpp-font-lock ()
   (use-package modern-cpp-font-lock
