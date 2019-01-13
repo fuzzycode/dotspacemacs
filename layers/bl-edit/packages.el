@@ -1,6 +1,6 @@
 ;;; packages.el --- bl-edit layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2018 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2019 Sylvain Benner & Contributors
 ;;
 ;; Author: Björn Larsson <develop@bjornlarsson.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -33,6 +33,7 @@
   '(ace-isearch
     all-the-icons-dired
     beacon
+    beginend
     demo-it
     drag-stuff
     deadgrep
@@ -80,6 +81,12 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-beginend ()
+  (use-package beginend
+    :ensure t
+    :diminish beginend-global-mode
+    :config (beginend-global-mode 1)))
 
 (defun bl-edit/init-highlight-doxygen ()
   (use-package highlight-doxygen
