@@ -35,6 +35,7 @@
     function-args
     (flycheck-clang-analyzer :location (recipe :fetcher github :repo "fuzzycode/flycheck-clang-analyzer"))
     (flycheck-clang-tidy :location (recipe :fetcher github :repo "fuzzycode/flycheck-clang-tidy"))
+    (flycheck-rats :location (recipe :fetcher github :repo "fuzzycode/flycheck-rats"))
     modern-cpp-font-lock
     (qmake-mode :location (recipe :fetcher github :repo "fuzzycode/qmake-mode"))
     (ff-c-style :location local)
@@ -77,8 +78,15 @@ Each entry is either:
     :after flycheck-clang-analyzer
     :config (progn
               (flycheck-clang-tidy-setup)
-              (flycheck-add-next-checker 'clang-analyzer '(warning . c/c++-clang-tidy))
-              (flycheck-add-next-checker 'c/c++-clang-tidy '(warning . c/c++-cppcheck)))))
+              (flycheck-add-next-checker 'clang-analyzer '(error . c/c++-clang-tidy))
+              (flycheck-add-next-checker 'c/c++-clang-tidy '(error . c/c++-cppcheck)))))
+
+(defun bl-c-c++/init-flycheck-rats ()
+  (use-package flycheck-rats
+    :after flycheck-clang-tidy
+    :config (progn
+              (flycheck-rats-setup)
+					    (flycheck-add-next-checker 'c/c++-cppcheck '(error . rats)))))
 
 (defun bl-c-c++/init-function-args ()
   (use-package function-args
