@@ -114,11 +114,8 @@ Each entry is either:
 (defun bl-c-c++/init-modern-cpp-font-lock ()
   (use-package modern-cpp-font-lock
     :defer t
-    :init
-    (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
-    :config
-    (spacemacs|diminish modern-c++-font-lock-mode)
-    ))
+    :init (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
+    :config (spacemacs|diminish modern-c++-font-lock-mode)))
 
 (defun bl-c-c++/init-ff-c-style ()
   (use-package ff-c-style
