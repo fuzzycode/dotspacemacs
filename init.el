@@ -63,7 +63,9 @@ This function should only modify configuration layer settings."
             c-c++-lsp-sem-highlight-rainbow nil
             c-c++-lsp-sem-highlight-method 'font-lock
             c-c++-default-mode-for-headers 'c++-mode
-            c-c++-backend 'lsp-cquery)
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-cache-dir ".lsp-cache"
+            c-c++-lsp-executable "/usr/local/bin/ccls")
      restructuredtext
 
      ;; Git
