@@ -135,7 +135,8 @@ This function should only modify configuration layer settings."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      osx
-     semantic
+     ;; TODO(Björn Larsson): Consider re-adding when https://github.com/syl20bnr/spacemacs/pull/11511 is merged.
+     ;;semantic
      dash
      treemacs
      (templates :variables templates-private-directory "~/.templates")
