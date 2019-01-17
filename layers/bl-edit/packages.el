@@ -43,6 +43,7 @@
     highlight-doxygen
     keyfreq
     lsp-ui
+    lsp-mode
     use-package-chords
     goto-last-change
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
@@ -169,6 +170,11 @@ Each entry is either:
     :mode lsp-ui-mode
     :documentation "Enable lsp-ui."
     :evil-leader "otu"))
+
+(defun bl-edit/post-init-lsp-mode ()
+  ;; Disable eldoc
+  (setq lsp-eldoc-enable-signature-help nil)
+  (setq lsp-eldoc-enable-hover nil))
 
 (defun bl-edit/init-smart-backspace ()
   (use-package smart-backspace
