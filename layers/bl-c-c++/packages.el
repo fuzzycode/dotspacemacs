@@ -115,9 +115,10 @@ Each entry is either:
   (setq company-idle-delay 0.2))
 
 (defun bl-c-c++/post-init-projectile ()
-  (when c-c++-adopt-subprojects
-    ;; https://www.bountysource.com/issues/11208594-use-only-topmost-git-as-project
-    (cl-nsubstitute ".git/" ".git" projectile-project-root-files-bottom-up :test #'string=))
+  (with-eval-after-load 'projectile
+    (when c-c++-adopt-subprojects
+      ;; https://www.bountysource.com/issues/11208594-use-only-topmost-git-as-project
+      (cl-nsubstitute ".git/" ".git" projectile-project-root-files-bottom-up :test #'string=)))
 
   (with-eval-after-load 'cc-mode
     (define-key c-mode-base-map (kbd "<A-tab>") (function projectile-find-other-file))
