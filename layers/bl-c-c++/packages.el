@@ -78,15 +78,15 @@ Each entry is either:
     :after flycheck-clang-analyzer
     :config (progn
               (flycheck-clang-tidy-setup)
-              (flycheck-add-next-checker 'clang-analyzer '(error . c/c++-clang-tidy))
-              (flycheck-add-next-checker 'c/c++-clang-tidy '(error . c/c++-cppcheck)))))
+              (flycheck-add-next-checker 'clang-analyzer '(t . c/c++-clang-tidy))
+              (flycheck-add-next-checker 'c/c++-clang-tidy '(t . c/c++-cppcheck)))))
 
 (defun bl-c-c++/init-flycheck-rats ()
   (use-package flycheck-rats
     :after flycheck-clang-tidy
     :config (progn
               (flycheck-rats-setup)
-					    (flycheck-add-next-checker 'c/c++-cppcheck '(error . rats)))))
+					    (flycheck-add-next-checker 'c/c++-cppcheck '(t . rats)))))
 
 (defun bl-c-c++/init-function-args ()
   (use-package function-args
