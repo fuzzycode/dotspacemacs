@@ -49,6 +49,7 @@
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
     org-tree-slide
+    org-make-toc
     visual-regexp-steroids
     visual-regexp
     projectile
@@ -156,6 +157,11 @@ Each entry is either:
   "Requirement of demo-it"
   (use-package org-tree-slide
     :defer t))
+
+(defun bl-edit/init-org-make-toc ()
+  (use-package org-make-toc
+    :defer t
+    :hook org-mode))
 
 (defun bl-edit/init-demo-it ()
   (use-package demo-it
