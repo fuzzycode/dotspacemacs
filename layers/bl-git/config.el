@@ -9,3 +9,10 @@
 
 ;; Disable arrows in magit buffers
 (setq magit-section-visibility-indicator nil)
+
+(with-eval-after-load 'magit
+  (magit-define-popup-switch 'magit-fetch-popup
+                             ?P "Prune tags" "--prune-tags")
+
+  (magit-define-popup-switch 'magit-fetch-popup
+                             ?t "Fetch tags" "--tags"))
