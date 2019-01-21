@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
 
      cmake
      csv
+     docker
      emacs-lisp
      html
      yaml
