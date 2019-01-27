@@ -104,6 +104,7 @@ This function should only modify configuration layer settings."
            )
 
      spotify
+     pandoc
      fasd
      (auto-completion :variables
                       auto-completion-return-key-behavior nil
