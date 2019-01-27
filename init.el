@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      dap
      emacs-lisp
      html
+     imenu-list
      yaml
      lua
      (lsp :variables lsp-remap-xref-keybindings t)
