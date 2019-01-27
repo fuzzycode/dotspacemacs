@@ -49,6 +49,7 @@ This function should only modify configuration layer settings."
      cmake
      csv
      docker
+     dap
      emacs-lisp
      html
      yaml
