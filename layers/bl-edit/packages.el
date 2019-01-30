@@ -135,7 +135,11 @@ Each entry is either:
 
 (defun bl-edit/post-init-projectile ()
   (setq projectile-git-command "fd --color never --type file --print0")
-  (setq projectile-git-submodule-command nil))
+  (setq projectile-git-submodule-command nil)
+  (setq projectile-enable-caching nil)
+
+  (add-to-list 'projectile-project-root-files "compile_commands.json")
+  (add-to-list 'projectile-project-root-files ".ccls"))
 
 (defun bl-edit/init-ace-isearch ()
   (use-package ace-isearch

@@ -555,9 +555,6 @@ you should place you code here."
     (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
   (setq ispell-dictionary "english")
 
-  ;; Projectile
-  (setq projectile-enable-caching nil)
-
   ;; Make sure that semantic does not go crazy on elisp comments
   ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
   (use-package semantic
