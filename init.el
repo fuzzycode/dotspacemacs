@@ -123,6 +123,7 @@ This function should only modify configuration layer settings."
      ranger
      colors
      (org :variables
+          org-projectile-file "notes.org"
           org-enable-github-support t
           org-enable-trello-support nil)
 
@@ -577,6 +578,14 @@ you should place you code here."
   (with-eval-after-load 'paradox
     (setq paradox-column-width-package 30
           paradox-column-width-version 15))
+
+  ;; Org-mode
+  (with-eval-after-load 'org-agenda
+    (require 'org-projectile)
+    (mapcar '(lambda (file)
+               (when (file-exists-p file)
+                 (push file org-agenda-files)))
+            (org-projectile-todo-files)))
 
     ;;; Load local config file if present
   (when (file-exists-p "~/.spacemacs.local.el")
