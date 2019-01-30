@@ -120,7 +120,10 @@ This function should only modify configuration layer settings."
      better-defaults
      themes-megapack
      theming
-     ranger
+     (ranger :variables
+             ranger-override-dired t
+             ranger-cleanup-on-disable t
+             ranger-dont-show-binary t)
      colors
      (org :variables
           org-projectile-file "notes.org"
@@ -529,11 +532,6 @@ you should place you code here."
   (add-to-list 'auto-mode-alist '("\\.projectile\\'" . gitignore-mode))
   (add-to-list 'auto-mode-alist '("\\.ignore\\'" . gitignore-mode))
   (add-to-list 'auto-mode-alist '("\\.qss\\'" . css-mode))
-
-  ;; Configure ranger
-  (setq ranger-override-dired t)
-  (setq ranger-cleanup-on-disable t)
-  (setq ranger-dont-show-binary t)
 
   (add-hook 'after-save-hook
             'executable-make-buffer-file-executable-if-script-p)
