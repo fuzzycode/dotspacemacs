@@ -131,9 +131,6 @@
     )
    ))
 
-;; Projectile
-(setq projectile-keymap-prefix (kbd "C-x p"))
-
 ;; IBuffer
 (setq ibuffer-formats '((mark modified read-only locked " "
                               (name 35 35 :left :elide)

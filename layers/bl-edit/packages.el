@@ -137,6 +137,7 @@ Each entry is either:
   (setq projectile-git-command "fd --color never --type file --print0")
   (setq projectile-git-submodule-command nil)
   (setq projectile-enable-caching nil)
+  (setq projectile-keymap-prefix (kbd "C-x p"))
 
   (with-eval-after-load 'projectile
     (add-to-list 'projectile-project-root-files "compile_commands.json")
