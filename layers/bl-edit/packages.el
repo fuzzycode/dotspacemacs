@@ -154,7 +154,7 @@ Each entry is either:
 
 (defun bl-edit/init-fancy-narrow ()
   "Requirement of demo-it"
-  (use-package fabcy-narrow
+  (use-package fancy-narrow
     :defer t))
 
 (defun bl-edit/init-org-tree-slide ()
