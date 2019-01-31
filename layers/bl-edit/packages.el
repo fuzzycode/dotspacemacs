@@ -34,6 +34,7 @@
     all-the-icons-dired
     beacon
     beginend
+    comment-dwim-2
     demo-it
     drag-stuff
     deadgrep
@@ -83,6 +84,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-comment-dwim-2 ()
+  (use-package comment-dwim-2
+    :defer t
+    :bind ("M-;" . comment-dwim-2)))
 
 (defun bl-edit/init-beginend ()
   (use-package beginend
