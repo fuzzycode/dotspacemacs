@@ -148,3 +148,4 @@
 
 ;; Magit
 (setq magit-refs-primary-column-width '(16 . 52))
+(setq magit-process-finish-apply-ansi-colors t)
