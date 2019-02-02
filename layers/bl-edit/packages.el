@@ -91,12 +91,14 @@ Each entry is either:
 
 (defun bl-edit/init-beginend ()
   (use-package beginend
+    :defer 5
     :ensure t
     :diminish beginend-global-mode
     :config (beginend-global-mode 1)))
 
 (defun bl-edit/init-highlight-doxygen ()
   (use-package highlight-doxygen
+    :defer 6
     :ensure t
     :config (highlight-doxygen-global-mode 1)))
 
@@ -195,9 +197,9 @@ Each entry is either:
 
 (defun bl-edit/init-smart-backspace ()
   (use-package smart-backspace
+    :defer 2
     :init (progn
             (global-set-key  [remap backward-delete-char-untabify] 'smart-backspace))))
-
 
 (defun bl-edit/init-smartscan ()
   (use-package smartscan
@@ -223,7 +225,7 @@ Each entry is either:
 
 (defun bl-edit/init-beacon ()
   (use-package beacon
-    :defer t
+    :defer 5
     :init (progn
             (spacemacs|add-toggle beacon
               :mode beacon-mode
@@ -251,7 +253,7 @@ Each entry is either:
 
 (defun bl-edit/init-visual-regexp ()
   (use-package visual-regexp
-    :defer t))
+    :defer 10))
 
 (defun bl-edit/init-goto-last-change()
   (use-package goto-last-change
