@@ -54,6 +54,7 @@
     visual-regexp-steroids
     visual-regexp
     projectile
+    proced
     smartscan
     smart-backspace
     sort-words)
@@ -83,6 +84,14 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-proced ()
+  (use-package proced
+    :defer t
+    :config
+    (progn
+      (setq proced-auto-update-interval 1)
+      (add-hook 'proced-mode-hook (lambda () (proced-toggle-auto-update +1))))))
 
 (defun bl-edit/init-comment-dwim-2 ()
   (use-package comment-dwim-2
