@@ -37,6 +37,7 @@
     (flycheck-clang-tidy :location (recipe :fetcher github :repo "fuzzycode/flycheck-clang-tidy"))
     (flycheck-rats :location (recipe :fetcher github :repo "fuzzycode/flycheck-rats"))
     flycheck-flawfinder
+    (helm-lsp :location (recipe :fetcher github :repo "yyoncho/helm-lsp"))
     modern-cpp-font-lock
     (qmake-mode :location (recipe :fetcher github :repo "fuzzycode/qmake-mode"))
     (ff-c-style :location local)
@@ -68,6 +69,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-c-c++/init-helm-lsp ()
+  (use-package helm-lsp
+    :after lsp-mode
+    :bind (:map prog-mode-map ("C-x C-j" . helm-lsp-workspace-symbol))))
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
   (use-package flycheck-clang-analyzer
