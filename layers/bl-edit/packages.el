@@ -96,7 +96,7 @@ Each entry is either:
 (defun bl-edit/init-comment-dwim-2 ()
   (use-package comment-dwim-2
     :defer t
-    :bind ("M-;" . comment-dwim-2)))
+    :bind ([remap comment-dwim] . comment-dwim-2)))
 
 (defun bl-edit/init-beginend ()
   (use-package beginend
@@ -182,8 +182,7 @@ Each entry is either:
 
 (defun bl-edit/init-org-make-toc ()
   (use-package org-make-toc
-    :defer t
-    :hook org-mode))
+    :defer t))
 
 (defun bl-edit/init-demo-it ()
   (use-package demo-it
@@ -249,12 +248,10 @@ Each entry is either:
 
 (defun bl-edit/init-visual-regexp-steroids ()
   (use-package visual-regexp-steroids
-    :defer t
+    :after visual-regexp
     :init (progn
             (global-set-key [remap replace-regexp] #'vr/replace)
             (global-set-key [remap query-replace-regexp] #'vr/query-replace)
-            ;(global-set-key [remap isearch-forward] #'vr/isearch-forward)
-            ;(global-set-key [remap isearch-backward] #'vr/isearch-backward)
 
             (global-set-key (kbd "C-c r") 'vr/replace)
             (global-set-key (kbd "C-c q") 'vr/query-replace)

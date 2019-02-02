@@ -12,10 +12,6 @@
 (define-key evil-normal-state-map "\C-p" 'evil-previous-line)
 (define-key evil-visual-state-map "\C-p" 'evil-previous-line)
 
-(spacemacs/set-leader-keys "xws" 'bl-edit/sort-words)
-
-(global-set-key (kbd "<f2>") 'flyspell-correct-previous-word-generic)
-
 (add-hook 'c-mode-common-hook
           (lambda ()
             (local-set-key (kbd "<f5>") 'projectile-run-project)
@@ -29,10 +25,6 @@
 (key-chord-define-global "BB" 'helm-buffers-list)
 
 (global-set-key (kbd "<A-return>") 'lsp-ui-sideline-apply-code-actions)
-
-(add-hook 'prog-mode-hook (lambda ()
-                            (key-chord-define-local "ii" 'spacemacs/jump-to-definition)
-                            (key-chord-define-local "jb" 'evil-jump-backward)))
 
 (global-set-key (kbd "<A-up>") 'join-line)
 (global-set-key (kbd "<A-down>") 'bl-edit/top-join-line)
