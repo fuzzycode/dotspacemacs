@@ -55,7 +55,6 @@
     visual-regexp
     projectile
     smartscan
-    smart-comment
     smart-backspace
     sort-words)
   "The list of Lisp packages required by the bl-edit layer.
@@ -199,9 +198,6 @@ Each entry is either:
     :init (progn
             (global-set-key  [remap backward-delete-char-untabify] 'smart-backspace))))
 
-(defun bl-edit/init-smart-comment ()
-  (use-package smart-comment
-    :init (global-set-key [remap comment-dwim] 'smart-comment)))
 
 (defun bl-edit/init-smartscan ()
   (use-package smartscan
