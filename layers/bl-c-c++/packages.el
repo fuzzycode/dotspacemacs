@@ -76,20 +76,24 @@ Each entry is either:
     :bind (:map prog-mode-map ("C-x C-j" . helm-lsp-workspace-symbol))))
 
 (defun bl-c-c++/init-flycheck-clang-analyzer ()
+  "Disabled for now. clang-tidy will report the same issues"
   (use-package flycheck-clang-analyzer
+    :disabled t
     :after flycheck
     :config (flycheck-clang-analyzer-setup)))
 
 (defun bl-c-c++/init-flycheck-clang-tidy ()
   (use-package flycheck-clang-tidy
-    :after flycheck-clang-analyzer
+    :after lsp-ui-flycheck
     :config (progn
               (flycheck-clang-tidy-setup)
-              (flycheck-add-next-checker 'clang-analyzer '(t . c/c++-clang-tidy))
+              (flycheck-add-next-checker 'lsp-ui '(t . c/c++-clang-tidy))
               (flycheck-add-next-checker 'c/c++-clang-tidy '(t . c/c++-cppcheck)))))
 
 (defun bl-c-c++/init-flycheck-rats ()
+  "Disabled. flawfinder finds similar issues."
   (use-package flycheck-rats
+    :disabled t
     :after flycheck-clang-tidy
     :config (progn
               (flycheck-rats-setup)
@@ -97,10 +101,10 @@ Each entry is either:
 
 (defun bl-c-c++/init-flycheck-flawfinder ()
   (use-package flycheck-flawfinder
-    :after flycheck-rats
+    :after flycheck-clang-tidy
     :config (progn
 	            (flycheck-flawfinder-setup)
-	            (flycheck-add-next-checker 'rats '(t . flawfinder)))))
+	            (flycheck-add-next-checker 'c/c++-cppcheck '(t . flawfinder)))))
 
 (defun bl-c-c++/init-function-args ()
   (use-package function-args
