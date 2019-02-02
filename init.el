@@ -92,8 +92,11 @@ This function should only modify configuration layer settings."
            mu4e-spacemacs-layout-binding "m"
            mu4e-spacemacs-kill-layout-on-exit t
            mu4e-view-show-images t
+           mu4e-show-images t
            mu4e-view-show-addresses t
            mu4e-confirm-quit nil
+           mu4e-update-interval (* 60 5)
+           mu4e-get-mail-command "timeout 60 offlineimap"
 
            org-mu4e-link-query-in-headers-mode nil
 
