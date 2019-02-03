@@ -41,6 +41,7 @@
     fancy-narrow
     easy-kill
     helm-swoop
+    helpful
     highlight-doxygen
     keyfreq
     lsp-ui
@@ -84,6 +85,20 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+
+(defun bl-edit/init-helpful ()
+  (use-package helpful
+    :defer 5
+    :bind (([remap describe-variable] . helpful-variable)
+           ([remap describe-key] . helpful-key)
+           ([remap describe-function] . helpful-callable))
+
+    ; TODO(Björn Larsson): Find a way to not hard-code the keys
+    :config (spacemacs/set-leader-keys "hdf" 'helpful-callable)
+    (spacemacs/set-leader-keys "hdk" 'helpful-key)
+    (spacemacs/set-leader-keys "hdv" 'helpful-variable)))
+
 
 (defun bl-edit/init-proced ()
   (use-package proced
