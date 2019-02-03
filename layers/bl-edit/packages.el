@@ -35,7 +35,6 @@
     beacon
     beginend
     comment-dwim-2
-    demo-it
     drag-stuff
     deadgrep
     fancy-narrow
@@ -50,8 +49,6 @@
     goto-last-change
     (helm-flycheck :toggle (configuration-layer/package-usedp 'helm))
     (helm-describe-modes :toggle (configuration-layer/package-usedp 'helm))
-    org-tree-slide
-    org-make-toc
     visual-regexp-steroids
     visual-regexp
     projectile
@@ -188,19 +185,6 @@ Each entry is either:
 (defun bl-edit/init-fancy-narrow ()
   "Requirement of demo-it"
   (use-package fancy-narrow
-    :defer t))
-
-(defun bl-edit/init-org-tree-slide ()
-  "Requirement of demo-it"
-  (use-package org-tree-slide
-    :defer t))
-
-(defun bl-edit/init-org-make-toc ()
-  (use-package org-make-toc
-    :defer t))
-
-(defun bl-edit/init-demo-it ()
-  (use-package demo-it
     :defer t))
 
 (defun bl-edit/init-sort-words ()

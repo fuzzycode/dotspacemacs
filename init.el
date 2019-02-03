@@ -155,6 +155,7 @@ This function should only modify configuration layer settings."
 
      ;; My private layers
      bl-git
+     bl-org
      bl-edit
      bl-c-c++
      )
