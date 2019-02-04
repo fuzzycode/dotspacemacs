@@ -70,10 +70,12 @@ Each entry is either:
 (defun bl-git/init-magit-todos ()
   (use-package magit-todos
     :after magit
-    :config (progn
-              (setq magit-todos-recursive t
-                    magit-todos-require-colon nil)
-              (magit-todos-mode))))
+    :config
+    (setq magit-todos-recursive t
+          magit-todos-require-colon nil)
+    (custom-set-variables
+     '(magit-todos-keywords (list "TODO(Björn Larsson)" "HACK" "FIXME" "XXX" "???")))
+    (magit-todos-mode)))
 
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
