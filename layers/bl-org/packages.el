@@ -32,7 +32,8 @@
 (defconst bl-org-packages
   '( demo-it
      org-tree-slide
-     org-make-toc)
+     org-make-toc
+     org-projectile)
 
   "The list of Lisp packages required by the bl-org layer.
 
@@ -61,6 +62,18 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defvar bl-org/created-property-string "
+  :PROPERTIES:
+  :CREATED: %U
+  :END:")
+
+;;https://ivanmalison.github.io/dotfiles/#addfilestoorgagendafiles
+(defun bl-org/add-to-org-agenda-files (incoming-files)
+  (setq org-agenda-files
+        (delete-dups
+         (cl-loop for filepath in (append org-agenda-files incoming-files)
+                  when (and filepath (file-exists-p (file-truename filepath)))
+                  collect (file-truename filepath)))))
 
 (defun bl-org/init-org-tree-slide ()
   "Requirement of demo-it"
@@ -75,5 +88,9 @@ Each entry is either:
   (use-package demo-it
     :defer t))
 
+(defun bl-org/post-init-org-projectile ()
+  (with-eval-after-load 'org-projectile
+    (setq org-projectile-capture-template (format "%s%s" "* TODO %?" bl-org/created-property-string))
+    (bl-org/add-to-org-agenda-files (org-projectile-todo-files))))
 
 ;;; packages.el ends here
