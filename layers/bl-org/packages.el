@@ -31,9 +31,11 @@
 
 (defconst bl-org-packages
   '( demo-it
+     org-fancy-priorities
      org-tree-slide
      org-make-toc
-     org-projectile)
+     org-projectile
+     org-super-agenda)
 
   "The list of Lisp packages required by the bl-org layer.
 
@@ -92,5 +94,17 @@ Each entry is either:
   (with-eval-after-load 'org-projectile
     (setq org-projectile-capture-template (format "%s%s" "* TODO %?" bl-org/created-property-string))
     (bl-org/add-to-org-agenda-files (org-projectile-todo-files))))
+
+(defun bl-org/init-org-super-agenda ()
+  (use-package org-super-agenda
+    :defer t
+    :after (org org-agenda)
+    :hook (org-mode . org-super-agenda-mode)))
+
+(defun bl-org/init-org-fancy-priorities ()
+  (use-package org-fancy-priorities
+    :ensure t
+    :hook (org-mode . org-fancy-priorities-mode)
+    :config (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕"))))
 
 ;;; packages.el ends here
