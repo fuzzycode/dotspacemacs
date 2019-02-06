@@ -69,14 +69,6 @@ Each entry is either:
   :CREATED: %U
   :END:")
 
-;;https://ivanmalison.github.io/dotfiles/#addfilestoorgagendafiles
-(defun bl-org/add-to-org-agenda-files (incoming-files)
-  (setq org-agenda-files
-        (delete-dups
-         (cl-loop for filepath in (append org-agenda-files incoming-files)
-                  when (and filepath (file-exists-p (file-truename filepath)))
-                  collect (file-truename filepath)))))
-
 (defun bl-org/init-org-tree-slide ()
   "Requirement of demo-it"
   (use-package org-tree-slide
@@ -93,13 +85,16 @@ Each entry is either:
 (defun bl-org/post-init-org-projectile ()
   (with-eval-after-load 'org-projectile
     (setq org-projectile-capture-template (format "%s%s" "* TODO %?" bl-org/created-property-string))
-    (bl-org/add-to-org-agenda-files (org-projectile-todo-files))))
+    ))
 
 (defun bl-org/init-org-super-agenda ()
   (use-package org-super-agenda
     :defer t
     :after (org org-agenda)
-    :hook (org-mode . org-super-agenda-mode)))
+    :config (org-super-agenda-mode)
+    (setq org-super-agenda-groups
+          '((:name "Important tasks ":priority "A")
+            (:auto-category t)))))
 
 (defun bl-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
