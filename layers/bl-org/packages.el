@@ -72,15 +72,15 @@ Each entry is either:
 (defun bl-org/init-org-tree-slide ()
   "Requirement of demo-it"
   (use-package org-tree-slide
-    :defer t))
+    :after org))
 
 (defun bl-org/init-org-make-toc ()
   (use-package org-make-toc
-    :defer t))
+    :after org))
 
 (defun bl-org/init-demo-it ()
   (use-package demo-it
-    :defer t))
+    :after org))
 
 (defun bl-org/post-init-org-projectile ()
   (with-eval-after-load 'org-projectile
@@ -89,7 +89,6 @@ Each entry is either:
 
 (defun bl-org/init-org-super-agenda ()
   (use-package org-super-agenda
-    :defer t
     :after (org org-agenda)
     :config (org-super-agenda-mode)
     (setq org-super-agenda-groups
@@ -98,6 +97,7 @@ Each entry is either:
 
 (defun bl-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
+    :after org
     :ensure t
     :hook (org-mode . org-fancy-priorities-mode)
     :config (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕"))))
