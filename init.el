@@ -43,8 +43,7 @@ This function should only modify configuration layer settings."
      ;;Language layers
      (python :variables python-enable-yapf-format-on-save t
              python-sort-imports-on-save t
-             python-save-before-test t
-             python-backend 'lsp)
+             python-save-before-test t)
 
      cmake
      csv
