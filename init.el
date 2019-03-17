@@ -127,7 +127,10 @@ This function should only modify configuration layer settings."
              ranger-cleanup-on-disable t
              ranger-dont-show-binary t)
      colors
-     org
+     (org :variables
+          org-enable-bootstrap-support t
+          org-projectile-file "todo.org"
+          org-enable-reveal-js-support t)
 
      (shell :variables
             shell-default-height 30
