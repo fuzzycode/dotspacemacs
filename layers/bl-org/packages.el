@@ -92,8 +92,7 @@ Each entry is either:
     :after (org org-agenda)
     :config (org-super-agenda-mode)
     (setq org-super-agenda-groups
-          '((:name "Important tasks ":priority "A")
-            (:auto-category t)))))
+          '((:name "Important tasks ":priority "A")))))
 
 (defun bl-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
