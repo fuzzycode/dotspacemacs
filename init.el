@@ -128,19 +128,7 @@ This function should only modify configuration layer settings."
              ranger-cleanup-on-disable t
              ranger-dont-show-binary t)
      colors
-     (org :variables
-          org-projectile-file "todo.org"
-          org-enable-github-support t
-          org-enable-trello-support nil
-          org-src-preserve-indentation t
-          org-agenda-start-day "-2d"
-          org-log-into-drawer t
-          org-log-done 'time
-          org-directory "~/Documents/Org"
-
-          org-highest-priority ?A
-          org-lowest-priority ?E
-          org-default-priority ?C)
+     org
 
      (shell :variables
             shell-default-height 30
