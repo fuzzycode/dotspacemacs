@@ -22,7 +22,7 @@
         org-log-redeadline 'time
         org-log-reschedule 'time
         org-treat-insert-todo-heading-as-state-change t
-        ; TODO(Björn Larsson): Remove hard-coded path
+                                        ; TODO(Björn Larsson): Remove hard-coded path
         org-directory "~/Documents/Org"
         org-id-method 'uuidgen
         org-clone-delete-id t
@@ -43,6 +43,19 @@
         org-refile-use-outline-path 'file
         org-refile-allow-creating-parent-nodes t
 
-         org-todo-keywords '((sequence "IDEA(i!)" "TODO(t!)" "IN-PROGRESS(p!)"  "BLOCKED(b@/!)" "|" "DONE(d!)" "CANCELED(c@/!)"))))
+        org-todo-keywords '((sequence "IDEA(i!)" "TODO(t!)" "IN-PROGRESS(p!)"  "BLOCKED(b@/!)" "|" "DONE(d!)" "CANCELED(c@/!)")))
 
+  (defvar bl-org/todo-file (bl-org/join-paths org-directory "todo.org"))
+  (defvar bl-org/archive-file (bl-org/join-paths org-directory "archive.org"))
+  (defvar bl-org/inbox-file (bl-org/join-paths org-directory "inbox.org"))
+
+  (setq org-archive-location (format "%s::%s" bl-org/archive-file "* From %s" ))
+  (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link))
+
+(with-eval-after-load 'org-agenda
+  (unless (boundp 'org-agenda-files)
+    (setq org-agenda-files '()))
+
+  (when (file-exists-p bl-org/todo-file)
+    (add-to-list 'org-agenda-files bl-org/todo-file)))
   ;;; config.el ends here
