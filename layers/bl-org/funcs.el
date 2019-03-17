@@ -21,4 +21,10 @@
   (interactive)
   (org-map-entries 'org-archive-if-completed))
 
+;; https://ivanmalison.github.io/dotfiles/#org
+(defun bl-org/join-paths (root &rest dirs)
+  (let ((result root))
+    (cl-loop for dir in dirs do
+             (setq result (concat (file-name-as-directory result) dir)))
+    result))
 ;;; funcs.el ends here
