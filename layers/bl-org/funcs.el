@@ -13,13 +13,20 @@
 
 ;;; Code:
 
-(defun org-archive-if-completed ()
-  (interactive)
-  (org-archive-if 'org-entry-is-done-p))
+(defun bl-org/org-archive-if (condition-function)
+  (if (funcall condition-function)
+      (let ((next-point-marker
+             (save-excursion (org-forward-heading-same-level 1) (point-marker))))
+        (org-archive-subtree)
+        (setq org-map-continue-from (marker-position next-point-marker)))))
 
-(defun org-archive-completed-in-buffer ()
+(defun bl-org/org-archive-if-completed ()
   (interactive)
-  (org-map-entries 'org-archive-if-completed))
+  (bl-org/org-archive-if 'org-entry-is-done-p))
+
+(defun bl-org/org-archive-completed-in-buffer ()
+  (interactive)
+  (org-map-entries 'bl-org/org-archive-if-completed))
 
 ;; https://ivanmalison.github.io/dotfiles/#org
 (defun bl-org/join-paths (root &rest dirs)
