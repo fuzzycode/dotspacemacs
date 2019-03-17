@@ -18,6 +18,8 @@
             (local-set-key (kbd "<f6>") 'projectile-compile-project)
             (local-set-key (kbd "<f7>") 'projectile-test-project)))
 
+(global-set-key (kbd "<f2>") 'flyspell-correct-wrapper)
+
 ;; Setup key chords
 (key-chord-define-global "uu" 'undo-tree-undo)
 (key-chord-define-global "jj" 'avy-goto-word-or-subword-1)
