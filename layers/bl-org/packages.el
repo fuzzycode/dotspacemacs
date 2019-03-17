@@ -97,7 +97,6 @@ Each entry is either:
 (defun bl-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
     :after org
-    :ensure t
     :hook (org-mode . org-fancy-priorities-mode)
     :config (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕"))))
 
