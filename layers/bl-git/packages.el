@@ -30,8 +30,7 @@
 ;;; Code:
 
 (defconst bl-git-packages
-  '(magit
-    magit-imerge
+  '(magit-imerge
     magit-todos
     rigid-tabs)
   "The list of Lisp packages required by the bl-git layer.
@@ -80,43 +79,4 @@ Each entry is either:
 (defun bl-git/init-magit-imerge ()
   (use-package magit-imerge
     :defer t))
-
-(defun bl-git/post-init-magit ()
-  (setq git-commit-summary-max-length 50
-        git-commit-fill-column 72
-        git-commit-turn-on-flyspell t
-        git-commit-turn-on-auto-fill t
-        magit-wip-merge-branch t)
-
-  (magit-wip-after-save-mode)
-
-  (add-hook 'magit-refresh-buffer-hook #'vc-refresh-state)
-
-  ;; Remove line highlight when in magit mode
-  (add-hook 'magit-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
-
-  (add-to-list 'magit-no-confirm 'stage-all-changes)
-  (add-to-list 'magit-no-confirm 'trash)
-  (add-to-list 'magit-no-confirm 'safe-with-wip)
-
-  (with-eval-after-load 'magit
-    (magit-add-section-hook 'magit-status-sections-hook
-                            'magit-insert-modules-unpulled-from-upstream
-                            'magit-insert-unpulled-from-upstream)
-    (magit-add-section-hook 'magit-status-sections-hook
-                            'magit-insert-modules-unpulled-from-pushremote
-                            'magit-insert-unpulled-from-upstream)
-    (magit-add-section-hook 'magit-status-sections-hook
-                            'magit-insert-modules-unpushed-to-upstream
-                            'magit-insert-unpulled-from-upstream)
-    (magit-add-section-hook 'magit-status-sections-hook
-                            'magit-insert-modules-unpushed-to-pushremote
-                            'magit-insert-unpulled-from-upstream)
-    (magit-add-section-hook 'magit-status-sections-hook
-                            'magit-insert-modules-overview
-                            'magit-insert-unpulled-from-upstream))
-
-  (magit-define-popup-action 'magit-submodule-popup
-	  ?r "Recursive Update" 'bl-git/magit-submodule-update-recursive ?u))
-
 ;;; packages.el ends here
