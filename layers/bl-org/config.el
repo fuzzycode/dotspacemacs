@@ -48,6 +48,7 @@
   (defvar bl-org/todo-file (bl-org/join-paths org-directory "todo.org"))
   (defvar bl-org/archive-file (bl-org/join-paths org-directory "archive.org"))
   (defvar bl-org/inbox-file (bl-org/join-paths org-directory "inbox.org"))
+  (defvar bl-org/calendar-file (bl-org/join-paths org-directory "calendar.org"))
 
   (setq org-archive-location (format "%s::%s" bl-org/archive-file "* From %s" ))
   (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link))
@@ -57,5 +58,8 @@
     (setq org-agenda-files '()))
 
   (when (file-exists-p bl-org/todo-file)
-    (add-to-list 'org-agenda-files bl-org/todo-file)))
+    (add-to-list 'org-agenda-files bl-org/todo-file))
+
+  (when (file-exists-p bl-org/calendar-file)
+    (add-to-list 'org-agenda-files bl-org/calendar-file)))
   ;;; config.el ends here
