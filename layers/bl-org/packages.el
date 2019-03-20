@@ -67,6 +67,9 @@ Each entry is either:
 (defvar bl-org/created-property-string "
   :PROPERTIES:
   :CREATED: %U
+  :END:
+  :LOGBOOK:
+  - State \"TODO\"       from              %U
   :END:")
 
 (defun bl-org/init-org-tree-slide ()
@@ -84,8 +87,9 @@ Each entry is either:
 
 (defun bl-org/post-init-org-projectile ()
   (with-eval-after-load 'org-projectile
-    (setq org-projectile-capture-template (format "%s%s" "* TODO %?" bl-org/created-property-string))
-    ))
+    (push (org-projectile-project-todo-entry
+           :capture-template (format "%s%s" "* TODO %?" bl-org/created-property-string)
+           :capture-character "p") org-capture-templates)))
 
 (defun bl-org/init-org-super-agenda ()
   (use-package org-super-agenda
