@@ -54,7 +54,13 @@
   (setq org-archive-location (format "%s::%s" bl-org/archive-file "* From %s" ))
   (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link)
 
-  (setq org-refile-target-verify-function 'bl-org/verify-refile-target))
+  (setq org-refile-target-verify-function 'bl-org/verify-refile-target)
+
+  (add-to-list 'org-capture-templates
+               `("t" "Todo" entry (file+headline ,bl-org/inbox-file "TODOs")
+                 (function bl-org/make-org-todo-template)))
+
+  )
 
 (with-eval-after-load 'org-agenda
   (unless (boundp 'org-agenda-files)

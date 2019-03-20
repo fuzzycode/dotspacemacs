@@ -39,4 +39,30 @@
     (cl-loop for dir in dirs do
              (setq result (concat (file-name-as-directory result) dir)))
     result))
+
+;; Capture Templates
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(cl-defun bl-org/make-org-todo-template (&key (content "%?") (creation-state "TODO") (project nil))
+  (with-temp-buffer
+    (org-mode)
+    (org-insert-heading)
+    (insert content)
+    (org-todo creation-state)
+    (org-set-property "CREATED"
+                      (with-temp-buffer
+                        (org-insert-time-stamp
+                         (org-current-effective-time) t t)))
+    (when project
+      (org-set-property "PROJECT" project))
+    (remove-hook 'post-command-hook 'org-add-log-note)
+    (let ((org-log-note-purpose 'state)
+          (org-log-note-return-to (point-marker))
+          (org-log-note-marker (progn (goto-char (org-log-beginning t))
+                                      (point-marker)))
+          (org-log-note-state creation-state))
+      (org-add-log-note))
+    (buffer-substring-no-properties (point-min) (point-max))))
+
+
 ;;; funcs.el ends here
