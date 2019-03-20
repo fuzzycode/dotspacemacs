@@ -46,6 +46,7 @@
         org-todo-keywords '((sequence "IDEA(i!)" "TODO(t!)" "IN-PROGRESS(p!)"  "BLOCKED(b@/!)" "|" "DONE(d!)" "CANCELED(c@/!)")))
 
   (defvar bl-org/todo-file (bl-org/join-paths org-directory "todo.org"))
+  (defvar bl-org/notes-file (bl-org/join-paths org-directory "notes.org"))
   (defvar bl-org/archive-file (bl-org/join-paths org-directory "archive.org"))
   (defvar bl-org/inbox-file (bl-org/join-paths org-directory "inbox.org"))
   (defvar bl-org/calendar-file (bl-org/join-paths org-directory "calendar.org"))
