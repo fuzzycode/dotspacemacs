@@ -13,6 +13,11 @@
 
 ;;; Code:
 
+;; http://doc.norang.ca/org-mode.html
+(defun bl-org/verify-refile-target ()
+  "Exclude todo keywords with a done state from refile targets"
+  (not (member (nth 2 (org-heading-components)) org-done-keywords)))
+
 (defun bl-org/org-archive-if (condition-function)
   (if (funcall condition-function)
       (let ((next-point-marker

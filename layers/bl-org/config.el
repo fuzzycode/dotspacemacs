@@ -52,7 +52,9 @@
   (defvar bl-org/calendar-file (bl-org/join-paths org-directory "calendar.org"))
 
   (setq org-archive-location (format "%s::%s" bl-org/archive-file "* From %s" ))
-  (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link))
+  (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link)
+
+  (setq org-refile-target-verify-function 'bl-org/verify-refile-target))
 
 (with-eval-after-load 'org-agenda
   (unless (boundp 'org-agenda-files)
