@@ -60,6 +60,11 @@
                `("t" "Todo" entry (file+headline ,bl-org/inbox-file "TODOs")
                  (function bl-org/make-org-todo-template)))
 
+  (add-to-list 'org-capture-templates
+               `("n" "Note" entry (file+headline ,bl-org/inbox-file "Notes")
+                 (function bl-org/make-org-note-template)))
+
+
   )
 
 (with-eval-after-load 'org-agenda

@@ -64,5 +64,16 @@
       (org-add-log-note))
     (buffer-substring-no-properties (point-min) (point-max))))
 
+(cl-defun bl-org/make-org-note-template (&key (content "%?"))
+  (with-temp-buffer
+    (org-mode)
+    (org-insert-heading)
+    (insert content)
+    (org-set-property "CREATED"
+                      (with-temp-buffer
+                        (org-insert-time-stamp
+                         (org-current-effective-time) t t)))
+    (buffer-substring-no-properties (point-min) (point-max))))
+
 
 ;;; funcs.el ends here
