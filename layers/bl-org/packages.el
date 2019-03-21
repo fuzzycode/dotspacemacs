@@ -94,6 +94,7 @@ Each entry is either:
 (defun bl-org/init-org-super-agenda ()
   (use-package org-super-agenda
     :after (org org-agenda)
+    :disabled t
     :config (org-super-agenda-mode)
     (setq org-super-agenda-groups
           '((:name "Important tasks ":priority "A")))))
