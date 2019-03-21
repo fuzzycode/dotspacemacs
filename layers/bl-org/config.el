@@ -39,7 +39,6 @@
         org-lowest-priority ?E
         org-default-priority ?C
 
-        org-refile-targets '((org-agenda-files :maxlevel . 9))
         org-refile-use-outline-path 'file
         org-refile-allow-creating-parent-nodes t
 
@@ -54,7 +53,11 @@
   (setq org-archive-location (format "%s::%s" bl-org/archive-file "* From %s" ))
   (add-hook 'org-capture-prepare-finalize-hook 'org-id-store-link)
 
+
   (setq org-refile-target-verify-function 'bl-org/verify-refile-target)
+
+  (setq org-refile-targets (quote ((bl-org/todo-file :maxlevel . 2)
+                                   (bl-org/notes-file :level . 2))))
 
   (add-to-list 'org-capture-templates
                `("t" "Todo" entry (file+headline ,bl-org/inbox-file "TODOs")
