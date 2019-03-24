@@ -40,6 +40,10 @@
              (setq result (concat (file-name-as-directory result) dir)))
     result))
 
+(defun bl-org/open-inbox ()
+  (interactive)
+  (find-file bl-org/inbox-file))
+
 ;; Capture Templates
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
