@@ -501,6 +501,8 @@ you should place you code here."
   (push '("melpa-stable" . "https://stable.melpa.org/packages/") package-archives)
   (use-package spaceline :ensure t :pin melpa-stable)
 
+  (setq spaceline-all-the-icons-separator-type 'arrow)
+  (spaceline-toggle-all-the-icons-buffer-position-on)
 
   ;; Need to call this explicitly to make sure that it uses the right ls executable, because exec-path-from-shell is never initialized
   (osx/post-init-exec-path-from-shell)
