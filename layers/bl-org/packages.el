@@ -94,10 +94,17 @@ Each entry is either:
 (defun bl-org/init-org-super-agenda ()
   (use-package org-super-agenda
     :after (org org-agenda)
-    :disabled t
     :config (org-super-agenda-mode)
     (setq org-super-agenda-groups
-          '((:name "Important tasks ":priority "A")))))
+          '((:name "Schedule" :time-grid t :order 4)
+            (:name "Today" :scheduled today :order 3)
+            (:name "Important" :priority "A" :order 0)
+            (:name "Overdue" :deadline past :order 2)
+            (:name "Due soon" :deadline future :order 5)
+            (:name "Todo" :todo "TODO": order 7)
+            (:name "In Progress" :todo "IN-PROGRESS" :order 6)
+            (:name "Due today" :deadline today :order 1)))))
+
 
 (defun bl-org/init-org-fancy-priorities ()
   (use-package org-fancy-priorities
