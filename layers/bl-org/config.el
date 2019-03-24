@@ -41,6 +41,8 @@
 
         org-refile-use-outline-path 'file
         org-refile-allow-creating-parent-nodes t
+        org-refile-allow-creating-parent-nodes 'confirm
+        org-outline-path-complete-in-steps nil
 
         org-todo-keywords '((sequence "IDEA(i!)" "TODO(t!)" "IN-PROGRESS(p!)"  "BLOCKED(b@/!)" "|" "DONE(d!)" "CANCELED(c@/!)")))
 
