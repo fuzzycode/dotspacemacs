@@ -101,7 +101,7 @@ Each entry is either:
             (:name "Important" :priority "A" :order 0)
             (:name "Overdue" :deadline past :order 2)
             (:name "Due soon" :deadline future :order 5)
-            (:name "Todo" :todo "TODO": order 7)
+            (:name "Todo" :todo "TODO" :order 7)
             (:name "In Progress" :todo "IN-PROGRESS" :order 6)
             (:name "Due today" :deadline today :order 1)))))
 
