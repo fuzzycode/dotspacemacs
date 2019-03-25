@@ -55,7 +55,7 @@ This function should only modify configuration layer settings."
      yaml
      lua
      (lsp :variables lsp-remap-xref-keybindings t)
-     latex
+     (latex :variables latex-build-command "LatexMk")
      markdown
      javascript
      json
