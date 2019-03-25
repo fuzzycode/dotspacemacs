@@ -117,6 +117,9 @@
    (solarized-light
     (company-tooltip-selection :foreground "#d33682")
 
+    ;; Highlight doxygen mode
+    (highlight-doxygen-comment :background "#eee8d5")
+
     ;; Misc
     (sp-show-pair-match-face :underline t))
 
@@ -128,6 +131,9 @@
 
     ;; lsp mode
     (lsp-ui-peek-header :box "white")
+
+    ;; Highlight doxygen mode
+    (highlight-doxygen-comment :background "#073642")
     )
    ))
 
