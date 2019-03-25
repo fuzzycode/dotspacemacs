@@ -31,6 +31,7 @@
 
 (defconst bl-org-packages
   '( demo-it
+     idle-org-agenda
      org-fancy-priorities
      org-tree-slide
      org-make-toc
@@ -71,6 +72,11 @@ Each entry is either:
   :LOGBOOK:
   - State \"TODO\"       from              %U
   :END:")
+
+(defun bl-org/init-idle-org-agenda ()
+  (use-package idle-org-agenda
+    :after org-agenda
+    :config (idle-org-agenda-mode)))
 
 (defun bl-org/init-org-tree-slide ()
   "Requirement of demo-it"
