@@ -30,10 +30,13 @@
         org-enforce-todo-dependencies t
         org-agenda-skip-scheduled-if-done t
         org-agenda-skip-deadline-if-done t
+        org-agenda-inhibit-startup t
         org-capture-templates '()
         org-confirm-babel-evaluate nil
         org-insert-heading-respect-content t
         org-archive-mark-done t
+
+        org-return-follows-link t
 
         org-highest-priority ?A
         org-lowest-priority ?E
