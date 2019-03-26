@@ -68,6 +68,13 @@
       (org-add-log-note))
     (buffer-substring-no-properties (point-min) (point-max))))
 
+(defun bl-org/make-org-todo-idea ()
+  (bl-org/make-org-todo-template :creation-state "IDEA"))
+
+(defun bl-org/make-org-todo-in-progress ()
+  (bl-org/make-org-todo-template :creation-state "IN-PROGRESS"))
+
+
 (cl-defun bl-org/make-org-note-template (&key (content "%?"))
   (with-temp-buffer
     (org-mode)

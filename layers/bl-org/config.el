@@ -66,6 +66,15 @@
                  (function bl-org/make-org-todo-template)))
 
   (add-to-list 'org-capture-templates
+               `("i" "Idea" entry (file+headline ,bl-org/inbox-file "TODOs")
+                 (function bl-org/make-org-todo-idea)))
+
+  (add-to-list 'org-capture-templates
+               `("I" "In Progress Item" entry (file+headline ,bl-org/inbox-file "TODOs")
+                 (function bl-org/make-org-todo-in-progress)))
+
+
+  (add-to-list 'org-capture-templates
                `("n" "Note" entry (file+headline ,bl-org/inbox-file "Notes")
                  (function bl-org/make-org-note-template)))
 
