@@ -284,7 +284,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(solarized-dark
                          solarized-light)
 
-   dotspacemacs-mode-line-theme '(all-the-icons :separator slant)
+   dotspacemacs-mode-line-theme '(all-the-icons :separator arrow)
 
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
@@ -501,7 +501,6 @@ you should place you code here."
   (push '("melpa-stable" . "https://stable.melpa.org/packages/") package-archives)
   (use-package spaceline :ensure t :pin melpa-stable)
 
-  (setq spaceline-all-the-icons-separator-type 'arrow)
   (spaceline-toggle-all-the-icons-buffer-position-on)
 
   ;; Need to call this explicitly to make sure that it uses the right ls executable, because exec-path-from-shell is never initialized
