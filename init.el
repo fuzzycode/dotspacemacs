@@ -157,6 +157,7 @@ This function should only modify configuration layer settings."
      bl-org
      bl-edit
      bl-c-c++
+     bl-latex
      )
 
    ;; List of additional packages that will be installed without being
