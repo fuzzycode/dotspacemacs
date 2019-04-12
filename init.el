@@ -509,6 +509,9 @@ you should place you code here."
 
   (setq vc-follow-symlinks t)
 
+  ;; Make cursor wide when over a tab
+  (setq x-stretch-cursor t)
+
   ;;Configure auto save
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
