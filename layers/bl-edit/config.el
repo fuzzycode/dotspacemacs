@@ -23,6 +23,9 @@
 (defvar bl-edit-close-compile-on-success t
   "Control if a compile buffer should be automatically closed on success.")
 
+(defvar bl-edit-notify-compile-finished t
+  "Control if there should be a compile finished message or not")
+
 (defvar bl-edit-compile-auto-close-time 2
   "The time in seconds that the compile buffer will be closed after a successful compile.")
 
@@ -53,6 +56,7 @@
 
 ;; Auto close compile buffer
 (add-hook 'compilation-finish-functions 'bl-edit/bury-compile-buffer-if-successful)
+(add-hook 'compilation-finish-functions 'bl-edit/maybe-notify-compile-finish)
 
 ;; Make sure that point is in the right place for typing when editing commit messages
 (add-hook 'find-file-hook (lambda ()

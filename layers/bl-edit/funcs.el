@@ -17,6 +17,8 @@
 ;;   SPC h SPC layers RET
 ;;
 ;;; Code:
+(require 'alert)
+
 
 (defun bl-edit/goto-first-empty-line (&optional from-top)
   "Finds the first empty line and moves point to it. If from-top is true the search will start from the top of the buffer."
@@ -34,7 +36,6 @@
 
 ;; https://emacs.stackexchange.com/questions/62/hide-compilation-window
 (defun bl-edit/bury-compile-buffer-if-successful (buffer string)
-
   (if (and
        (null (string-match ".*exited abnormally.*" string))
        (bound-and-true-p  bl-edit-close-compile-on-success))
@@ -42,8 +43,14 @@
       (progn
         (run-at-time
          (format "%d sec" bl-edit-compile-auto-close-time) nil 'delete-windows-on
-         (get-buffer-create "*compilation*"))
-        (message "%s" (propertize "Compilation finished OK!" 'face '(:foreground "green"))))))
+         (get-buffer-create "*compilation*")))))
+
+(defun bl-edit/maybe-notify-compile-finish (buffer string)
+  "Show an alert when compilation finished, like XCode does"
+  (when bl-edit-notify-compile-finished
+    (if (string-match "^finished" string)
+        (alert "Compilation finished OK!" :title "Compilation Successful" :category 'compile :id 'compile-ok)
+      (alert "Compilation Failed" :title "Compilation Failed" :category 'compile :id 'compile-fail))))
 
 ;; http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun bl-edit/top-join-line ()
