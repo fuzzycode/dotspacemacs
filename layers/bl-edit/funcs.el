@@ -17,7 +17,7 @@
 ;;   SPC h SPC layers RET
 ;;
 ;;; Code:
-(require 'alert)
+
 
 
 (defun bl-edit/goto-first-empty-line (&optional from-top)
@@ -47,6 +47,7 @@
 
 (defun bl-edit/maybe-notify-compile-finish (buffer string)
   "Show an alert when compilation finished, like XCode does"
+  (require 'alert)
   (when bl-edit-notify-compile-finished
     (if (string-match "^finished" string)
         (alert "Compilation finished OK!" :title "Compilation Successful" :category 'compile :id 'compile-ok)
