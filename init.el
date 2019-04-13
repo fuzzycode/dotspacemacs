@@ -558,6 +558,10 @@ you should place you code here."
     (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB")))
   (setq ispell-dictionary "english")
 
+  (if (executable-find "terminal-notifier")
+      (setq alert-default-style 'notifier)
+    (setq alert-default-style 'osx-notifier))
+
   ;; Make sure that semantic does not go crazy on elisp comments
   ;; https://github.com/syl20bnr/spacemacs/pull/7736#issuecomment-313320906
   (use-package semantic
