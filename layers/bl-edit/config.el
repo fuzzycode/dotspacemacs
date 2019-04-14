@@ -35,6 +35,9 @@
 (defvar bl-edit-enable-abbrev-mode nil
   "Configure usage of abbreviation mode")
 
+(defvar bl-edit-dap-mode-hooks '(c-mode-hook c++-mode-hook python-mode-hook)
+  "Modes that should configure dap key bindings")
+
 (defvar bl-edit-key-freq-ignore '(self-insert-command
                                   abort-recursive-edit
                                   forward-char

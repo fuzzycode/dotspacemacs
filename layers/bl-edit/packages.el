@@ -35,6 +35,7 @@
     beacon
     beginend
     comment-dwim-2
+    dap-mode
     drag-stuff
     deadgrep
     fancy-narrow
@@ -83,6 +84,15 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-edit/pre-init-dap-mode ()
+  (spacemacs|use-package-add-hook dap-mode
+    :post-config
+    (progn (require 'dap-gdb-lldb)
+           (dolist (hook bl-edit-dap-mode-hooks)
+             (add-hook hook
+                       (lambda ()
+                         (dap-mode 1)
+                         (dap-ui-mode 1)))))))
 
 (defun bl-edit/init-helpful ()
   (use-package helpful

@@ -43,3 +43,15 @@
         (add-hook hook
                   (lambda ()
                     (local-set-key (kbd "<f5>") 'bl-edit/run-current-file))))
+
+(dolist (hook bl-edit-dap-mode-hooks)
+  (add-hook hook
+            (lambda ()
+              (local-set-key (kbd "S-<f5>") 'dap-debug)
+              (local-set-key (kbd "C-<f5>") 'dap-debug-last)
+              (local-set-key (kbd "<f8>") 'dap-continue)
+              (local-set-key (kbd "<f9>") 'dap-breakpoint-toggle)
+              (local-set-key (kbd "<f10>") 'dap-next)
+              (local-set-key (kbd "<f11>") 'dap-step-in)
+              (local-set-key (kbd "S-<f11>") 'dap-step-out)
+              )))
