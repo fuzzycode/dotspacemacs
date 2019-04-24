@@ -226,7 +226,7 @@ Each entry is either:
 (defun bl-edit/init-all-the-icons-dired ()
   (use-package all-the-icons-dired
     :defer t
-    :init (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)))
+    :hook (dired-mode . all-the-icons-dired-mode)))
 
 (defun bl-edit/init-drag-stuff ()
   (use-package drag-stuff
