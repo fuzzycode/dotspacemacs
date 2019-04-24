@@ -45,6 +45,7 @@
     highlight-doxygen
     keyfreq
     lsp-ui
+    lsp-origami
     lsp-mode
     use-package-chords
     goto-last-change
@@ -83,6 +84,11 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/init-lsp-origami ()
+  (use-package lsp-origami
+    :defer t
+    :hook (origami-mode . lsp-origami-mode)))
 
 (defun bl-edit/pre-init-dap-mode ()
   (spacemacs|use-package-add-hook dap-mode
