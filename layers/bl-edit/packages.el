@@ -226,7 +226,7 @@ Each entry is either:
 
 (defun bl-edit/init-smartscan ()
   (use-package smartscan
-    :defer t
+    :defer 10
     :init (global-smartscan-mode 1)))
 
 (defun bl-edit/init-all-the-icons-dired ()
