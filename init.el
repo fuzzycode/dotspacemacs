@@ -548,8 +548,15 @@ you should place you code here."
   (setq mac-right-command-modifier nil)
   (setq mac-right-option-modifier nil)
 
+  ;; No dialog boxes
+  (setq use-dialog-box nil
+        use-file-dialog nil)
+
+
   ;; Not needed and it speeds up scrolling long lines
   (setq bidi-display-reordering nil)
+  (setq-default bidi-paragraph-direction 'left-to-right)
+
   (setq inhibit-compacting-font-caches t)
 
   ;; Configure spelling
