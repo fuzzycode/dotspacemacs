@@ -1,4 +1,6 @@
 (spacemacs/declare-prefix "ot" "Toggles")
+(spacemacs/declare-prefix "oo" "Org")
+(spacemacs/declare-prefix "op" "Project")
 
 ;; Evil-mode or no Evil mode, I NEED some of the emacs navigation keys
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
