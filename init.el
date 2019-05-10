@@ -55,7 +55,9 @@ This function should only modify configuration layer settings."
      yaml
      lua
      (lsp :variables lsp-remap-xref-keybindings t)
-     (latex :variables latex-build-command "LatexMk")
+     (latex :variables
+            latex-build-command "LatexMk"
+            latex-enable-folding t)
      markdown
      javascript
      json
