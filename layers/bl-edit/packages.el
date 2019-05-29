@@ -34,6 +34,7 @@
     all-the-icons-dired
     beacon
     beginend
+    bm
     comment-dwim-2
     dap-mode
     drag-stuff
@@ -85,6 +86,16 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun bl-edit/pre-init-bm ()
+  (spacemacs|use-package-add-hook bm
+    :post-init (progn
+                   (setq bm-marker 'bm-marker-left
+                         bm-recenter t
+                         bm-highlight-style 'bm-highlight-only-fringe)
+
+                   (global-set-key (kbd "<f10>") 'bm-toggle)
+                   (global-set-key (kbd "<M-f10>")   'bm-next)
+                   (global-set-key (kbd "<A-f10>") 'bm-previous))))
 (defun bl-edit/init-lsp-origami ()
   (use-package lsp-origami
     :defer t

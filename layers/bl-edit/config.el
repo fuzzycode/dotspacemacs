@@ -119,6 +119,8 @@
     ;; lsp mode
     (lsp-face-highlight-textual :background "#464752")
     (lsp-ui-peek-header :box "white")
+
+    (bm-persistent-face :overline nil)
     )
 
    (solarized-light
@@ -128,7 +130,10 @@
     (highlight-doxygen-comment :background "#eee8d5")
 
     ;; Misc
-    (sp-show-pair-match-face :underline t))
+    (sp-show-pair-match-face :underline t)
+
+    (bm-persistent-face :overline nil)
+    )
 
    (solarized-dark
     (company-tooltip-selection :foreground "#d33682")
@@ -141,6 +146,8 @@
 
     ;; Highlight doxygen mode
     (highlight-doxygen-comment :background "#073642")
+
+    (bm-persistent-face :overline nil)
     )
    ))
 
