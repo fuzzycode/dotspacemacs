@@ -501,7 +501,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
 
 
-  (spaceline-toggle-all-the-icons-buffer-position-on)
 
   ;; Need to call this explicitly to make sure that it uses the right ls executable, because exec-path-from-shell is never initialized
   (osx/post-init-exec-path-from-shell)

@@ -58,7 +58,9 @@
     proced
     smartscan
     smart-backspace
-    sort-words)
+    sort-words
+    spaceline-all-the-icons
+    )
   "The list of Lisp packages required by the bl-edit layer.
 
 Each entry is either:
@@ -85,6 +87,37 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-edit/pre-init-spaceline-all-the-icons ()
+  (spacemacs|use-package-add-hook spaceline-all-the-icons
+    :post-init (progn
+
+                 ;; Turn on segments
+                 (spaceline-toggle-all-the-icons-buffer-position-on)
+                 (spaceline-toggle-all-the-icons-hud-on)
+                 (spaceline-toggle-all-the-icons-package-updates-on)
+
+                 ;; Add more segments
+                 (spaceline-all-the-icons--setup-git-ahead)
+                 (spaceline-all-the-icons--setup-paradox)
+
+                 ;; Define the LSP segment
+                 (spaceline-define-segment all-the-icons-lsp
+                   (let* ((workspaces (lsp-workspaces))
+                          (face (if workspaces 'success 'warning)))
+
+                     (propertize (all-the-icons-faicon "rocket" :v-adjust -0.0575)
+                                 'face face
+                                 'help-echo
+                                 (if workspaces (concat "LSP Connected "
+                                                        (string-join (--map (format "[%s]\n" (lsp--workspace-print it))
+                                                                            workspaces)))
+                                   "lsp disconnected")))
+
+                   :when (and active (bound-and-true-p lsp-mode)))
+
+                 (spaceline-all-the-icons-theme 'all-the-icons-lsp)
+                 )))
 
 (defun bl-edit/pre-init-bm ()
   (spacemacs|use-package-add-hook bm
