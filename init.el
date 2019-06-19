@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
              python-sort-imports-on-save t
              python-save-before-test t)
 
+     ipython-notebook
      cmake
      csv
      docker
