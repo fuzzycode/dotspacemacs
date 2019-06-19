@@ -34,11 +34,14 @@
                           'magit-insert-modules-overview
                           'magit-insert-unpulled-from-upstream)
 
-  (magit-define-popup-switch 'magit-fetch-popup
-    ?P "Prune tags" "--prune-tags")
+  (transient-bind-q-to-quit)
 
-  (magit-define-popup-switch 'magit-fetch-popup
-    ?t "Fetch tags" "--tags")
+  (transient-append-suffix 'magit-fetch "-p"
+    '("-P" "Prune tags" "--prune-tags"))
 
-  (magit-define-popup-action 'magit-submodule-popup
-	  ?r "Recursive Update" 'bl-git/magit-submodule-update-recursive ?u))
+  (transient-append-suffix 'magit-fetch "-P"
+    '("-t" "Fetch tags" "--tags"))
+
+  (transient-append-suffix 'magit-submodule "u"
+    '("R" "Recursive Update" bl-git/magit-submodule-update-recursive))
+  )
