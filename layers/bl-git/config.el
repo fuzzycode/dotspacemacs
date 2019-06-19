@@ -35,6 +35,8 @@
                           'magit-insert-unpulled-from-upstream)
 
   (transient-bind-q-to-quit)
+  (setq transient-enable-popup-navigation t)
+
 
   (transient-append-suffix 'magit-fetch "-p"
     '("-P" "Prune tags" "--prune-tags"))
