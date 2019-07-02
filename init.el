@@ -288,7 +288,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(solarized-dark
                          solarized-light)
 
-   dotspacemacs-mode-line-theme '(all-the-icons :separator arrow)
+   dotspacemacs-mode-line-theme 'doom ;;'(all-the-icons :separator arrow)
 
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
