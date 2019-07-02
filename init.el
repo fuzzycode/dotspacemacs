@@ -46,6 +46,8 @@ This function should only modify configuration layer settings."
              python-save-before-test t)
 
      ipython-notebook
+     (clojure :variables
+              clojure-enable-clj-refactor t)
      cmake
      csv
      docker
