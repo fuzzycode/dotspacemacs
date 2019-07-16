@@ -60,7 +60,14 @@ This function should only modify configuration layer settings."
      (lsp :variables lsp-remap-xref-keybindings t)
      (latex :variables
             latex-build-command "LatexMk"
-            latex-enable-folding t)
+            TeX-source-correlate-mode t
+            TeX-source-correlate-start-server t
+            TeX-source-correlate-method '(pdf . synctex)
+            latex-enable-folding t
+            TeX-auto-save t
+            TeX-save-query nil
+            TeX-parse-self t)
+
      markdown
      javascript
      json
@@ -156,6 +163,7 @@ This function should only modify configuration layer settings."
      treemacs
      (templates :variables templates-private-directory "~/.templates")
      sphinx
+     pdf
 
      ;; My private layers
      bl-git

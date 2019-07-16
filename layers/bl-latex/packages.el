@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst bl-latex-packages
-  '()
+  '(pdf-tools)
   "The list of Lisp packages required by the bl-latex layer.
 
 Each entry is either:
@@ -59,4 +59,28 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-;;; packages.el ends here
+(defun bl-latex/pre-init-pdf-tools ()
+  (spacemacs|use-package-add-hook pdf-tools
+    :pre-config (progn
+
+                  (setq pdf-view-display-size 'fit-page
+                        pdf-view-resize-factor 1.1)
+
+                  ;; Hooks
+                  (add-hook 'pdf-view-mode-hook #'pdf-sync-minor-mode)
+                  (add-hook 'pdf-view-mode-hook #'pdf-links-minor-mode)
+
+                  (add-hook 'pdf-view-mode-hook (lambda ()
+                                                  (cua-mode 0)
+                                                  (linum-mode 0)))
+
+                  (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
+
+                  ;; Setup pdf-tools
+                  (when (executable-find "epdfinfo")
+                    (setq-default TeX-view-program-selection '((output-pdf "PDF Tools")))
+                    ; TODO(Björn Larsson): Fix this setup properly, I think it is too aggressive
+                    (setq-default TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view)))
+                    (setq-default pdf-info-epdfinfo-program "/usr/local/bin/epdfinfo")))))
+
+ ;;; packages.el ends here
