@@ -108,6 +108,8 @@ This function should only modify configuration layer settings."
            mu4e-confirm-quit nil
            mu4e-update-interval (* 60 5)
            mu4e-get-mail-command "timeout 60 offlineimap"
+           mu4e-attachment-dir  "~/Downloads"
+           mu4e-compose-dont-reply-to-self t
 
            org-mu4e-link-query-in-headers-mode nil
 
