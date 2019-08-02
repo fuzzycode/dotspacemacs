@@ -167,6 +167,7 @@ This function should only modify configuration layer settings."
      (templates :variables templates-private-directory "~/.templates")
      sphinx
      pdf
+     spacemacs-purpose
 
      ;; My private layers
      bl-git
