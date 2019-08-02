@@ -142,6 +142,7 @@ This function should only modify configuration layer settings."
              ranger-dont-show-binary t)
      colors
      (org :variables
+          org-highlight-latex-and-related '(latex)
           org-enable-bootstrap-support t
           org-projectile-file "todo.org"
           org-enable-reveal-js-support t)
@@ -329,7 +330,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-emacs-leader-key "M-SPC"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
-   dotspacemacs-major-mode-leader-key ","
+   dotspacemacs-major-mode-leader-key nil
 
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m")
