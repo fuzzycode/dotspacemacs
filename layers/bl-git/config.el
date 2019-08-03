@@ -41,9 +41,6 @@
   (transient-append-suffix 'magit-fetch "-p"
     '("-P" "Prune tags" "--prune-tags"))
 
-  (transient-append-suffix 'magit-fetch "-P"
-    '("-t" "Fetch tags" "--tags"))
-
   (transient-append-suffix 'magit-submodule "u"
     '("R" "Recursive Update" bl-git/magit-submodule-update-recursive))
   )
