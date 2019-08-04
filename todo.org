@@ -1,0 +1,13 @@
+#+TITLE: .spacemacs TODO items
+#+AUTHOR: Björn Larsson
+#+STARTUP: overview
+#+OPTIONS:   num:nil toc:nil
+
+* TODO Write a custom modeline
+  Could be based on Spaceline
+
+* TODO Change Treemacs to use all-the-icons
+* TODO Reduce lsp-ui sideline intensity
+* TODO Setup purpose
+  [] Implement a lsp-1 layout
+  [] Implement a header/source split layout
