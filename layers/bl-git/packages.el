@@ -32,6 +32,7 @@
 (defconst bl-git-packages
   '(magit-imerge
     magit-todos
+    (treemacs-magit :toggle (configuration-layer/package-used-p 'treemacs))
     rigid-tabs)
   "The list of Lisp packages required by the bl-git layer.
 
@@ -59,6 +60,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun bl-git/init-treemacs-magit ()
+  (use-package treemacs-magit
+    :after treemacs
+    :defer t
+    :init (require 'treemacs-magit)))
+
 
 (defun bl-git/init-rigid-tabs ()
   (use-package rigid-tabs
