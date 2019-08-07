@@ -73,6 +73,12 @@
   (dolist (i custom-enabled-themes)
     (disable-theme i)))
 
+(defun bl-edit/dim-lsp-sideline (&rest args)
+  (mapcar (lambda (face)
+           (when (facep face)
+             (set-face-foreground face (face-attribute 'font-lock-comment-face :foreground))))
+          '(lsp-ui-sideline-code-action lsp-ui-sideline-current-symbol lsp-ui-sideline-symbol lsp-ui-sideline-symbol-info)))
+
 (defun bl-edit/disable-themes (&rest args)
   (bl-edit/disable-all-themes))
 

@@ -7,7 +7,11 @@
   Could be based on Spaceline
 
 * TODO Change Treemacs to use all-the-icons
-* TODO Reduce lsp-ui sideline intensity
+* DONE Reduce lsp-ui sideline intensity
+  CLOSED: [2019-08-07 Wed 13:33]
+  :LOGBOOK:
+  - State "DONE"       from "TODO"       [2019-08-07 Wed 13:33]
+  :END:
 * TODO Setup purpose
   [] Implement a lsp-1 layout
   [] Implement a header/source split layout

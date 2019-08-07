@@ -88,6 +88,7 @@
   :evil-leader "otD")
 
 (advice-add 'load-theme :after 'bl-edit/remove-mode-line-box)
+(advice-add 'load-theme :after 'bl-edit/dim-lsp-sideline)
 (advice-add 'load-theme :before 'bl-edit/disable-themes)
 
 (when window-system
