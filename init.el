@@ -62,7 +62,6 @@ This function should only modify configuration layer settings."
             latex-build-command "LatexMk"
             TeX-source-correlate-mode t
             TeX-source-correlate-start-server t
-            TeX-source-correlate-method '(pdf . synctex)
             latex-enable-folding t
             TeX-auto-save t
             TeX-save-query nil
@@ -184,7 +183,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '()
 
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(firebelly-theme niflheim-theme pastels-on-dark-theme tronesque-theme zonokai-theme, rtags)
+   dotspacemacs-excluded-packages '(firebelly-theme niflheim-theme pastels-on-dark-theme tronesque-theme zonokai-theme rtags)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
