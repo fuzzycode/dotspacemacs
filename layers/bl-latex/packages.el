@@ -64,7 +64,9 @@ Each entry is either:
     :pre-config (progn
 
                   (setq pdf-view-display-size 'fit-page
-                        pdf-view-resize-factor 1.1)
+                        pdf-view-resize-factor 1.1
+                        pdf-sync-backward-display-action t
+                        pdf-sync-forward-display-action t)
 
                   ;; Hooks
                   (add-hook 'pdf-view-mode-hook #'pdf-sync-minor-mode)
