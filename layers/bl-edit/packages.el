@@ -44,7 +44,6 @@
     helm-swoop
     helpful
     highlight-doxygen
-    hound
     keyfreq
     lsp-ui
     lsp-origami
@@ -89,13 +88,6 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
-(defun bl-edit/init-hound ()
-  "Emacs interface to git-hound, needs to be configured to point to the right back-end
-https://github.com/ryoung786/hound.el"
-  (use-package hound
-    :defer t
-    :commands hound))
 
 (defun bl-edit/pre-init-doom-modeline ()
   (spacemacs|use-package-add-hook doom-modeline
