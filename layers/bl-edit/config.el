@@ -91,6 +91,8 @@
 (advice-add 'load-theme :after 'bl-edit/dim-lsp-sideline)
 (advice-add 'load-theme :before 'bl-edit/disable-themes)
 
+(add-hook 'lsp-ui-mode-hook 'bl-edit/dim-lsp-sideline)
+
 (when window-system
   (bl-edit/remove-mode-line-box))
 
