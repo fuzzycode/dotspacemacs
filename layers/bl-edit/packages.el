@@ -264,6 +264,8 @@ Each entry is either:
     :defer t))
 
 (defun bl-edit/post-init-lsp-ui ()
+  (setq lsp-ui-sideline-show-hover t)
+
   (spacemacs|add-toggle lsp-ui
     :mode lsp-ui-mode
     :documentation "Enable lsp-ui."
