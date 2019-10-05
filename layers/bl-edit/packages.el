@@ -316,6 +316,7 @@ Each entry is either:
             (spacemacs|diminish beacon-mode "" "")
 
             (setq beacon-dont-blink-major-modes '(eshell-mode
+                                                  vterm-mode
                                                   spacemacs-buffer-mode
                                                   term-mode)))))
 
