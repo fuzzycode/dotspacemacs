@@ -34,6 +34,8 @@
                       (cpp-macro . -1000)
                       (cpp-macro-cont . +)
 
+                      (arglist-cont-nonempty . +)
+
                       (substatement-open . 0)))
 
      ;; Control brace placement
