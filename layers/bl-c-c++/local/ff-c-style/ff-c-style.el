@@ -35,6 +35,7 @@
                       (cpp-macro-cont . +)
 
                       (arglist-cont-nonempty . +)
+                      (brace-list-entry . -)
 
                       (substatement-open . 0)))
 
