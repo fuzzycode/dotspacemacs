@@ -35,7 +35,6 @@
                       (cpp-macro-cont . +)
 
                       (arglist-cont-nonempty . +)
-                      (brace-list-entry . -)
 
                       (substatement-open . 0)))
 
@@ -60,7 +59,8 @@
                      brace-elseif-brace
                      brace-catch-brace
                      scope-operator
-                     defun-close-semi))
+                     defun-close-semi
+                     empty-defun-braces))
 
     )
   "FF C Style Guide"
